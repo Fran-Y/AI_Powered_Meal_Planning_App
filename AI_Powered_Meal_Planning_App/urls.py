@@ -19,6 +19,10 @@ from django.urls import path
 from mealPlanningMain import views
 
 urlpatterns = [
+    # path('', views.login),
     path('admin/', admin.site.urls),
-    path('index/', views.index)
+    path('', views.landing, name='landing'),
+    path('register', views.register, name='register'),
+    path('login', views.login_view, name='login'),
+    path('profile/', views.profile, name='profile'),
 ]

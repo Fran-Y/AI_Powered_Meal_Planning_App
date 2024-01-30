@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <h1>{% trans "User Profile" %}</h1>
+    <p><strong>{% trans "Username:" %}</strong> {{ user.username }}</p>
+    <p><strong>{% trans "Email:" %}</strong> {{ user.email }}</p>
+    <p><strong>{% trans "Age:" %}</strong> {{ user.age }}</p>
+</div>
+{% endblock %}

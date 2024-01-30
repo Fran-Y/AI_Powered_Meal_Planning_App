@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}{% trans 'Home' %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron mt-4">
+        <h1 class="display-4">{% trans 'Welcome to Meal Planner!' %}</h1>
+        <p class="lead">{% trans 'Plan your meals efficiently and effortlessly.' %}</p>
+        <hr class="my-4">
+        <p>{% trans 'Get started by exploring our diverse meal options, customizing your meal plan, and shopping with ease.' %}</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">{% trans 'Learn more' %}</a>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-lg-4">
+            <img src="{% static 'images/icon-recipes.png' %}" alt="{% trans 'Recipes' %}" class="mb-4">
+            <h2>{% trans 'Recipes' %}</h2>
+            <p>{% trans 'Discover new recipes and find inspiration for your next meal.' %}</p>
+            <p><a class="btn btn-secondary" href="#" role="button">{% trans 'View Recipes' %} &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static 'images/icon-mealplan.png' %}" alt="{% trans 'Meal Planning' %}" class="mb-4">
+            <h2>{% trans 'Meal Planning' %}</h2>
+            <p>{% trans 'Create and manage your meal plans with our interactive planner.' %}</p>
+            <p><a class="btn btn-secondary" href="#" role="button">{% trans 'Plan Meals' %} &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static 'images/icon-shopping.png' %}" alt="{% trans 'Shopping' %}" class="mb-4">
+            <h2>{% trans 'Shopping' %}</h2>
+            <p>{% trans 'Generate shopping lists from your meal plans and organize your grocery trips.' %}</p>
+            <p><a class="btn btn-secondary" href="#" role="button">{% trans 'Shopping List' %} &raquo;</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
