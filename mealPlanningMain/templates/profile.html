@@ -2,10 +2,15 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container">
-    <h1>{% trans "User Profile" %}</h1>
-    <p><strong>{% trans "Username:" %}</strong> {{ user.username }}</p>
-    <p><strong>{% trans "Email:" %}</strong> {{ user.email }}</p>
-    <p><strong>{% trans "Age:" %}</strong> {{ user.age }}</p>
-</div>
+    <div class="container">
+        <h1>{% trans "User Profile" %}</h1>
+        <p><strong>{% trans "Username:" %}</strong> {{ user.username }}</p>
+        <p><strong>{% trans "Email:" %}</strong> {{ user.email }}</p>
+        <p><strong>{% trans "Age:" %}</strong> {{ user.age }}</p>
+        <p><strong>{% trans "Gender:" %}</strong> {{ user.gender }}</p>
+        <p><strong>{% trans "Weight:" %}</strong> {{ user.weight }}</p>
+        <p><strong>{% trans "Height:" %}</strong> {{ user.height }}</p>
+        <p><strong>{% trans "Dietary preferences:" %}</strong> {{ user.dietary_preferences }}</p>
+
+    </div>
 {% endblock %}

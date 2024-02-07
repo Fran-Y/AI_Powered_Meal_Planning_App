@@ -7,6 +7,7 @@ from django.db import connection
 from .models import User
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 def landing(request):
     return render(request, "landing.html")
