@@ -36,7 +36,7 @@ header{
 
 
 .banner-section{
-    background-image: url('../images/meal-plan-bg.jpg');
+    background-image: url('img/meal-plan-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
@@ -162,8 +162,8 @@ header{
 }
 
 footer{
-    background-color: rgb(152, 198, 53);
-    padding: 5px 0;
+    position: relative;
+    width: 100%;
 }
 
 footer p{
@@ -171,4 +171,52 @@ footer p{
     font-weight: 600;
     color: rgb(12,85,86);
     margin: 0;
+}
+
+footer .footer-section-content{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 5px 0;
+    background: rgb(152, 198, 53);
+}
+
+/* -- Login page -- */
+.login-form-section{
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 60px 0;
+    background-color: #ececec;
+    height: 100vh;
+}
+
+.login-form-section-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+    width: 100%;
+}
+
+.form-section{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#login-form{
+    display: inline-block;
+    max-width: 450px;
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 25px;
+}
+
+.form-field{
+
 }
