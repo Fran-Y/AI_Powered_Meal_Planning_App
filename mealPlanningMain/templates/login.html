@@ -4,30 +4,59 @@
 {% block title %}{% trans 'Login' %}{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12 text-center">
-        <h3>{% trans "Sign In" %}</h3>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3">
-        <hr>
-        <form class="login" method="POST" action="{% url 'login' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>
-            <a class="btn btn-secondary" href={% url 'register' %}>{% trans "Sign Up" %}</a>
-        </form>
-    </div>
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert {{ message.tags }}">
-            {{ message }}
+<section class="login-form-section">
+        <div class="login-form-section-content">
+            <div class="container">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert {{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST" action="{% url 'login' %}" id="login-form" class="form-section">
+                    <div class="header-field">
+                        <h2>Hello, User</h2>
+                        <p>Please enter your details</p>
+                    </div>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+{#                    <div class="form-field d-flex flex-column my-3">#}
+{#                        <label for="username">Username</label>#}
+{#                        <input type="text" name="username" id="id_username" required>#}
+{#                    </div>#}
+{#                    <div class="form-field d-flex flex-column my-3">#}
+{#                        <label for="password">Password</label>#}
+{#                        <input type="password" name="password" id="id_password" required>#}
+{#                    </div>#}
+                    <div class="form-field d-flex flex-row my-3">
+                        <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>
+                        <a class="btn btn-secondary" href={% url 'register' %}>{% trans "Sign Up" %}</a>
+                    </div>
+                </form>
+            </div>
         </div>
-    {% endfor %}
-{% endif %}
-</div>
+    </section>
+
+{#<div class="row">#}
+{#    <div class="col-12 text-center">#}
+{#        <h3>{% trans "Sign In" %}</h3>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="row">#}
+{#    <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3">#}
+{#        <hr>#}
+{#        <form class="login" method="POST" action="{% url 'login' %}">#}
+{#            {% csrf_token %}#}
+{#            {{ form.as_p }}#}
+{#            <button class="btn btn-success" type="submit">{% trans "Sign In" %}</button>#}
+{#            <a class="btn btn-secondary" href={% url 'register' %}>{% trans "Sign Up" %}</a>#}
+{#        </form>#}
+{#    </div>#}
+
+
+{#</div>#}
 
 
 <script>
