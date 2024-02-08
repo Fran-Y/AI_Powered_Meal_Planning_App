@@ -4,23 +4,43 @@
 {% block title %}{% trans 'Register' %}{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-12 text-center">
-        <h3>{% trans "Sign Up" %}</h3>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3">
-        <hr>
-        <form class="register" method="POST" action="{% url 'register' %}">
-            {% csrf_token %}
-            {{ form.as_p }}
+    <section class="login-form-section">
+        <div class="login-form-section-content">
+            <div class="container">
+                <form method="POST" action="{% url 'register' %}" id="register-form" class="form-section register">
+                    <div class="header-field mb-2">
+                        <h2>Hello, User</h2>
+                        <p>Please enter your details</p>
+                    </div>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="form-field d-flex flex-row my-3">
+                        <button class="btn btn-success" type="submit">{% trans "Sign Up" %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-            <button class="btn btn-success" type="submit">{% trans "Sign Up" %}</button>
-        </form>
-    </div>
-</div>
+
+{#<div class="row">#}
+{#    <div class="col-12 text-center">#}
+{#        <h3>{% trans "Sign Up" %}</h3>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#<div class="row">#}
+{#    <div class="col-sm-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3">#}
+{#        <hr>#}
+{#        <form class="register" method="POST" action="{% url 'register' %}">#}
+{#            {% csrf_token %}#}
+{#            {{ form.as_p }}#}
+{##}
+{#            <button class="btn btn-success" type="submit">{% trans "Sign Up" %}</button>#}
+{#        </form>#}
+{#    </div>#}
+{#</div>#}
 
 <script>
     document.getElementById('id_username').focus();
