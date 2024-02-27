@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+    <!--Bootstrap Font Awesome CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+    <title>Responsive Admin Dashboard</title>
+
+    <link rel="stylesheet" text="text/css" href={% static 'css/dashboard.css' %}>
+    <script src="https://kit.fontawesome.com/b23c7cc76f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Navbar-->
+        <div class="navigation">
+            <ul>
+                <li >
+                    <a href={% url 'profile' %}>
+                        <span class="icon">
+                            <i class="fa fa-apple" aria-hidden="true"></i>
+                        </span>
+                        <span class="title"><h2>Brand Name</h2></span>
+                    </a>
+                </li>
+                <li>
+                    <a href={% url 'profile' %}>
+                        <span class="icon">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href={% url 'personalInfo' %}>
+                        <span class="icon">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Personal Info</span>
+                    </a>
+                </li>
+                <li>
+                    <a href={% url 'mealplan' %}>
+                        <span class="icon">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Weekly Meal Plans</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+
+{% block content %}
+
+{% endblock %}

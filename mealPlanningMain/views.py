@@ -8,6 +8,7 @@ from .models import User
 from django.contrib.auth.decorators import login_required
 
 
+
 # Create your views here.
 def landing(request):
     return render(request, "landing.html")
@@ -54,3 +55,14 @@ def profile(request):
         'user': user
     }
     return render(request, 'profile.html', context)
+
+
+# def logout(request):
+#
+
+@login_required
+def mealplan(request):
+    return render(request, 'meal-plans.html')
+
+def personalInfo(request):
+    return render(request, 'personal-info.html')

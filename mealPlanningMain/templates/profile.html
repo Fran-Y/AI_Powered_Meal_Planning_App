@@ -1,116 +1,7 @@
-{#{% extends "base.html" %}#}
-{#{% load i18n %}#}
-{##}
-{#{% block content %}#}
-{#<div class="container">#}
-{#    <h1>{% trans "User Profile" %}</h1>#}
-{#    <p><strong>{% trans "Username:" %}</strong> {{ user.username }}</p>#}
-{#    <p><strong>{% trans "Email:" %}</strong> {{ user.email }}</p>#}
-{#    <p><strong>{% trans "Age:" %}</strong> {{ user.age }}</p>#}
-{#</div>#}
-{#{% endblock %}#}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "dashboard.html" %}
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Latest compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-
-    <!--Bootstrap Font Awesome CDN-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
-    <title>Responsive Admin Dashboard</title>
-
-    <link rel="stylesheet" text="text/css" href="{% static 'css/dashboard.css' %}">
-    <script src="https://kit.fontawesome.com/b23c7cc76f.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
-        <!-- Left Navbar-->
-        <div class="navigation">
-            <ul>
-                <li >
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-apple" aria-hidden="true"></i>
-                        </span>
-                        <span class="title"><h2>Brand Name</h2></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-home" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-users" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Customers</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-comment" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Message</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-cog" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Settings</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Password</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon">
-                            <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        </span>
-                        <span class="title">Sign Out</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+{% block title %}{% endblock %}
+{% block content %}
         <!--***-->
         <div class="main">
             <div class="topbar">
@@ -121,7 +12,7 @@
                         <input type="text" placeholder="Search Here...." name="" id="">
                     </label>
                     <div class="user">
-                        <img src="{%  static 'images/avatar.png' %}" alt="">
+                        <img src="images/avatar.png" alt="">
                     </div>
                 </div>
             </div>
@@ -216,7 +107,7 @@
                             <tr>
                                 <td width="60px">
                                     <div class="imgBx">
-                                        <img src="{%  static 'images/profile-1.png' %}" alt="">
+                                        <img src="images/profile-1.png" alt="">
                                     </div>
                                 </td>
                                 <td>
@@ -226,7 +117,7 @@
                             <tr>
                                 <td width="60px">
                                     <div class="imgBx">
-                                        <img src="{%  static 'images/profile-2.png' %}" alt="">
+                                        <img src="images/profile-2.png" alt="">
                                     </div>
                                 </td>
                                 <td>
@@ -236,7 +127,7 @@
                             <tr>
                                 <td width="60px">
                                     <div class="imgBx">
-                                        <img src="{%  static 'images/profile-3.png' %}" alt="">
+                                        <img src="images/profile-3.png" alt="">
                                     </div>
                                 </td>
                                 <td>
@@ -262,6 +153,8 @@
             main.classList.toggle('active');
         }
     </script>
-{#    <script src="main.js"></script>#}
+    <script src="main.js"></script>
 </body>
 </html>
+
+{% endblock content %}
