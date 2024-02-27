@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Latest compiled and minified CSS -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!--Bootstrap Font Awesome CDN-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
@@ -30,8 +30,8 @@
     <link rel="stylesheet" text="text/css" href={% static 'css/dashboard.css' %}>
     <script src="https://kit.fontawesome.com/b23c7cc76f.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container">
+<html>
+    <div class="containers">
         <!-- Left Navbar-->
         <div class="navigation">
             <ul>
@@ -102,7 +102,9 @@
             </ul>
         </div>
         </div>
-
+<body>
 {% block content %}
 
 {% endblock %}
+</body>
+</html>
