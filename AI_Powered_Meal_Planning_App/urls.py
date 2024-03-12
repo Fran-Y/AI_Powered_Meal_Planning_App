@@ -28,6 +28,8 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('mealplan/', views.mealplan, name='mealplan'),
-    path('personalInfo/', views.personalInfo, name='personalInfo')
+    path('personalInfo/', views.personalInfo, name='personalInfo'),
+    path('recommendation/', views.recommend_food, name='recommendation'),
+    path('test/', views.test, name='test')
 
 ]

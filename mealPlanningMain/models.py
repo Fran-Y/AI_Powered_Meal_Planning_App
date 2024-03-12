@@ -25,23 +25,19 @@ class User(AbstractBaseUser):
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=20)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
-    age = models.PositiveIntegerField(null=True, blank=True, validators=[MaxValueValidator(200)],
-                                      help_text="Please enter an age up to 200.")
+    gender = models.CharField(max_length=20, null=True)
+    age = models.IntegerField(null=True)
     weight = models.FloatField(null=True, blank=True, help_text="kg")
     height = models.FloatField(null=True, blank=True, help_text="cm")
-    dietary_preferences = models.CharField(max_length=3, choices=DIETARY_PREFERENCES_CHOICES, default='NO')
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     last_login = models.DateTimeField(verbose_name='last login', auto_now=True)
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = []
-    #
-    # USERNAME_FIELD = 'email'
-    # REQUIRED_FIELDS = ['username']
-
-    # def __str__(self):
-    #     return self.email
+    physical_activity = models.CharField(max_length=200, null=True)
+    dietary_preferences = models.CharField(max_length=200, null=True)
+    health_goals = models.CharField(max_length=200, null=True)
+    idea_weight = models.FloatField(null=True, blank=True)
 
     def send_verification_email(self):
         subject = 'Verify your email'

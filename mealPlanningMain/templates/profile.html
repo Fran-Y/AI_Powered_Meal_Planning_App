@@ -2,148 +2,47 @@
 
 {% block title %}{% endblock %}
 {% block content %}
-        <!--***-->
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle" onclick="toggleMenu();"></div>
-                <div class="search">
-                    <label for="">
-                        <i class="fas fa-search searchIcon"></i>
-                        <input type="text" placeholder="Search Here...." name="" id="">
-                    </label>
-                    <div class="user">
-                        <img src="images/avatar.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">1,042</div>
-                        <div class="cardName">Daily Views</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">80</div>
-                        <div class="cardName">Sales</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">208</div>
-                        <div class="cardName">Comments</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fa fa-commenting" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div>
-                        <div class="numbers">$ 1065</div>
-                        <div class="cardName">Earning</div>
-                    </div>
-                    <div class="iconBox">
-                        <i class="fa fa-usd" aria-hidden="true"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Recent Orders</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Price</th>
-                                <th>Payment</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Star Refrigerator</td>
-                                <td>$ 1200</td>
-                                <td>Paid</td>
-                                <td><span class="status delivered">Delivered</span></td>
-                            </tr>
-                            <tr>
-                                <td>Window Coolers</td>
-                                <td>$ 110</td>
-                                <td>Due</td>
-                                <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>Speakers</td>
-                                <td>$ 60</td>
-                                <td>Paid</td>
-                                <td><span class="status returned">Returned</span></td>
-                            </tr>
-                            <tr>
-                                <td>HP Laptop</td>
-                                <td>$ 600</td>
-                                <td>Due</td>
-                                <td><span class="status inprogress">In Process</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Recent Customers</h2>
-                        <!-- <a href="#" class="btn">View All</a> -->
-                    </div>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx">
-                                        <img src="images/profile-1.png" alt="">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>David<br><span>Italy</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx">
-                                        <img src="images/profile-2.png" alt="">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>David<br><span>Italy</span></h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx">
-                                        <img src="images/profile-3.png" alt="">
-                                    </div>
-                                </td>
-                                <td>
-                                    <h4>David<br><span>Italy</span></h4>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!--***-->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="search">
+                <label for="">
+                    <i class="fas fa-search searchIcon"></i>
+                    <input type="text" placeholder="Search Here...." name="" id="">
+                </label>
+                <div class="user">
+                    <img src="images/avatar.png" alt="">
                 </div>
             </div>
         </div>
+
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Profile</h2>
+                    {#<a href="#" class="btn">View All</a>#}
+                </div>
+                <p>Username: {{ user.username }}</p>
+                <p>Height: {{ user.height }}</p>
+                <p>Weight: {{ user.weight }}</p>
+                <p>Idea Weight: {{ user.idea_weight }}</p>
+                <p>Gender: {{ user.gender }}</p>
+                <p>age: {{ user.age }}</p>
+                <p>Food Preference:
+                    {% for food in recommend_foods %}
+                        <li>{{ food }}</li>
+                    {% endfor %}</p>
+                <p>Your </p>
+            </div>
+
+        </div>
+    </div>
     </div>
 
     <script>
 
-        function toggleMenu(){
+        function toggleMenu() {
             let toggle = document.querySelector('.toggle');
             let navigation = document.querySelector('.navigation');
             let main = document.querySelector('.main');
@@ -154,7 +53,7 @@
         }
     </script>
     <script src="main.js"></script>
-</body>
-</html>
+    </body>
+    </html>
 
 {% endblock content %}

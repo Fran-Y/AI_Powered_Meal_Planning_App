@@ -1,0 +1,30 @@
+{% extends "dashboard.html" %}
+
+{% block title %}{% endblock %}
+{% block content %}
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="search">
+                <label for="">
+                    <i class="fas fa-search searchIcon"></i>
+                    <input type="text" placeholder="Search Here...." name="" id="">
+                </label>
+                <div class="user">
+                    <img src="images/avatar.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div><h2>Recommended food combinations:</h2>
+            <ul>
+                {{ rm|safe }}
+            </ul>
+
+            <h3>Total nutrient intake for three selected meals per day:</h3>
+            <p>Protein: {{ total_nutrition.ProteinContent }}, Fat: {{ total_nutrition.FatContent }},
+                Carbs: {{ total_nutrition.CarbohydrateContent }}, Calories: {{ total_nutrition.Calories }}</p>
+        </div>
+
+
+{% endblock content %}
