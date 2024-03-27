@@ -2,136 +2,137 @@
 
 {% block title %}{% endblock %}
 {% block content %}
-        <!--***-->
-        <div class="main">
-            <div class="topbar">
-                <div class="toggle" onclick="toggleMenu();"></div>
-                <div class="search">
-                    <label for="">
-                        <i class="fas fa-search searchIcon"></i>
-                        <input type="text" placeholder="Search Here...." name="" id="">
-                    </label>
-                    <div class="user">
-                        <img src="images/avatar.png" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="cardBox">
-            </div>
-            <div class="details" id="meal-plan-details">
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <!-- <h2>Recent Customers</h2> -->
-                        <!-- <a href="#" class="btn">View All</a> -->
-                    </div>
-                    <div class="cardBody">
-                        <form action="#" class="weekly-meal-form" id="weeklyMealForm">
-                            <div class="header-field">
-                                <h2>Hello {{ user }}</h2>
-                                <p>Please Enter Your Weekly Meal Plans</p>
-                                <br>
-                            </div>
-                            <div class="form-field">
-                                <label for="meal-type">Type Of Meal</label>
-                                <select name="meal-type" id="meal-type" required>
-                                    <option value="1">Breakfast</option>
-                                    <option value="2">Lunch</option>
-                                    <option value="3">Snack</option>
-                                    <option value="4">Dinner</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <label for="day-of-week">Day of Week</label>
-                                <select name="day-of-week" id="day-of-week" required>
-                                    <option value="1">Sunday</option>
-                                    <option value="2">Monday</option>
-                                    <option value="3">Tuesday</option>
-                                    <option value="4">Wednesday</option>
-                                    <option value="5">Thursday</option>
-                                    <option value="6">Friday</option>
-                                    <option value="7">Saturday</option>
-                                </select>
-                            </div>
-                            <div class="form-field">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="" class="mb-0">Food You Want to Have</label>
-                                    <button class="btn btn-primary add-meal-button">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
-                                <div class="input-group">
-
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-field text-right">
-                                <input type="submit" class="btn btn-primary" value="Submit">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Meal of the Week</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-                    <table class="table-responsive">
-                        <thead>
-                            <th class="table-heading"><small>SUBJECT</small></th>
-                            <th class="table-heading"><small>Sunday</small></th>
-                            <th class="table-heading"><small>Monday</small></th>
-                            <th class="table-heading"><small>Tuesday</small></th>
-                            <th class="table-heading"><small>Wednesday</small></th>
-                            <th class="table-heading"><small>Thursday</small></th>
-                            <th class="table-heading"><small>Friday</small></th>
-                            <th class="table-heading"><small>Saturday</small></th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="table-heading"><small>Breakfast</small></th>
-                                <td id="sunday_breakfast"></td>
-                                <td id="monday_breakfast"></td>
-                                <td id="tuesday_breakfast"></td>
-                                <td id="wednesday_breakfast"></td>
-                                <td id="thursday_breakfast"></td>
-                                <td id="friday_breakfast"></td>
-                                <td id="saturday_breakfast"></td>
-                            </tr>
-                            <tr>
-                                <th class="table-heading"><small>Lunch</small></th>
-                                <td id="sunday_lunch"></td>
-                                <td id="monday_lunch"></td>
-                                <td id="tuesday_lunch"></td>
-                                <td id="wednesday_lunch"></td>
-                                <td id="thursday_lunch"></td>
-                                <td id="friday_lunch"></td>
-                                <td id="saturday_lunch"></td>
-                            </tr>
-                            <tr>
-                                <th class="table-heading"><small>Snack</small></th>
-                                <td id="sunday_snack"></td>
-                                <td id="monday_snack"></td>
-                                <td id="tuesday_snack"></td>
-                                <td id="wednesday_snack"></td>
-                                <td id="thursday_snack"></td>
-                                <td id="friday_snack"></td>
-                                <td id="saturday_snack"></td>
-                            </tr>
-                            <tr>
-                                <th class="table-heading"><small>Dinner</small></th>
-                                <td id="sunday_dinner"></td>
-                                <td id="monday_dinner"></td>
-                                <td id="tuesday_dinner"></td>
-                                <td id="wednesday_dinner"></td>
-                                <td id="thursday_dinner"></td>
-                                <td id="friday_dinner"></td>
-                                <td id="saturday_dinner"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <!--***-->
+    <div class="main">
+        <div class="topbar">
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <div class="search">
+                <label for="">
+                    <i class="fas fa-search searchIcon"></i>
+                    <input type="text" placeholder="Search Here...." name="" id="">
+                </label>
+                <div class="user">
+                    <img src="images/avatar.png" alt="">
                 </div>
             </div>
         </div>
+        <div class="cardBox">
+        </div>
+        <div class="details" id="meal-plan-details">
+            <div class="recentCustomers">
+                <div class="cardHeader">
+                    <!-- <h2>Recent Customers</h2> -->
+                    <!-- <a href="#" class="btn">View All</a> -->
+                </div>
+                <div class="cardBody">
+                    <form method="POST" action="#" class="weekly-meal-form" id="weeklyMealForm">
+                        <div class="header-field">
+                            <h2>Hello {{ user }}</h2>
+                            <p>Please Enter Your Weekly Meal Plans</p>
+                            <br>
+                        </div>
+                        <div class="form-field">
+                            <label for="meal-type">Type Of Meal</label>
+                            <select name="meal-type" id="meal-type" required>
+                                <option value="1">Breakfast</option>
+                                <option value="2">Lunch</option>
+                                <option value="3">Snack</option>
+                                <option value="4">Dinner</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="day-of-week">Day of Week</label>
+                            <select name="day-of-week" id="day-of-week" required>
+                                <option value="1">Sunday</option>
+                                <option value="2">Monday</option>
+                                <option value="3">Tuesday</option>
+                                <option value="4">Wednesday</option>
+                                <option value="5">Thursday</option>
+                                <option value="6">Friday</option>
+                                <option value="7">Saturday</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="food-name" class="mb-0">Food You Want to Have</label>
+                                <button class="btn btn-primary add-meal-button">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="food-name" name="food-name"
+                                       placeholder="Enter Food Name" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-field text-right">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Meal of the Week</h2>
+                    <a href={% url 'test' %} class="btn">Generate</a>
+                </div>
+                <table class="table-responsive">
+                    <thead>
+                    <th class="table-heading"><small>SUBJECT</small></th>
+                    <th class="table-heading"><small>Sunday</small></th>
+                    <th class="table-heading"><small>Monday</small></th>
+                    <th class="table-heading"><small>Tuesday</small></th>
+                    <th class="table-heading"><small>Wednesday</small></th>
+                    <th class="table-heading"><small>Thursday</small></th>
+                    <th class="table-heading"><small>Friday</small></th>
+                    <th class="table-heading"><small>Saturday</small></th>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th class="table-heading"><small>Breakfast</small></th>
+                        <td id="sunday_breakfast"></td>
+                        <td id="monday_breakfast"></td>
+                        <td id="tuesday_breakfast"></td>
+                        <td id="wednesday_breakfast"></td>
+                        <td id="thursday_breakfast"></td>
+                        <td id="friday_breakfast"></td>
+                        <td id="saturday_breakfast"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-heading"><small>Lunch</small></th>
+                        <td id="sunday_lunch"></td>
+                        <td id="monday_lunch"></td>
+                        <td id="tuesday_lunch"></td>
+                        <td id="wednesday_lunch"></td>
+                        <td id="thursday_lunch"></td>
+                        <td id="friday_lunch"></td>
+                        <td id="saturday_lunch"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-heading"><small>Snack</small></th>
+                        <td id="sunday_snack"></td>
+                        <td id="monday_snack"></td>
+                        <td id="tuesday_snack"></td>
+                        <td id="wednesday_snack"></td>
+                        <td id="thursday_snack"></td>
+                        <td id="friday_snack"></td>
+                        <td id="saturday_snack"></td>
+                    </tr>
+                    <tr>
+                        <th class="table-heading"><small>Dinner</small></th>
+                        <td id="sunday_dinner"></td>
+                        <td id="monday_dinner"></td>
+                        <td id="tuesday_dinner"></td>
+                        <td id="wednesday_dinner"></td>
+                        <td id="thursday_dinner"></td>
+                        <td id="friday_dinner"></td>
+                        <td id="saturday_dinner"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     </div>
 
     <!-- Bootstrap 4 JS and dependencies -->
@@ -184,202 +185,202 @@
 
         //--- Sunday Meal ---// 
 
-        if(localStorage.getItem('sunday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('sunday_breakfast').length;i++){
-                document.getElementById('sunday_breakfast').innerHTML = '<small>'+localStorage.getItem('sunday_breakfast')+'</small>'
+        if (localStorage.getItem('sunday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('sunday_breakfast').length; i++) {
+                document.getElementById('sunday_breakfast').innerHTML = '<small>' + localStorage.getItem('sunday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('sunday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('sunday_lunch').length;i++){
-                document.getElementById('sunday_lunch').innerHTML = '<small>'+localStorage.getItem('sunday_lunch')+'</small>'
+        if (localStorage.getItem('sunday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('sunday_lunch').length; i++) {
+                document.getElementById('sunday_lunch').innerHTML = '<small>' + localStorage.getItem('sunday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('sunday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('sunday_snack').length;i++){
-                document.getElementById('sunday_snack').innerHTML = '<small>'+localStorage.getItem('sunday_snack')+'</small>'
+        if (localStorage.getItem('sunday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('sunday_snack').length; i++) {
+                document.getElementById('sunday_snack').innerHTML = '<small>' + localStorage.getItem('sunday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('sunday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('sunday_dinner').length;i++){
-                document.getElementById('sunday_dinner').innerHTML = '<small>'+localStorage.getItem('sunday_dinner')+'</small>'
+        if (localStorage.getItem('sunday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('sunday_dinner').length; i++) {
+                document.getElementById('sunday_dinner').innerHTML = '<small>' + localStorage.getItem('sunday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
         //--- Monday Meal ---// 
-        
-        if(localStorage.getItem('monday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('monday_breakfast').length;i++){
-                document.getElementById('monday_breakfast').innerHTML = '<small>'+localStorage.getItem('monday_breakfast')+'</small>'
+
+        if (localStorage.getItem('monday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('monday_breakfast').length; i++) {
+                document.getElementById('monday_breakfast').innerHTML = '<small>' + localStorage.getItem('monday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('monday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('monday_lunch').length;i++){
-                document.getElementById('monday_lunch').innerHTML = '<small>'+localStorage.getItem('monday_lunch')+'</small>'
+        if (localStorage.getItem('monday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('monday_lunch').length; i++) {
+                document.getElementById('monday_lunch').innerHTML = '<small>' + localStorage.getItem('monday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('monday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('monday_snack').length;i++){
-                document.getElementById('monday_snack').innerHTML = '<small>'+localStorage.getItem('monday_snack')+'</small>'
+        if (localStorage.getItem('monday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('monday_snack').length; i++) {
+                document.getElementById('monday_snack').innerHTML = '<small>' + localStorage.getItem('monday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('monday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('monday_dinner').length;i++){
-                document.getElementById('monday_dinner').innerHTML = '<small>'+localStorage.getItem('monday_dinner')+'</small>'
+        if (localStorage.getItem('monday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('monday_dinner').length; i++) {
+                document.getElementById('monday_dinner').innerHTML = '<small>' + localStorage.getItem('monday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
         //--- Tuesday Meal ---// 
-        
-        if(localStorage.getItem('tuesday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('tuesday_breakfast').length;i++){
-                document.getElementById('tuesday_breakfast').innerHTML = '<small>'+localStorage.getItem('tuesday_breakfast')+'</small>'
+
+        if (localStorage.getItem('tuesday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('tuesday_breakfast').length; i++) {
+                document.getElementById('tuesday_breakfast').innerHTML = '<small>' + localStorage.getItem('tuesday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('tuesday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('tuesday_lunch').length;i++){
-                document.getElementById('tuesday_lunch').innerHTML = '<small>'+localStorage.getItem('tuesday_lunch')+'</small>'
+        if (localStorage.getItem('tuesday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('tuesday_lunch').length; i++) {
+                document.getElementById('tuesday_lunch').innerHTML = '<small>' + localStorage.getItem('tuesday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('tuesday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('tuesday_snack').length;i++){
-                document.getElementById('tuesday_snack').innerHTML = '<small>'+localStorage.getItem('tuesday_snack')+'</small>'
+        if (localStorage.getItem('tuesday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('tuesday_snack').length; i++) {
+                document.getElementById('tuesday_snack').innerHTML = '<small>' + localStorage.getItem('tuesday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('tuesday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('tuesday_dinner').length;i++){
-                document.getElementById('tuesday_dinner').innerHTML = '<small>'+localStorage.getItem('tuesday_dinner')+'</small>'
+        if (localStorage.getItem('tuesday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('tuesday_dinner').length; i++) {
+                document.getElementById('tuesday_dinner').innerHTML = '<small>' + localStorage.getItem('tuesday_dinner') + '</small>'
             }
         }
 
         // ---- //       
 
         //--- Wednesday Meal ---// 
-        
-        if(localStorage.getItem('wednesday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('wednesday_breakfast').length;i++){
-                document.getElementById('wednesday_breakfast').innerHTML = '<small>'+localStorage.getItem('wednesday_breakfast')+'</small>'
+
+        if (localStorage.getItem('wednesday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('wednesday_breakfast').length; i++) {
+                document.getElementById('wednesday_breakfast').innerHTML = '<small>' + localStorage.getItem('wednesday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('wednesday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('wednesday_lunch').length;i++){
-                document.getElementById('wednesday_lunch').innerHTML = '<small>'+localStorage.getItem('wednesday_lunch')+'</small>'
+        if (localStorage.getItem('wednesday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('wednesday_lunch').length; i++) {
+                document.getElementById('wednesday_lunch').innerHTML = '<small>' + localStorage.getItem('wednesday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('wednesday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('wednesday_snack').length;i++){
-                document.getElementById('wednesday_snack').innerHTML = '<small>'+localStorage.getItem('wednesday_snack')+'</small>'
+        if (localStorage.getItem('wednesday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('wednesday_snack').length; i++) {
+                document.getElementById('wednesday_snack').innerHTML = '<small>' + localStorage.getItem('wednesday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('wednesday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('wednesday_dinner').length;i++){
-                document.getElementById('wednesday_dinner').innerHTML = '<small>'+localStorage.getItem('wednesday_dinner')+'</small>'
+        if (localStorage.getItem('wednesday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('wednesday_dinner').length; i++) {
+                document.getElementById('wednesday_dinner').innerHTML = '<small>' + localStorage.getItem('wednesday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
         //--- Thursday Meal ---// 
-        
-        if(localStorage.getItem('thursday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('thursday_breakfast').length;i++){
-                document.getElementById('thursday_breakfast').innerHTML = '<small>'+localStorage.getItem('thursday_breakfast')+'</small>'
+
+        if (localStorage.getItem('thursday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('thursday_breakfast').length; i++) {
+                document.getElementById('thursday_breakfast').innerHTML = '<small>' + localStorage.getItem('thursday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('thursday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('thursday_lunch').length;i++){
-                document.getElementById('thursday_lunch').innerHTML = '<small>'+localStorage.getItem('thursday_lunch')+'</small>'
+        if (localStorage.getItem('thursday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('thursday_lunch').length; i++) {
+                document.getElementById('thursday_lunch').innerHTML = '<small>' + localStorage.getItem('thursday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('thursday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('thursday_snack').length;i++){
-                document.getElementById('thursday_snack').innerHTML = '<small>'+localStorage.getItem('thursday_snack')+'</small>'
+        if (localStorage.getItem('thursday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('thursday_snack').length; i++) {
+                document.getElementById('thursday_snack').innerHTML = '<small>' + localStorage.getItem('thursday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('thursday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('thursday_dinner').length;i++){
-                document.getElementById('thursday_dinner').innerHTML = '<small>'+localStorage.getItem('thursday_dinner')+'</small>'
+        if (localStorage.getItem('thursday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('thursday_dinner').length; i++) {
+                document.getElementById('thursday_dinner').innerHTML = '<small>' + localStorage.getItem('thursday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
         //--- Friday Meal ---// 
-        
-        if(localStorage.getItem('friday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('friday_breakfast').length;i++){
-                document.getElementById('friday_breakfast').innerHTML = '<small>'+localStorage.getItem('friday_breakfast')+'</small>'
+
+        if (localStorage.getItem('friday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('friday_breakfast').length; i++) {
+                document.getElementById('friday_breakfast').innerHTML = '<small>' + localStorage.getItem('friday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('friday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('friday_lunch').length;i++){
-                document.getElementById('friday_lunch').innerHTML = '<small>'+localStorage.getItem('friday_lunch')+'</small>'
+        if (localStorage.getItem('friday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('friday_lunch').length; i++) {
+                document.getElementById('friday_lunch').innerHTML = '<small>' + localStorage.getItem('friday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('friday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('friday_snack').length;i++){
-                document.getElementById('friday_snack').innerHTML = '<small>'+localStorage.getItem('friday_snack')+'</small>'
+        if (localStorage.getItem('friday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('friday_snack').length; i++) {
+                document.getElementById('friday_snack').innerHTML = '<small>' + localStorage.getItem('friday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('friday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('friday_dinner').length;i++){
-                document.getElementById('friday_dinner').innerHTML = '<small>'+localStorage.getItem('friday_dinner')+'</small>'
+        if (localStorage.getItem('friday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('friday_dinner').length; i++) {
+                document.getElementById('friday_dinner').innerHTML = '<small>' + localStorage.getItem('friday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
         //--- Saturday Meal ---// 
-        
-        if(localStorage.getItem('saturday_breakfast') !== null){
-            for(var i=0;i<localStorage.getItem('saturday_breakfast').length;i++){
-                document.getElementById('saturday_breakfast').innerHTML = '<small>'+localStorage.getItem('saturday_breakfast')+'</small>'
+
+        if (localStorage.getItem('saturday_breakfast') !== null) {
+            for (var i = 0; i < localStorage.getItem('saturday_breakfast').length; i++) {
+                document.getElementById('saturday_breakfast').innerHTML = '<small>' + localStorage.getItem('saturday_breakfast') + '</small>'
             }
         }
 
-        if(localStorage.getItem('saturday_lunch') !== null){
-            for(var i=0;i<localStorage.getItem('saturday_lunch').length;i++){
-                document.getElementById('saturday_lunch').innerHTML = '<small>'+localStorage.getItem('saturday_lunch')+'</small>'
+        if (localStorage.getItem('saturday_lunch') !== null) {
+            for (var i = 0; i < localStorage.getItem('saturday_lunch').length; i++) {
+                document.getElementById('saturday_lunch').innerHTML = '<small>' + localStorage.getItem('saturday_lunch') + '</small>'
             }
         }
 
-        if(localStorage.getItem('saturday_snack') !== null){
-            for(var i=0;i<localStorage.getItem('saturday_snack').length;i++){
-                document.getElementById('saturday_snack').innerHTML = '<small>'+localStorage.getItem('saturday_snack')+'</small>'
+        if (localStorage.getItem('saturday_snack') !== null) {
+            for (var i = 0; i < localStorage.getItem('saturday_snack').length; i++) {
+                document.getElementById('saturday_snack').innerHTML = '<small>' + localStorage.getItem('saturday_snack') + '</small>'
             }
         }
 
-        if(localStorage.getItem('saturday_dinner') !== null){
-            for(var i=0;i<localStorage.getItem('saturday_dinner').length;i++){
-                document.getElementById('saturday_dinner').innerHTML = '<small>'+localStorage.getItem('saturday_dinner')+'</small>'
+        if (localStorage.getItem('saturday_dinner') !== null) {
+            for (var i = 0; i < localStorage.getItem('saturday_dinner').length; i++) {
+                document.getElementById('saturday_dinner').innerHTML = '<small>' + localStorage.getItem('saturday_dinner') + '</small>'
             }
         }
 
         // ---- //
 
-        function addInput(e){
-        
+        function addInput(e) {
+
             e.preventDefault();
 
             const name = document.createElement("input")
@@ -402,8 +403,8 @@
             flex.appendChild(btn);
         }
 
-        function removeInput(e){
-    
+        function removeInput(e) {
+
             e.preventDefault();
 
             this.parentElement.remove();
@@ -411,7 +412,7 @@
 
         addBtn.addEventListener("click", addInput);
 
-        function toggleMenu(){
+        function toggleMenu() {
             let toggle = document.querySelector('.toggle');
             let navigation = document.querySelector('.navigation');
             let main = document.querySelector('.main');
@@ -422,63 +423,63 @@
         }
 
         // Weekly Meal Plan
-        function insertFoodItem(){
-            
+        function insertFoodItem() {
+
             // checkbox value 
             let selectedDay = document.getElementById('day-of-week').value;
             let selectedMeal = document.getElementById('meal-type').value;
-             
+
             let inputMealItems = document.querySelectorAll('.meal-item');
 
             //------------ Sunday Meal ---------//
-            if(selectedDay == "1" && selectedMeal == "1"){
+            if (selectedDay == "1" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     sunday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('sunday_breakfast', JSON.stringify(sunday_breakfast));
 
-                document.getElementById('sunday_breakfast').innerHTML = '<small>'+sunday_breakfast+'</small>'
-                
+                document.getElementById('sunday_breakfast').innerHTML = '<small>' + sunday_breakfast + '</small>'
+
                 console.log(sunday_breakfast);
             }
 
-            if(selectedDay == "1" && selectedMeal == "2"){
+            if (selectedDay == "1" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     sunday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('sunday_lunch', JSON.stringify(sunday_lunch));
 
-                document.getElementById('sunday_lunch').innerHTML = '<small>'+sunday_lunch+'</small>'
+                document.getElementById('sunday_lunch').innerHTML = '<small>' + sunday_lunch + '</small>'
 
                 console.log(sunday_lunch);
             }
 
-            if(selectedDay == '1' && selectedMeal == '3'){
+            if (selectedDay == '1' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     sunday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('sunday_snack', JSON.stringify(sunday_snack));
 
-                document.getElementById('sunday_snack').innerHTML = '<small>'+sunday_snack+'</small>'
+                document.getElementById('sunday_snack').innerHTML = '<small>' + sunday_snack + '</small>'
 
                 console.log(sunday_snack);
             }
 
-            if(selectedDay == '1' && selectedMeal == '4'){
+            if (selectedDay == '1' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     sunday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('sunday_dinner', JSON.stringify(sunday_dinner));
 
-                document.getElementById('sunday_dinner').innerHTML = '<small>'+sunday_dinner+'</small>'
+                document.getElementById('sunday_dinner').innerHTML = '<small>' + sunday_dinner + '</small>'
 
                 console.log(sunday_dinner);
             }
@@ -487,54 +488,54 @@
 
             //------------ Monday Meal ---------//
 
-            if(selectedDay == "2" && selectedMeal == "1"){
+            if (selectedDay == "2" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     monday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('monday_breakfast', JSON.stringify(monday_breakfast));
 
-                document.getElementById('monday_breakfast').innerHTML = '<small>'+monday_breakfast+'</small>'
-                
+                document.getElementById('monday_breakfast').innerHTML = '<small>' + monday_breakfast + '</small>'
+
                 console.log(monday_breakfast);
             }
 
-            if(selectedDay == "2" && selectedMeal == "2"){
+            if (selectedDay == "2" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     monday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('monday_lunch', JSON.stringify(monday_lunch));
 
-                document.getElementById('monday_lunch').innerHTML = '<small>'+monday_lunch+'</small>'
+                document.getElementById('monday_lunch').innerHTML = '<small>' + monday_lunch + '</small>'
 
                 console.log(monday_lunch);
             }
 
-            if(selectedDay == '2' && selectedMeal == '3'){
+            if (selectedDay == '2' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     monday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('monday_snack', JSON.stringify(monday_snack));
 
-                document.getElementById('monday_snack').innerHTML = '<small>'+monday_snack+'</small>'
+                document.getElementById('monday_snack').innerHTML = '<small>' + monday_snack + '</small>'
 
                 console.log(monday_snack);
             }
 
-            if(selectedDay == '2' && selectedMeal == '4'){
+            if (selectedDay == '2' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     monday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('monday_dinner', JSON.stringify(monday_dinner));
 
-                document.getElementById('monday_dinner').innerHTML = '<small>'+monday_dinner+'</small>'
+                document.getElementById('monday_dinner').innerHTML = '<small>' + monday_dinner + '</small>'
 
                 console.log(monday_dinner);
             }
@@ -543,109 +544,109 @@
 
             //-------- Tuesday ------//
 
-            if(selectedDay == "3" && selectedMeal == "1"){
+            if (selectedDay == "3" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     tuesday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('tuesday_breakfast', JSON.stringify(tuesday_breakfast));
 
-                document.getElementById('tuesday_breakfast').innerHTML = '<small>'+tuesday_breakfast+'</small>'
-                
+                document.getElementById('tuesday_breakfast').innerHTML = '<small>' + tuesday_breakfast + '</small>'
+
                 console.log(tuesday_breakfast);
             }
 
-            if(selectedDay == "3" && selectedMeal == "2"){
+            if (selectedDay == "3" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     tuesday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('tuesday_lunch', JSON.stringify(tuesday_lunch));
 
-                document.getElementById('tuesday_lunch').innerHTML = '<small>'+tuesday_lunch+'</small>'
+                document.getElementById('tuesday_lunch').innerHTML = '<small>' + tuesday_lunch + '</small>'
 
                 console.log(tuesday_lunch);
             }
 
-            if(selectedDay == '3' && selectedMeal == '3'){
+            if (selectedDay == '3' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     tuesday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('tuesday_snack', JSON.stringify(tuesday_snack));
 
-                document.getElementById('tuesday_snack').innerHTML = '<small>'+tuesday_snack+'</small>'
+                document.getElementById('tuesday_snack').innerHTML = '<small>' + tuesday_snack + '</small>'
 
                 console.log(tuesday_snack);
             }
 
-            if(selectedDay == '3' && selectedMeal == '4'){
+            if (selectedDay == '3' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     tuesday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('tuesday_dinner', JSON.stringify(tuesday_dinner));
 
-                document.getElementById('tuesday_dinner').innerHTML = '<small>'+tuesday_dinner+'</small>'
+                document.getElementById('tuesday_dinner').innerHTML = '<small>' + tuesday_dinner + '</small>'
 
                 console.log(tuesday_dinner);
-            }            
+            }
 
             //------------------//
 
             //-------- Wednesday ------//
-            if(selectedDay == "4" && selectedMeal == "1"){
+            if (selectedDay == "4" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     wednesday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('wednesday_breakfast', JSON.stringify(wednesday_breakfast));
 
-                document.getElementById('wednesday_breakfast').innerHTML = '<small>'+wednesday_breakfast+'</small>'
-                
+                document.getElementById('wednesday_breakfast').innerHTML = '<small>' + wednesday_breakfast + '</small>'
+
                 console.log(wednesday_breakfast);
             }
 
-            if(selectedDay == "4" && selectedMeal == "2"){
+            if (selectedDay == "4" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     wednesday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('wednesday_lunch', JSON.stringify(wednesday_lunch));
 
-                document.getElementById('wednesday_lunch').innerHTML = '<small>'+wednesday_lunch+'</small>'
+                document.getElementById('wednesday_lunch').innerHTML = '<small>' + wednesday_lunch + '</small>'
 
                 console.log(wednesday_lunch);
             }
 
-            if(selectedDay == '4' && selectedMeal == '3'){
+            if (selectedDay == '4' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     wednesday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('wednesday_snack', JSON.stringify(wednesday_snack));
 
-                document.getElementById('wednesday_snack').innerHTML = '<small>'+wednesday_snack+'</small>'
+                document.getElementById('wednesday_snack').innerHTML = '<small>' + wednesday_snack + '</small>'
 
                 console.log(wednesday_snack);
             }
 
-            if(selectedDay == '4' && selectedMeal == '4'){
+            if (selectedDay == '4' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     wednesday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('wednesday_dinner', JSON.stringify(wednesday_dinner));
 
-                document.getElementById('wednesday_dinner').innerHTML = '<small>'+wednesday_dinner+'</small>'
+                document.getElementById('wednesday_dinner').innerHTML = '<small>' + wednesday_dinner + '</small>'
 
                 console.log(wednesday_dinner);
             }
@@ -653,166 +654,166 @@
 
             //-------- Thursday ------//
 
-            if(selectedDay == "5" && selectedMeal == "1"){
+            if (selectedDay == "5" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     thursday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('thursday_breakfast', JSON.stringify(thursday_breakfast));
 
-                document.getElementById('thursday_breakfast').innerHTML = '<small>'+thursday_breakfast+'</small>'
-                
+                document.getElementById('thursday_breakfast').innerHTML = '<small>' + thursday_breakfast + '</small>'
+
                 console.log(thursday_breakfast);
             }
 
-            if(selectedDay == "5" && selectedMeal == "2"){
+            if (selectedDay == "5" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     thursday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('thursday_lunch', JSON.stringify(thursday_lunch));
 
-                document.getElementById('thursday_lunch').innerHTML = '<small>'+thursday_lunch+'</small>'
+                document.getElementById('thursday_lunch').innerHTML = '<small>' + thursday_lunch + '</small>'
 
                 console.log(thursday_lunch);
             }
 
-            if(selectedDay == '5' && selectedMeal == '3'){
+            if (selectedDay == '5' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     thursday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('thursday_snack', JSON.stringify(thursday_snack));
 
-                document.getElementById('thursday_snack').innerHTML = '<small>'+thursday_snack+'</small>'
+                document.getElementById('thursday_snack').innerHTML = '<small>' + thursday_snack + '</small>'
 
                 console.log(thursday_snack);
             }
 
-            if(selectedDay == "5" && selectedMeal == "4"){
+            if (selectedDay == "5" && selectedMeal == "4") {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     thursday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('thursday_dinner', JSON.stringify(thursday_dinner));
 
-                document.getElementById('thursday_dinner').innerHTML = '<small>'+thursday_dinner+'</small>'
+                document.getElementById('thursday_dinner').innerHTML = '<small>' + thursday_dinner + '</small>'
 
                 console.log(thursday_dinner);
-            }            
+            }
 
             //------------------//
 
             //-------- Friday ------//
 
-            if(selectedDay == "6" && selectedMeal == "1"){
+            if (selectedDay == "6" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     friday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('friday_breakfast', JSON.stringify(friday_breakfast));
 
-                document.getElementById('friday_breakfast').innerHTML = '<small>'+friday_breakfast+'</small>'
-                
+                document.getElementById('friday_breakfast').innerHTML = '<small>' + friday_breakfast + '</small>'
+
                 console.log(friday_breakfast);
             }
 
-            if(selectedDay == "6" && selectedMeal == "2"){
+            if (selectedDay == "6" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     friday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('friday_lunch', JSON.stringify(friday_lunch));
 
-                document.getElementById('friday_lunch').innerHTML = '<small>'+friday_lunch+'</small>'
+                document.getElementById('friday_lunch').innerHTML = '<small>' + friday_lunch + '</small>'
 
                 console.log(friday_lunch);
             }
 
-            if(selectedDay == '6' && selectedMeal == '3'){
+            if (selectedDay == '6' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     friday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('friday_snack', JSON.stringify(friday_snack));
 
-                document.getElementById('friday_snack').innerHTML = '<small>'+friday_snack+'</small>'
+                document.getElementById('friday_snack').innerHTML = '<small>' + friday_snack + '</small>'
 
                 console.log(friday_snack);
             }
 
-            if(selectedDay == '6' && selectedMeal == '4'){
+            if (selectedDay == '6' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     friday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('friday_dinner', JSON.stringify(friday_dinner));
 
-                document.getElementById('friday_dinner').innerHTML = '<small>'+friday_dinner+'</small>'
+                document.getElementById('friday_dinner').innerHTML = '<small>' + friday_dinner + '</small>'
 
                 console.log(friday_dinner);
-            }            
+            }
 
             //------------------//
 
             //-------- Saturday ------//
 
-            if(selectedDay == "7" && selectedMeal == "1"){
+            if (selectedDay == "7" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     saturday_breakfast.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('saturday_breakfast', JSON.stringify(saturday_breakfast));
 
-                document.getElementById('saturday_breakfast').innerHTML = '<small>'+saturday_breakfast+'</small>'
-                
+                document.getElementById('saturday_breakfast').innerHTML = '<small>' + saturday_breakfast + '</small>'
+
                 console.log(saturday_breakfast);
             }
 
-            if(selectedDay == "7" && selectedMeal == "2"){
+            if (selectedDay == "7" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     saturday_lunch.push(inputMealItems[i].value);
                 }
                 // Save Array In Local Storage
                 localStorage.setItem('saturday_lunch', JSON.stringify(saturday_lunch));
 
-                document.getElementById('saturday_lunch').innerHTML = '<small>'+saturday_lunch+'</small>'
+                document.getElementById('saturday_lunch').innerHTML = '<small>' + saturday_lunch + '</small>'
 
                 console.log(saturday_lunch);
             }
 
-            if(selectedDay == '7' && selectedMeal == '3'){
+            if (selectedDay == '7' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     saturday_snack.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('saturday_snack', JSON.stringify(saturday_snack));
 
-                document.getElementById('saturday_snack').innerHTML = '<small>'+saturday_snack+'</small>'
+                document.getElementById('saturday_snack').innerHTML = '<small>' + saturday_snack + '</small>'
 
                 console.log(saturday_snack);
             }
 
-            if(selectedDay == '7' && selectedMeal == '4'){
+            if (selectedDay == '7' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     saturday_dinner.push(inputMealItems[i].value);
                 }
                 // Save Array in Local Storage
                 localStorage.setItem('saturday_dinner', JSON.stringify(saturday_dinner));
 
-                document.getElementById('saturday_dinner').innerHTML = '<small>'+saturday_dinner+'</small>'
+                document.getElementById('saturday_dinner').innerHTML = '<small>' + saturday_dinner + '</small>'
 
                 console.log(saturday_dinner);
             }
@@ -822,6 +823,7 @@
         }
 
         weeklyMealForm.addEventListener("submit", insertFoodItem);
+
 
     </script>
     <script src="main.js"></script>

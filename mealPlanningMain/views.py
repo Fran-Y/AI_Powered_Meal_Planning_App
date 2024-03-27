@@ -186,7 +186,7 @@ def test(request):
         age_adjustment = 0
         if age > 50:
             age_adjustment = 200
-        calorie_lower_limit = max(1800 - age_adjustment, 1200)
+        calorie_lower_limit = max(1000 - age_adjustment, 1000)
         calorie_upper_limit = min(2500 + age_adjustment, 3000)
 
         if physical_activity == 1:
@@ -195,10 +195,10 @@ def test(request):
             calorie_upper_limit += 200
 
         personalized_nutrition_standards = {
-            'ProteinContent': (50, protein_upper_limit),
-            'FatContent': (20, 70),
-            'CarbohydrateContent': (130, 300),
-            'Calories': (calorie_lower_limit, calorie_upper_limit)
+            'Proteins': (0, protein_upper_limit),
+            'Fats': (0, 70),
+            'Carbohydrates': (0, 300),
+            'Calories': (0, calorie_upper_limit)
         }
 
         return personalized_nutrition_standards
@@ -207,23 +207,17 @@ def test(request):
     print("Personalized Nutrition Standards:")
     print(personalized_nutrition_standards)
 
-    # Read and load the dataset
-    df = pd.read_csv('/Users/yuanfanfan/updated_categories_recipes.csv', low_memory=False)
+    df = pd.read_csv('/Users/yuanfanfan/Meal_data.csv', low_memory=False)
 
-    # Converting data types
-    numeric_columns = ['Calories', 'FatContent', 'SaturatedFatContent', 'CholesterolContent',
-                       'SodiumContent', 'CarbohydrateContent', 'FiberContent', 'SugarContent', 'ProteinContent']
+    numeric_columns = ['Calories', 'Fats', 'Proteins', 'Carbohydrates']
     for col in numeric_columns:
         df[col] = pd.to_numeric(df[col], errors='coerce')
 
-    # Remove any rows containing null values for clustering analysis
     df.dropna(subset=numeric_columns, inplace=True)
 
-    # Initialization and standardization
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(df[numeric_columns])
 
-    # Use KMeans to clustering
     kmeans = KMeans(n_clusters=10, random_state=42)
     df['Cluster'] = kmeans.fit_predict(features_scaled)
 
@@ -233,52 +227,58 @@ def test(request):
             nutrition_standards)
         return nutrition_balance
 
-    def generate_food_recommendations(df, age, weight, physical_activity):
+    def generate_food_recommendations(df, age, weight, ideal_weight, physical_activity):
         nutrition_balance = False
         attempt = 0
+
+        weight_goal = 'Lose' if weight > ideal_weight else 'Gain'
+
         while not nutrition_balance:
             attempt += 1
-            # random choose a cluster
             selected_cluster = np.random.choice(df['Cluster'].unique())
-            cluster_meals = df[df['Cluster'] == selected_cluster]
+
+            if weight_goal == 'Lose':
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'Yes')]
+            elif weight_goal == 'Gain':
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'No')]
+            else:
+                cluster_meals = df[df['Cluster'] == selected_cluster]
+
             breakfast_meals = cluster_meals[cluster_meals['Meal'] == 'Breakfast']
             lunch_meals = cluster_meals[cluster_meals['Meal'] == 'Lunch']
             dinner_meals = cluster_meals[cluster_meals['Meal'] == 'Dinner']
+
             if breakfast_meals.empty or lunch_meals.empty or dinner_meals.empty:
-                print("One or more meal categories have no samples. Skipping this attempt.")
                 continue
-            # Confirmation that the sample size is 1 for each meal category
+
             breakfast_sample = breakfast_meals.sample(n=1)
             lunch_sample = lunch_meals.sample(n=1)
             dinner_sample = dinner_meals.sample(n=1)
-            # Randomly selected samples can be repeated if the sample size is less than 3
             recommended_meals = pd.concat([breakfast_sample, lunch_sample, dinner_sample])
-            # Calculation of total nutrient intake
-            total_nutrition = recommended_meals[
-                ['ProteinContent', 'FatContent', 'CarbohydrateContent', 'Calories']].sum()
+
+            total_nutrition = recommended_meals[['Proteins', 'Fats', 'Carbohydrates', 'Calories']].sum().to_dict()
 
             personalized_nutrition_standards = generate_nutrition_standards(age, weight, physical_activity)
-
-            # Check that nutrition is within balanced limits
             nutrition_balance = check_nutrition_balance(total_nutrition, personalized_nutrition_standards)
-            print(f"attempt #{attempt}")
-            print("Recommended food combinations:")
-            print(recommended_meals[['Name', 'ProteinContent', 'FatContent', 'CarbohydrateContent', 'Calories']])
-            print("\nTotal nutrient intake for three selected meals per day:")
-            print(total_nutrition)
-            print("\nWhether the nutrition is balanced:", "Yes" if nutrition_balance else "No")
-            print("-" * 50)
 
             if nutrition_balance:
-                print("Find food combinations that are nutritionally balanced!")
-
                 return recommended_meals[
-                    ['Name', 'ProteinContent', 'FatContent', 'CarbohydrateContent',
-                     'Calories']], total_nutrition, nutrition_balance
-            else:
-                print("Keep looking...")
+                    ['Name', 'Proteins', 'Fats', 'Carbohydrates', 'Calories', 'Meal',
+                     'PortionSize']], total_nutrition, nutrition_balance
 
-    recommended_meals, total_nutrition, nutrition_balance = generate_food_recommendations(df, user.age, user.weight,
-                                                                                          user.physical_activity)
-    return render(request, 'test.html', {'rm': recommended_meals.to_html(), 'total_nutrition': total_nutrition,
+    recommended_meals = {}
+    total_nutrition = {}
+    nutrition_balance = {}
+    for day in range(1, 8):
+        print(f"Day {day}")
+        rec_meals, tot_nutrition, nutri_balance = generate_food_recommendations(df,
+                                                                                user.age,
+                                                                                user.weight,
+                                                                                user.idea_weight,
+                                                                                user.physical_activity)
+        print("\n")
+        recommended_meals[day] = rec_meals
+        total_nutrition[day] = tot_nutrition
+        nutrition_balance[day] = nutri_balance
+    return render(request, 'test.html', {'rm': recommended_meals, 'total_nutrition': total_nutrition,
                                          'nutrition_balance': nutrition_balance})
