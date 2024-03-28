@@ -58,12 +58,11 @@
                             <select name="dietary-preferences" id="dietary-preferences">
                                 <option value="0" hidden>-</option>
                                 <option value="1">Vegan</option>
-                                <option value="8">Vegetarian</option>
                                 <option value="2">Paleo</option>
                                 <option value="3">Lactose Intolerance</option>
                                 <option value="4">Raw Food</option>
                                 <option value="5">Dairy-free</option>
-                                <option value="6">Gluten free</option>
+                                <option value="6">Vegetarian</option>
                                 <option value="7">Pescatarian</option>
                                 <option value="8">Keto</option>
                             </select>
@@ -83,7 +82,7 @@
                                 <option value="7">Preventing Cancer</option>
                                 <option value="8">Stress Reductiona and Enhancing Mood</option>
                                 <option value="9">Boosting Energy</option>
-                                <option value="10">Having Healthy Skin</option>
+                                <option value="10">Loss Weight</option>
                                 <option value="11">Improving Sleep Quality and Duration</option>
                                 <option value="12">Imporving Physical Performance</option>
                                 <option value="13">Improving the Immune System</option>
@@ -97,10 +96,10 @@
                             <label for="weight">Weight</label>
                             <input type="number" name="weight" id="user_weight" required>
                         </div>
-                        <div class="form-field">
-                            <label for="ideaWeight">Idea Weight</label>
-                            <input type="number" name="ideaWeight" id="user_ideaweight" required>
-                        </div>
+{#                        <div class="form-field">#}
+{#                            <label for="ideaWeight">Idea Weight</label>#}
+{#                            <input type="number" name="ideaWeight" id="user_ideaweight" required>#}
+{#                        </div>#}
                         <div class="form-field">
                             <input type="submit" value="Submit" id="health-info-submit">
                         </div>
@@ -116,7 +115,6 @@
 
         function insertPersonalInfo() {
 
-            // Initialize variables
             userAge = document.getElementById('user_age').value;
             userGender = document.getElementById('user_gender').value;
             userPhysicalActivity = document.getElementById('physical-activity').value;

@@ -174,6 +174,39 @@ def recommend_food(request):
 def test(request):
     user = request.user
 
+    def user_profile(dietary_preferences, health_goals):
+        recommended_food = []
+
+        if dietary_preferences == "1":
+            recommended_food.append(
+                "Focuses on plant-based foods including vegetables, fruits, beans, grains, nuts, and seeds. ")
+        elif dietary_preferences == "2":
+            recommended_food.append(
+                "Emulates ancient human diets consisting mainly of meat, fish, nuts, leafy greens, regional veggies, and seeds")
+        elif dietary_preferences == "3":
+            recommended_food.append("Offers meals without lactose, catering to those who are lactose intolerant. ")
+        elif dietary_preferences == "4":
+            recommended_food.append(
+                "Comprises unprocessed and uncooked plant foods, such as fresh fruits and vegetables, nuts, seeds, and sprouted grains.")
+        elif dietary_preferences == "5":
+            recommended_food.append("Provides meals that do not contain dairy products.")
+        elif dietary_preferences == "6":
+            recommended_food.append(
+                "Includes meals that may contain eggs and dairy but does not include meat, poultry, or fish.")
+        elif dietary_preferences == "7":
+            recommended_food.append(
+                "Excludes all other forms of meat and poultry, focusing on fish, fruits, vegetables, grains, and nuts.")
+        elif dietary_preferences == "8":
+            recommended_food.append(
+                "A high-fat, adequate-protein, low-carbohydrate diet that helps to burn fats more efficiently. Includes meat, fish, eggs, cheese, and low-carb vegetables.")
+
+        if health_goals == "10":
+            recommended_food.append("Loss Weight")
+        elif health_goals == "6":
+            recommended_food.append("Supporting muscle growth and strength.")
+
+        return recommended_food
+
     def generate_nutrition_standards(age, weight, physical_activity):
         default_nutrition_standards = {
             'ProteinContent': (50, 150),
@@ -227,22 +260,47 @@ def test(request):
             nutrition_standards)
         return nutrition_balance
 
-    def generate_food_recommendations(df, age, weight, ideal_weight, physical_activity):
+    def generate_food_recommendations(df, age, weight, ideal_weight, physical_activity, dietary_preferences,
+                                      health_goals):
         nutrition_balance = False
         attempt = 0
 
-        weight_goal = 'Lose' if weight > ideal_weight else 'Gain'
+        # weight_goal = 'Lose' if weight > ideal_weight else 'Gain'
 
         while not nutrition_balance:
             attempt += 1
             selected_cluster = np.random.choice(df['Cluster'].unique())
 
-            if weight_goal == 'Lose':
-                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'Yes')]
-            elif weight_goal == 'Gain':
-                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'No')]
+            if dietary_preferences == "1":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Vegan'] == 'Yes')]
+            elif dietary_preferences == "2":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Paleo'] == 'Yes')]
+            elif dietary_preferences == "3":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Lactose'] == 'Yes')]
+            elif dietary_preferences == "4":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Raw'] == 'Yes')]
+            elif dietary_preferences == "5":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Dairy-Free'] == 'Yes')]
+            elif dietary_preferences == "6":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Vegetarian'] == 'Yes')]
+            elif dietary_preferences == "7":
+                cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Pescatarian'] == 'Yes')]
+            # elif dietary_preferences == "8":
+            #     cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Keto'] == 'Yes')]
             else:
                 cluster_meals = df[df['Cluster'] == selected_cluster]
+
+            # if weight_goal == 'Lose':
+            #     cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'Yes')]
+            # elif weight_goal == 'Gain':
+            #     cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'No')]
+
+            if health_goals == 10:
+                cluster_meals = cluster_meals[cluster_meals['Loss'] == 'Yes']
+            elif health_goals == 6:
+                cluster_meals = cluster_meals[cluster_meals['Muscle'] == 'Yes']
+            # elif health_goals == 3:
+            #     cluster_meals = cluster_meals[cluster_meals['HighProtein'] == 'Yes']
 
             breakfast_meals = cluster_meals[cluster_meals['Meal'] == 'Breakfast']
             lunch_meals = cluster_meals[cluster_meals['Meal'] == 'Lunch']
@@ -275,10 +333,15 @@ def test(request):
                                                                                 user.age,
                                                                                 user.weight,
                                                                                 user.idea_weight,
-                                                                                user.physical_activity)
+                                                                                user.physical_activity,
+                                                                                user.dietary_preferences,
+                                                                                user.health_goals
+                                                                                )
         print("\n")
         recommended_meals[day] = rec_meals
         total_nutrition[day] = tot_nutrition
         nutrition_balance[day] = nutri_balance
+    recommend_foods = user_profile(user.dietary_preferences, user.health_goals)
+    print(recommend_foods)
     return render(request, 'test.html', {'rm': recommended_meals, 'total_nutrition': total_nutrition,
-                                         'nutrition_balance': nutrition_balance})
+                                         'nutrition_balance': nutrition_balance, 'recommend_foods': recommend_foods})
