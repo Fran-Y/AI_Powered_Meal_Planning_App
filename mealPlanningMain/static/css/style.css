@@ -168,6 +168,63 @@ footer{
     top: 56px;
 }
 
+
+.about-us-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    /* background: linear-gradient(180deg,#030749,rgba(96, 33, 255, 0.592) 0%); */
+    color: #fff;
+    background-color: rgb(152, 198, 53);
+    background-size: cover;
+    background-position: center center;
+}
+
+.about-us-banner-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.how-we-work{
+    background-color: #ececec;
+}
+
+.activity-cards{
+    background-color: #fff;
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    padding: 20px 30px;
+    min-height: 215px;
+    height: 100%;
+    text-align: center;
+}
+
+.activity-cards h4{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.25;
+    margin-bottom: 10px;
+}
+
+.additional-info{
+    text-align: center;
+    padding: 25px 0;
+}
+
+.about-login-button{
+    display: inline-block;
+    background-color: #FF7142;
+    border-radius: 4px;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    /* text-decoration: none; */
+    outline: none;
+}
+
 footer p{
     font-size: 16px;
     font-weight: 600;

@@ -56,7 +56,8 @@ def login_view(request):
 
     return render(request, 'login.html', {'form': form})
 
-
+def about(request):
+    return render(request, 'about.html')
 @login_required
 def profile(request):
     user = request.user
@@ -348,3 +349,5 @@ def test(request):
     print(recommend_foods)
     return render(request, 'test.html', {'rm': recommended_meals, 'total_nutrition': total_nutrition,
                                          'nutrition_balance': nutrition_balance, 'recommend_foods': recommend_foods})
+
+
