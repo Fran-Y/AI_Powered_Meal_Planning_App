@@ -179,26 +179,29 @@ def test(request):
 
         if dietary_preferences == "1":
             recommended_food.append(
-                "Focuses on plant-based foods including vegetables, fruits, beans, grains, nuts, and seeds. ")
+                "You are Vegan. Your food will focuses on plant-based foods including vegetables, fruits, beans, grains, nuts, and seeds. ")
         elif dietary_preferences == "2":
             recommended_food.append(
-                "Emulates ancient human diets consisting mainly of meat, fish, nuts, leafy greens, regional veggies, and seeds")
+                "You are Paleo. Your food will emulates ancient human diets consisting mainly of meat, fish, nuts, leafy greens, regional veggies, and seeds")
         elif dietary_preferences == "3":
-            recommended_food.append("Offers meals without lactose, catering to those who are lactose intolerant. ")
+            recommended_food.append("Lactose Intolerance, Your food will offers meals without lactose, catering to those who are lactose intolerant. ")
         elif dietary_preferences == "4":
             recommended_food.append(
-                "Comprises unprocessed and uncooked plant foods, such as fresh fruits and vegetables, nuts, seeds, and sprouted grains.")
+                "You like Raw Food. Your food will comprises unprocessed and uncooked plant foods, such as fresh fruits and vegetables, nuts, seeds, and sprouted grains.")
         elif dietary_preferences == "5":
-            recommended_food.append("Provides meals that do not contain dairy products.")
+            recommended_food.append("Dairy-free. Your food will provides meals that do not contain dairy products.")
         elif dietary_preferences == "6":
             recommended_food.append(
-                "Includes meals that may contain eggs and dairy but does not include meat, poultry, or fish.")
+                "You are Vegetarian. Your food will includes meals that may contain eggs and dairy but does not include meat, poultry, or fish.")
         elif dietary_preferences == "7":
             recommended_food.append(
-                "Excludes all other forms of meat and poultry, focusing on fish, fruits, vegetables, grains, and nuts.")
+                "You are Pescatarian. Your food will excludes all other forms of meat and poultry, focusing on fish, fruits, vegetables, grains, and nuts.")
         elif dietary_preferences == "8":
             recommended_food.append(
-                "A high-fat, adequate-protein, low-carbohydrate diet that helps to burn fats more efficiently. Includes meat, fish, eggs, cheese, and low-carb vegetables.")
+                "You are Keto. Your food will contain a high-fat, adequate-protein, low-carbohydrate diet that helps to burn fats more efficiently. Includes meat, fish, eggs, cheese, and low-carb vegetables.")
+        else:
+            recommended_food.append(
+                "You have no dietary preferences.")
 
         if health_goals == "10":
             recommended_food.append("Loss Weight")
@@ -228,10 +231,10 @@ def test(request):
             calorie_upper_limit += 200
 
         personalized_nutrition_standards = {
-            'Proteins': (0, protein_upper_limit),
-            'Fats': (0, 70),
-            'Carbohydrates': (0, 300),
-            'Calories': (0, calorie_upper_limit)
+            'Proteins': (0, 100000),
+            'Fats': (0, 100000),
+            'Carbohydrates': (0, 100000),
+            'Calories': (0, 100000)
         }
 
         return personalized_nutrition_standards
@@ -295,9 +298,9 @@ def test(request):
             # elif weight_goal == 'Gain':
             #     cluster_meals = df[(df['Cluster'] == selected_cluster) & (df['Loss'] == 'No')]
 
-            if health_goals == 10:
+            if health_goals == "10":
                 cluster_meals = cluster_meals[cluster_meals['Loss'] == 'Yes']
-            elif health_goals == 6:
+            elif health_goals == "6":
                 cluster_meals = cluster_meals[cluster_meals['Muscle'] == 'Yes']
             # elif health_goals == 3:
             #     cluster_meals = cluster_meals[cluster_meals['HighProtein'] == 'Yes']

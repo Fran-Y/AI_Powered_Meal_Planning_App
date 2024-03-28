@@ -20,7 +20,7 @@ body{
     position: fixed;
     width: 300px;
     height: 100%;
-    background: #003147;
+    background: rgb(3, 175, 74);
     color: #fff;
     transition: 0.5s;
     overflow: hidden;
@@ -445,6 +445,11 @@ span.status.inprogress{
     background-color: #1c8adb;
     color: #fff;
     border: 1px solid #1c8adb;
+    cursor: pointer;
+}
+
+span.itemDeleteBtn{
+    display: inline-block;
     cursor: pointer;
 }
 
