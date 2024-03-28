@@ -20,7 +20,7 @@ body{
     position: fixed;
     width: 300px;
     height: 100%;
-    background: rgb(3, 175, 74);
+    background: rgba(0,137,55,1);
     color: #fff;
     transition: 0.5s;
     overflow: hidden;
@@ -117,7 +117,7 @@ body{
     position: relative;
     width: 60px;
     height: 60px;
-    background-color: #1c8adb;
+    background-color: rgb(7, 98, 45);
     transition: 0.5s;
 }
 
