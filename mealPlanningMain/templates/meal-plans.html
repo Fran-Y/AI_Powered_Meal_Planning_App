@@ -72,8 +72,10 @@
             <div class="recentOrders">
                 <div class="cardHeader">
                     <h2>Meal of the Week</h2>
-                    <button class="btn download-csv" id="download-csv" onclick="downloadCSVFromLocalStorage()">Download CSV</button>
-{#                    <a href={% url 'test' %} class="btn">Generate</a>#}
+                    <button class="btn download-csv" id="download-csv" onclick="downloadCSVFromLocalStorage()">Download
+                        CSV
+                    </button>
+                    {#                    <a href={% url 'test' %} class="btn">Generate</a>#}
                 </div>
                 <table class="table-responsive">
                     <thead>
@@ -133,7 +135,10 @@
                     <p>Input You 'Weekly-Meal-Plan' csv file here and see your results!</p>
                     <!-- <button id="csv-input1" for="csv-input" onclick=""><i class="fas fa-upload"></i> Upload File</button> -->
                     <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
-                    <input type="submit" value="See Your Result" class="btn btn-primary">
+                    <form action="{% url 'predict' %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="See Your Result" class="btn btn-primary">
+                    </form>
                     <!-- <span class="file-custom"> -->
                 </div>
             </div>
@@ -181,9 +186,9 @@
         let saturday_dinner = []
 
         //--- Sunday Meal ---//
-        if(localStorage.getItem('sunday_breakfast') !== null){
+        if (localStorage.getItem('sunday_breakfast') !== null) {
             let temp_var01 = JSON.parse(localStorage.getItem('sunday_breakfast'))
-            for(var i=0;i<temp_var01.length;i++){
+            for (var i = 0; i < temp_var01.length; i++) {
                 document.getElementById('sunday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var01[i]}</b></small>
                                 <div class="edit-controller">
@@ -193,9 +198,9 @@
                 // document.getElementById('sunday_breakfast').innerHTML += '<small>'+sunday_breakfast[i]+'</small>'
             }
         }
-        if(localStorage.getItem('sunday_lunch') !== null){
+        if (localStorage.getItem('sunday_lunch') !== null) {
             let temp_var02 = JSON.parse(localStorage.getItem('sunday_lunch'))
-            for(var i=0;i<temp_var02.length;i++){
+            for (var i = 0; i < temp_var02.length; i++) {
                 document.getElementById('sunday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var02[i]}</b></small>
                                 <div class="edit-controller">
@@ -204,9 +209,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('sunday_snack') !== null){
+        if (localStorage.getItem('sunday_snack') !== null) {
             let temp_var03 = JSON.parse(localStorage.getItem('sunday_snack'))
-            for(var i=0;i<temp_var03.length;i++){
+            for (var i = 0; i < temp_var03.length; i++) {
                 document.getElementById('sunday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var03[i]}</b></small>
                                 <div class="edit-controller">
@@ -215,9 +220,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('sunday_dinner') !== null){
+        if (localStorage.getItem('sunday_dinner') !== null) {
             let temp_var04 = JSON.parse(localStorage.getItem('sunday_dinner'))
-            for(var i=0;i<temp_var04.length;i++){
+            for (var i = 0; i < temp_var04.length; i++) {
                 document.getElementById('sunday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var04[i]}</b></small>
                                 <div class="edit-controller">
@@ -228,9 +233,9 @@
         }
         // ---- //
         //--- Monday Meal ---//
-        if(localStorage.getItem('monday_breakfast') !== null){
+        if (localStorage.getItem('monday_breakfast') !== null) {
             let temp_var05 = JSON.parse(localStorage.getItem('monday_breakfast'))
-            for(var i=0;i<temp_var05.length;i++){
+            for (var i = 0; i < temp_var05.length; i++) {
                 document.getElementById('monday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var05[i]}</b></small>
                                 <div class="edit-controller">
@@ -239,9 +244,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('monday_lunch') !== null){
+        if (localStorage.getItem('monday_lunch') !== null) {
             let temp_var06 = JSON.parse(localStorage.getItem('monday_lunch'))
-            for(var i=0;i<temp_var06.length;i++){
+            for (var i = 0; i < temp_var06.length; i++) {
                 document.getElementById('monday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var06[i]}</b></small>
                                 <div class="edit-controller">
@@ -250,9 +255,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('monday_snack') !== null){
+        if (localStorage.getItem('monday_snack') !== null) {
             let temp_var07 = JSON.parse(localStorage.getItem('monday_snack'))
-            for(var i=0;i<temp_var07.length;i++){
+            for (var i = 0; i < temp_var07.length; i++) {
                 document.getElementById('monday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var07[i]}</b></small>
                                 <div class="edit-controller">
@@ -261,9 +266,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('monday_dinner') !== null){
+        if (localStorage.getItem('monday_dinner') !== null) {
             let temp_var08 = JSON.parse(localStorage.getItem('monday_dinner'))
-            for(var i=0;i<temp_var08.length;i++){
+            for (var i = 0; i < temp_var08.length; i++) {
                 document.getElementById('monday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var08[i]}</b></small>
                                 <div class="edit-controller">
@@ -274,9 +279,9 @@
         }
         // ---- //
         //--- Tuesday Meal ---//
-        if(localStorage.getItem('tuesday_breakfast') !== null){
+        if (localStorage.getItem('tuesday_breakfast') !== null) {
             let temp_var09 = JSON.parse(localStorage.getItem('tuesday_breakfast'))
-            for(var i=0;i<temp_var09.length;i++){
+            for (var i = 0; i < temp_var09.length; i++) {
                 document.getElementById('tuesday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var09[i]}</b></small>
                                 <div class="edit-controller">
@@ -285,9 +290,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('tuesday_lunch') !== null){
+        if (localStorage.getItem('tuesday_lunch') !== null) {
             let temp_var10 = JSON.parse(localStorage.getItem('tuesday_lunch'))
-            for(var i=0;i<temp_var10.length;i++){
+            for (var i = 0; i < temp_var10.length; i++) {
                 document.getElementById('tuesday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var10[i]}</b></small>
                                 <div class="edit-controller">
@@ -296,9 +301,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('tuesday_snack') !== null){
+        if (localStorage.getItem('tuesday_snack') !== null) {
             let temp_var11 = JSON.parse(localStorage.getItem('tuesday_snack'))
-            for(var i=0;i<temp_var11.length;i++){
+            for (var i = 0; i < temp_var11.length; i++) {
                 document.getElementById('tuesday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var11[i]}</b></small>
                                 <div class="edit-controller">
@@ -307,9 +312,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('tuesday_dinner') !== null){
+        if (localStorage.getItem('tuesday_dinner') !== null) {
             let temp_var12 = JSON.parse(localStorage.getItem('tuesday_dinner'))
-            for(var i=0;i<temp_var12.length;i++){
+            for (var i = 0; i < temp_var12.length; i++) {
                 document.getElementById('tuesday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var12[i]}</b></small>
                                 <div class="edit-controller">
@@ -320,9 +325,9 @@
         }
         // ---- //
         //--- Wednesday Meal ---//
-        if(localStorage.getItem('wednesday_breakfast') !== null){
+        if (localStorage.getItem('wednesday_breakfast') !== null) {
             let temp_var13 = JSON.parse(localStorage.getItem('wednesday_breakfast'))
-            for(var i=0;i<temp_var13.length;i++){
+            for (var i = 0; i < temp_var13.length; i++) {
                 document.getElementById('wednesday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var13[i]}</b></small>
                                 <div class="edit-controller">
@@ -331,9 +336,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('wednesday_lunch') !== null){
+        if (localStorage.getItem('wednesday_lunch') !== null) {
             let temp_var14 = JSON.parse(localStorage.getItem('wednesday_lunch'))
-            for(var i=0;i<temp_var14.length;i++){
+            for (var i = 0; i < temp_var14.length; i++) {
                 document.getElementById('wednesday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var14[i]}</b></small>
                                 <div class="edit-controller">
@@ -342,9 +347,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('wednesday_snack') !== null){
+        if (localStorage.getItem('wednesday_snack') !== null) {
             let temp_var15 = JSON.parse(localStorage.getItem('wednesday_snack'))
-            for(var i=0;i<temp_var15.length;i++){
+            for (var i = 0; i < temp_var15.length; i++) {
                 document.getElementById('wednesday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var15[i]}</b></small>
                                 <div class="edit-controller">
@@ -353,9 +358,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('wednesday_dinner') !== null){
+        if (localStorage.getItem('wednesday_dinner') !== null) {
             let temp_var16 = JSON.parse(localStorage.getItem('wednesday_dinner'))
-            for(var i=0;i<temp_var16.length;i++){
+            for (var i = 0; i < temp_var16.length; i++) {
                 document.getElementById('wednesday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var16[i]}</b></small>
                                 <div class="edit-controller">
@@ -366,9 +371,9 @@
         }
         // ---- //
         //--- Thursday Meal ---//
-        if(localStorage.getItem('thursday_breakfast') !== null){
+        if (localStorage.getItem('thursday_breakfast') !== null) {
             let temp_var17 = JSON.parse(localStorage.getItem('thurday_breakfast'))
-            for(var i=0;i<temp_var17.length;i++){
+            for (var i = 0; i < temp_var17.length; i++) {
                 document.getElementById('thursday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var17[i]}</b></small>
                                 <div class="edit-controller">
@@ -377,9 +382,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('thursday_lunch') !== null){
+        if (localStorage.getItem('thursday_lunch') !== null) {
             let temp_var18 = JSON.parse(localStorage.getItem('thursday_lunch'))
-            for(var i=0;i<temp_var18.length;i++){
+            for (var i = 0; i < temp_var18.length; i++) {
                 document.getElementById('thursday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var18[i]}</b></small>
                                 <div class="edit-controller">
@@ -388,9 +393,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('thursday_snack') !== null){
+        if (localStorage.getItem('thursday_snack') !== null) {
             let temp_var19 = JSON.parse(localStorage.getItem('thursday_snack'))
-            for(var i=0;i<temp_var19.length;i++){
+            for (var i = 0; i < temp_var19.length; i++) {
                 document.getElementById('thursday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var19[i]}</b></small>
                                 <div class="edit-controller">
@@ -399,9 +404,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('thursday_dinner') !== null){
+        if (localStorage.getItem('thursday_dinner') !== null) {
             let temp_var20 = JSON.parse(localStorage.getItem('thursday_dinner'))
-            for(var i=0;i<temp_var20.length;i++){
+            for (var i = 0; i < temp_var20.length; i++) {
                 document.getElementById('thursday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var20[i]}</b></small>
                                 <div class="edit-controller">
@@ -412,9 +417,9 @@
         }
         // ---- //
         //--- Friday Meal ---//
-        if(localStorage.getItem('friday_breakfast') !== null){
+        if (localStorage.getItem('friday_breakfast') !== null) {
             let temp_var21 = JSON.parse(localStorage.getItem('friday_breakfast'))
-            for(var i=0;i<temp_var21.length;i++){
+            for (var i = 0; i < temp_var21.length; i++) {
                 document.getElementById('friday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var21[i]}</b></small>
                                 <div class="edit-controller">
@@ -423,9 +428,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('friday_lunch') !== null){
+        if (localStorage.getItem('friday_lunch') !== null) {
             let temp_var22 = JSON.parse(localStorage.getItem('friday_lunch'))
-            for(var i=0;i<temp_var22.length;i++){
+            for (var i = 0; i < temp_var22.length; i++) {
                 document.getElementById('friday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var22[i]}</b></small>
                                 <div class="edit-controller">
@@ -434,9 +439,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('friday_snack') !== null){
+        if (localStorage.getItem('friday_snack') !== null) {
             let temp_var23 = JSON.parse(localStorage.getItem('friday_snack'))
-            for(var i=0;i<temp_var23.length;i++){
+            for (var i = 0; i < temp_var23.length; i++) {
                 document.getElementById('friday_snack').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var23[i]}</b></small>
                                 <div class="edit-controller">
@@ -445,9 +450,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('friday_dinner') !== null){
+        if (localStorage.getItem('friday_dinner') !== null) {
             let temp_var24 = JSON.parse(localStorage.getItem('friday_dinner'))
-            for(var i=0;i<temp_var24.length;i++){
+            for (var i = 0; i < temp_var24.length; i++) {
                 document.getElementById('friday_dinner').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var24[i]}</b></small>
                                 <div class="edit-controller">
@@ -458,9 +463,9 @@
         }
         // ---- //
         //--- Saturday Meal ---//
-        if(localStorage.getItem('saturday_breakfast') !== null){
+        if (localStorage.getItem('saturday_breakfast') !== null) {
             let temp_var25 = JSON.parse(localStorage.getItem('saturday_breakfast'))
-            for(var i=0;i<temp_var25.length;i++){
+            for (var i = 0; i < temp_var25.length; i++) {
                 document.getElementById('saturday_breakfast').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var25[i]}</b></small>
                                 <div class="edit-controller">
@@ -469,9 +474,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('saturday_lunch') !== null){
+        if (localStorage.getItem('saturday_lunch') !== null) {
             let temp_var26 = JSON.parse(localStorage.getItem('saturday_lunch'))
-            for(var i=0;i<temp_var26.length;i++){
+            for (var i = 0; i < temp_var26.length; i++) {
                 document.getElementById('saturday_lunch').innerHTML += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var26[i]}</b></small>
                                 <div class="edit-controller">
@@ -480,9 +485,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('saturday_snack') !== null){
+        if (localStorage.getItem('saturday_snack') !== null) {
             let temp_var27 = JSON.parse(localStorage.getItem('saturday_snack'))
-            for(var i=0;i<temp_var27.length;i++){
+            for (var i = 0; i < temp_var27.length; i++) {
                 document.getElementById('saturday_snack').innerHTML = `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var27[i]}</b></small>
                                 <div class="edit-controller">
@@ -491,9 +496,9 @@
                             </div>`
             }
         }
-        if(localStorage.getItem('saturday_dinner') !== null){
+        if (localStorage.getItem('saturday_dinner') !== null) {
             let temp_var28 = JSON.parse(localStorage.getItem('saturday_dinner'))
-            for(var i=0;i<temp_var28.length;i++){
+            for (var i = 0; i < temp_var28.length; i++) {
                 document.getElementById('saturday_dinner').innerHTML = `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${temp_var28[i]}</b></small>
                                 <div class="edit-controller">
@@ -502,8 +507,9 @@
                             </div>`
             }
         }
+
         // ---- //
-        function addInput(e){
+        function addInput(e) {
             // e.preventDefault();
             const name = document.createElement("input")
             name.type = "text";
@@ -520,12 +526,15 @@
             flex.appendChild(name);
             flex.appendChild(btn);
         }
-        function removeInput(e){
+
+        function removeInput(e) {
             e.preventDefault();
             this.parentElement.remove();
         }
+
         addBtn.addEventListener("click", addInput);
-        function toggleMenu(){
+
+        function toggleMenu() {
             let toggle = document.querySelector('.toggle');
             let navigation = document.querySelector('.navigation');
             let main = document.querySelector('.main');
@@ -533,8 +542,9 @@
             navigation.classList.toggle('active');
             main.classList.toggle('active');
         }
+
         // Weekly Meal Plan
-        function insertFoodItem(e){
+        function insertFoodItem(e) {
             e.preventDefault();
             // checkbox value
             let selectedDay = document.getElementById('day-of-week').value;
@@ -546,9 +556,9 @@
             //                         <small aria-hidden="true">&times;</small>
             //                     </button>
             //------------ Sunday Meal --------- //
-            if(selectedDay == "1" && selectedMeal == "1"){
+            if (selectedDay == "1" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -560,13 +570,13 @@
                 // Save Array In Local Storage
                 localStorage.setItem('sunday_breakfast', JSON.stringify(sunday_breakfast));
                 document.getElementById('sunday_breakfast').innerHTML = items
-               // document.getElementById('sunday_breakfast').innerHTML = '<small>'+sunday_breakfast+'</small>'
+                // document.getElementById('sunday_breakfast').innerHTML = '<small>'+sunday_breakfast+'</small>'
                 console.log(sunday_breakfast);
                 activateDeleteListener('sunday_breakfast')
             }
-            if(selectedDay == "1" && selectedMeal == "2"){
+            if (selectedDay == "1" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -582,9 +592,9 @@
                 console.log(sunday_lunch);
                 activateDeleteListener('sunday_lunch')
             }
-            if(selectedDay == '1' && selectedMeal == '3'){
+            if (selectedDay == '1' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -600,9 +610,9 @@
                 console.log(sunday_snack);
                 activateDeleteListener('sunday_snack')
             }
-            if(selectedDay == '1' && selectedMeal == '4'){
+            if (selectedDay == '1' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -620,9 +630,9 @@
             }
             // ----------------- //
             //------------ Monday Meal ---------//
-            if(selectedDay == "2" && selectedMeal == "1"){
+            if (selectedDay == "2" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -638,9 +648,9 @@
                 console.log(monday_breakfast);
                 activateDeleteListener('monday_breakfast')
             }
-            if(selectedDay == "2" && selectedMeal == "2"){
+            if (selectedDay == "2" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -656,9 +666,9 @@
                 console.log(monday_lunch);
                 activateDeleteListener('monday_lunch')
             }
-            if(selectedDay == '2' && selectedMeal == '3'){
+            if (selectedDay == '2' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -674,9 +684,9 @@
                 console.log(monday_snack);
                 activateDeleteListener('monday_snack')
             }
-            if(selectedDay == '2' && selectedMeal == '4'){
+            if (selectedDay == '2' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -694,9 +704,9 @@
             }
             //------------------//
             //-------- Tuesday ------//
-            if(selectedDay == "3" && selectedMeal == "1"){
+            if (selectedDay == "3" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -712,9 +722,9 @@
                 console.log(tuesday_breakfast);
                 activateDeleteListener('tuesday_breakfast')
             }
-            if(selectedDay == "3" && selectedMeal == "2"){
+            if (selectedDay == "3" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -730,9 +740,9 @@
                 console.log(tuesday_lunch);
                 activateDeleteListener('tuesday_lunch')
             }
-            if(selectedDay == '3' && selectedMeal == '3'){
+            if (selectedDay == '3' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -748,9 +758,9 @@
                 console.log(tuesday_snack);
                 activateDeleteListener('tuesday_snack')
             }
-            if(selectedDay == '3' && selectedMeal == '4'){
+            if (selectedDay == '3' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -768,9 +778,9 @@
             }
             //------------------//
             //-------- Wednesday ------//
-            if(selectedDay == "4" && selectedMeal == "1"){
+            if (selectedDay == "4" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -786,9 +796,9 @@
                 console.log(wednesday_breakfast);
                 activateDeleteListener('wednesday_breakfast')
             }
-            if(selectedDay == "4" && selectedMeal == "2"){
+            if (selectedDay == "4" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -804,9 +814,9 @@
                 console.log(wednesday_lunch);
                 activateDeleteListener('wednesday_lunch')
             }
-            if(selectedDay == '4' && selectedMeal == '3'){
+            if (selectedDay == '4' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -822,9 +832,9 @@
                 console.log(wednesday_snack);
                 activateDeleteListener('wednesday_snack')
             }
-            if(selectedDay == '4' && selectedMeal == '4'){
+            if (selectedDay == '4' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -842,9 +852,9 @@
             }
             //------------------//
             //-------- Thursday ------//
-            if(selectedDay == "5" && selectedMeal == "1"){
+            if (selectedDay == "5" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -860,9 +870,9 @@
                 console.log(thursday_breakfast);
                 activateDeleteListener('thursday_breakfast')
             }
-            if(selectedDay == "5" && selectedMeal == "2"){
+            if (selectedDay == "5" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -878,9 +888,9 @@
                 console.log(thursday_lunch);
                 activateDeleteListener('thursday_lunch')
             }
-            if(selectedDay == '5' && selectedMeal == '3'){
+            if (selectedDay == '5' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -896,9 +906,9 @@
                 console.log(thursday_snack);
                 activateDeleteListener('thursday_snack')
             }
-            if(selectedDay == "5" && selectedMeal == "4"){
+            if (selectedDay == "5" && selectedMeal == "4") {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -916,9 +926,9 @@
             }
             //------------------//
             //-------- Friday ------//
-            if(selectedDay == "6" && selectedMeal == "1"){
+            if (selectedDay == "6" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -934,9 +944,9 @@
                 console.log(friday_breakfast);
                 activateDeleteListener('friday_breakfast')
             }
-            if(selectedDay == "6" && selectedMeal == "2"){
+            if (selectedDay == "6" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -952,9 +962,9 @@
                 console.log(friday_lunch);
                 activateDeleteListener('friday_lunch');
             }
-            if(selectedDay == '6' && selectedMeal == '3'){
+            if (selectedDay == '6' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -970,9 +980,9 @@
                 console.log(friday_snack);
                 activateDeleteListener('friday_snack');
             }
-            if(selectedDay == '6' && selectedMeal == '4'){
+            if (selectedDay == '6' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -990,9 +1000,9 @@
             }
             //------------------//
             //-------- Saturday ------//
-            if(selectedDay == "7" && selectedMeal == "1"){
+            if (selectedDay == "7" && selectedMeal == "1") {
                 // Insert Value In An Array
-                for(var i=0; i<inputMealItems.length; i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -1008,9 +1018,9 @@
                 console.log(saturday_breakfast);
                 activateDeleteListener('saturday_breakfast')
             }
-            if(selectedDay == "7" && selectedMeal == "2"){
+            if (selectedDay == "7" && selectedMeal == "2") {
                 // Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -1026,9 +1036,9 @@
                 console.log(saturday_lunch);
                 activateDeleteListener('saturday_lunch')
             }
-            if(selectedDay == '7' && selectedMeal == '3'){
+            if (selectedDay == '7' && selectedMeal == '3') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -1044,9 +1054,9 @@
                 console.log(saturday_snack);
                 activateDeleteListener('saturday_snack')
             }
-            if(selectedDay == '7' && selectedMeal == '4'){
+            if (selectedDay == '7' && selectedMeal == '4') {
                 //Insert Value in an Array
-                for(var i=0;i<inputMealItems.length;i++){
+                for (var i = 0; i < inputMealItems.length; i++) {
                     items += `<div class="alert alert-primary d-flex justify-content-around align-items-center mb-2 p-0 alert-dismissible fade show" role="alert">
                                 <small><b>${inputMealItems[i].value}</b></small>
                                 <div class="edit-controller">
@@ -1064,14 +1074,15 @@
             }
             //------------------//
         }
-        function activateDeleteListener(array_name){
+
+        function activateDeleteListener(array_name) {
             const itemsArray = localStorage.getItem(array_name) ? JSON.parse(localStorage.getItem(array_name)) : []
             let deleteButton = document.querySelectorAll('.itemDeleteBtn')
             console.log(deleteButton)
             // let array_name = document.querySelectorAll('.hiddenStorageInput').value
             console.log(array_name)
-            deleteButton.forEach((db, i)=>{
-                db.addEventListener("click", ()=>{
+            deleteButton.forEach((db, i) => {
+                db.addEventListener("click", () => {
                     // deleteFoodItem(i, array_name)
                     // console.log(array_name)
                     itemsArray.splice(i, 1)
@@ -1080,12 +1091,15 @@
                 })
             })
         }
-        function deleteFoodItem(i, array_name){
+
+        function deleteFoodItem(i, array_name) {
             new_array = JSON.parse(localStorage.getItem(array_name)).splice(i, 1)
             localStorage.setItem(array_name, JSON.stringify(new_array))
             location.reload()
 
-            ocalStorage.getItem('sunday_breakfast')) : []
+            ocalStorage.getItem('sunday_breakfast')
+        ) :
+            []
             let d2 = localStorage.getItem('sunday_lunch') ? JSON.parse(localStorage.getItem('sunday_lunch')) : []
             let d3 = localStorage.getItem('sunday_snack') ? JSON.parse(localStorage.getItem('sunday_snack')) : []
             let d4 = localStorage.getItem('sunday_dinner') ? JSON.parse(localStorage.getItem('sunday_dinner')) : []
@@ -1124,154 +1138,154 @@
             let csvColumns = ['day', 'meal', 'food name'];
 
             // Combine or process the data as needed to create a C SV string
-            let csvData = csvColumns.join(',')+'/n'; // Add column headers
+            let csvData = csvColumns.join(',') + '/n'; // Add column headers
 
             // Insert data into the specified columns
 
-            for (let items of d1){
+            for (let items of d1) {
                 let row = ['Sunday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d2){
+            for (let items of d2) {
                 let row = ['Sunday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d3){
+            for (let items of d3) {
                 let row = ['Sunday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d4){
+            for (let items of d4) {
                 let row = ['Sunday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d5){
+            for (let items of d5) {
                 let row = ['Monday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d6){
+            for (let items of d6) {
                 let row = ['Monday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d7){
+            for (let items of d7) {
                 let row = ['Monday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d8){
+            for (let items of d8) {
                 let row = ['Monday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d9){
+            for (let items of d9) {
                 let row = ['Tuesday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d10){
+            for (let items of d10) {
                 let row = ['Tuesday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d11){
+            for (let items of d11) {
                 let row = ['Tuesday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d12){
+            for (let items of d12) {
                 let row = ['Tuesday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d13){
+            for (let items of d13) {
                 let row = ['Wednesday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d14){
+            for (let items of d14) {
                 let row = ['Wendesday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d15){
+            for (let items of d15) {
                 let row = ['Wednesday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d16){
+            for (let items of d16) {
                 let row = ['Wednesday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d17){
+            for (let items of d17) {
                 let row = ['Thursday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d18){
+            for (let items of d18) {
                 let row = ['Thursday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d19){
+            for (let items of d19) {
                 let row = ['Thursday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d20){
+            for (let items of d20) {
                 let row = ['Thursday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d21){
+            for (let items of d21) {
                 let row = ['Friday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d22){
+            for (let items of d22) {
                 let row = ['Friday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d23){
+            for (let items of d23) {
                 let row = ['Friday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d24){
+            for (let items of d24) {
                 let row = ['Friday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
-            for (let items of d25){
+            for (let items of d25) {
                 let row = ['Saturday', 'Breakfast', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d26){
+            for (let items of d26) {
                 let row = ['Saturday', 'Lunch', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d27){
+            for (let items of d27) {
                 let row = ['Saturday', 'Snack', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
 
-            for (let items of d28){
+            for (let items of d28) {
                 let row = ['Saturday', 'Dinner', items];
-                csvData += row.join(',')+'\n';
+                csvData += row.join(',') + '\n';
             }
             /*-------------*/
 
@@ -1279,7 +1293,7 @@
             //let combinedCSVData = `${d1}, ${d2}, ${d3}, ${d4}, ${d5}, ${d6}, ${d7}, ${d8}, ${d9}, ${d10}, ${d11}, ${d12}, ${d13}, ${d14}, ${d15}, ${d16}, ${d17}, ${d18}, ${d19}, ${d20}, ${d21}, ${d22}, ${d23}, ${d24}, ${d25}, ${d26}, ${d27}, ${d28}\n`;
 
             // Create a Blob containing the CSV data
-            let blob = new Blob([csvData], {type: 'text/csv' });
+            let blob = new Blob([csvData], {type: 'text/csv'});
 
             // Create a URL for the blob
             const url = URL.createObjectURL(blob);

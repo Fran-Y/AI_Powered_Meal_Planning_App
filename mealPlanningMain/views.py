@@ -162,11 +162,17 @@ def predict(request):
     food_names = df['foodname'].tolist()
 
     predictions = model.predict(food_names)
+    df['Calories'], df['FatContent'], df['CarbohydrateContent'], df['ProteinContent'] = zip(*predictions)
+    daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum()
+    # for name, prediction in zip(food_names, predictions):
+    #     print(f'{name}: {prediction}')
+    for day, sums in daily_sums.iterrows():
+        print(f"{day}:\n{sums}\n")
 
-    for name, prediction in zip(food_names, predictions):
-        print(f'{name}: {prediction}')
-
-    return HttpResponse('预测完成，结果已打印在控制台。')
+    daily_sums_dict = daily_sums.to_dict(orient='index')
+    print(daily_sums_dict)
+    # Render the HTML template and pass the data
+    return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict})
 
 
 def test(request):
