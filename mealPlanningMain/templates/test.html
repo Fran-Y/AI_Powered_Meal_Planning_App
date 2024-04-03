@@ -89,18 +89,7 @@
 
     </style>
     <div class="main">
-        <div class="topbar">
-            <div class="toggle" onclick="toggleMenu();"></div>
-            <div class="search">
-                <label for="">
-                    <i class="fas fa-search searchIcon"></i>
-                    <input type="text" placeholder="Search Here...." name="" id="">
-                </label>
-                <div class="user">
-                    <img src="images/avatar.png" alt="">
-                </div>
-            </div>
-        </div>
+        <a href="{% url "test" %}" class="btn btn-primary">regenerate</a>
         <div>
             <p>Food Recommendation:
                 {% for food in recommend_foods %}

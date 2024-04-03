@@ -26,11 +26,11 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('login', views.login_view, name='login'),
     path('profile/', views.profile, name='profile'),
-    path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
+    # path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('mealplan/', views.mealplan, name='mealplan'),
     path('personalInfo/', views.personalInfo, name='personalInfo'),
     path('recommendation/', views.recommend_food, name='recommendation'),
     path('test/', views.test, name='test'),
-    path('about/', views.about, name='about')
-
+    path('about/', views.about, name='about'),
+    path('logout/', views.user_logout, name='logout')
 ]

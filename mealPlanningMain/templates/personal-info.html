@@ -24,7 +24,7 @@
                     <!-- <a href="#" class="btn">View All</a> -->
                 </div>
                 <div class="cardBody">
-                    <form action="{% url 'personalInfo' %}" method="post" id="aboutUser">
+                    <form action="{% url 'test' %}" method="post" id="aboutUser">
                         {% csrf_token %}
                         <div class="header-field">
                             <h2>Hello {{ user.username }}</h2>
@@ -33,23 +33,31 @@
                         </div>
                         <div class="form-field">
                             <label for="userage">Age</label>
-                            <input type="number" name="userage" id="user_age" required>
+                            <input type="number" name="userage" id="user_age" required value="{{ user.age }}">
                         </div>
                         <div class="form-field">
-                            <label for="usergender">Gender</label>
+                            <label for="user_gender">Gender</label>
                             <select name="usergender" id="user_gender">
-                                <option value="" hidden>-</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="male" {% if user.gender == "male" %}selected{% endif %}>Male
+                                </option>
+                                <option value="female" {% if user.gender == "female" %}selected{% endif %}>
+                                    Female
+                                </option>
                             </select>
                         </div>
                         <div class="form-field">
-                            <label for="pysical-activiy">Enter Your Physical Activity</label>
+                            <label for="physical-activity">Enter Your Physical Activity</label>
                             <select name="physical-activity" id="physical-activity">
                                 <option value="" hidden>-</option>
-                                <option value="1">Less than 30 min/day of moderate activity.</option>
-                                <option value="2">30 min/day of moderate activity.</option>
-                                <option value="3">More than 60 min/day of moderate activity.</option>
+                                <option value="1" {% if user.physical_activity == "1" %}selected{% endif %}>Less than 30
+                                    min/day of moderate activity.
+                                </option>
+                                <option value="2" {% if user.physical_activity == "2" %}selected{% endif %}>30 min/day
+                                    of moderate activity.
+                                </option>
+                                <option value="3" {% if user.physical_activity == "3" %}selected{% endif %}>More than 60
+                                    min/day of moderate activity.
+                                </option>
                             </select>
                         </div>
                         <div class="form-field">
@@ -57,51 +65,86 @@
                                 Of The Following</label>
                             <select name="dietary-preferences" id="dietary-preferences">
                                 <option value="0" hidden>-</option>
-                                <option value="1">Vegan</option>
-                                <option value="2">Paleo</option>
-                                <option value="3">Lactose Intolerance</option>
-                                <option value="4">Raw Food</option>
-                                <option value="5">Dairy-free</option>
-                                <option value="6">Vegetarian</option>
-                                <option value="7">Pescatarian</option>
-                                <option value="8">Keto</option>
+                                <option value="1" {% if user.dietary_preferences == "1" %}selected{% endif %}>Vegan
+                                </option>
+                                <option value="2" {% if user.dietary_preferences == "2" %}selected{% endif %}>Paleo
+                                </option>
+                                <option value="3" {% if user.dietary_preferences == "3" %}selected{% endif %}>Lactose
+                                    Intolerance
+                                </option>
+                                <option value="4" {% if user.dietary_preferences == "4" %}selected{% endif %}>Raw Food
+                                </option>
+                                <option value="5" {% if user.dietary_preferences == "5" %}selected{% endif %}>
+                                    Dairy-free
+                                </option>
+                                <option value="6" {% if user.dietary_preferences == "6" %}selected{% endif %}>
+                                    Vegetarian
+                                </option>
+                                <option value="7" {% if user.dietary_preferences == "7" %}selected{% endif %}>
+                                    Pescatarian
+                                </option>
+                                <option value="8" {% if user.dietary_preferences == "8" %}selected{% endif %}>Keto
+                                </option>
                             </select>
                         </div>
                         <div class="form-field">
                             <label for="health-goals">What is your Health Goal?</label>
                             <select name="health-goals" id="health-goals">
-                                <option value="0" hidden>-</option>
-                                <option value="1">Maintaining Healthy Weight</option>
-                                <option value="2">Lowering The Risk Of Heart Diseases</option>
-                                <option value="3">Blood Sugar Control</option>
-                                <option value="4">Promoting a healthy digestive system and preventing issues like
-                                    constipation
+                                <option value="" hidden>-</option>
+                                <option value="1" {% if user.health_goals == "1" %}selected{% endif %}>Maintaining
+                                    Healthy Weight
                                 </option>
-                                <option value="5">Building and maintaining strong bones.</option>
-                                <option value="6">Supporting muscle growth and strength.</option>
-                                <option value="7">Preventing Cancer</option>
-                                <option value="8">Stress Reductiona and Enhancing Mood</option>
-                                <option value="9">Boosting Energy</option>
-                                <option value="10">Loss Weight</option>
-                                <option value="11">Improving Sleep Quality and Duration</option>
-                                <option value="12">Imporving Physical Performance</option>
-                                <option value="13">Improving the Immune System</option>
+                                <option value="2" {% if user.health_goals == "2" %}selected{% endif %}>Lowering The Risk
+                                    Of Heart Diseases
+                                </option>
+                                <option value="3" {% if user.health_goals == "3" %}selected{% endif %}>Blood Sugar
+                                    Control
+                                </option>
+                                <option value="4" {% if user.health_goals == "4" %}selected{% endif %}>Promoting a
+                                    healthy digestive system and preventing issues like constipation
+                                </option>
+                                <option value="5" {% if user.health_goals == "5" %}selected{% endif %}>Building and
+                                    maintaining strong bones.
+                                </option>
+                                <option value="6" {% if user.health_goals == "6" %}selected{% endif %}>Supporting muscle
+                                    growth and strength.
+                                </option>
+                                <option value="7" {% if user.health_goals == "7" %}selected{% endif %}>Preventing
+                                    Cancer
+                                </option>
+                                <option value="8" {% if user.health_goals == "8" %}selected{% endif %}>Stress Reduction
+                                    and Enhancing Mood
+                                </option>
+                                <option value="9" {% if user.health_goals == "9" %}selected{% endif %}>Boosting Energy
+                                </option>
+                                <option value="10" {% if user.health_goals == "10" %}selected{% endif %}>Losing Weight
+                                </option>
+                                <option value="11" {% if user.health_goals == "11" %}selected{% endif %}>Improving Sleep
+                                    Quality and Duration
+                                </option>
+                                <option value="12" {% if user.health_goals == "12" %}selected{% endif %}>Improving
+                                    Physical Performance
+                                </option>
+                                <option value="13" {% if user.health_goals == "13" %}selected{% endif %}>Improving the
+                                    Immune System
+                                </option>
                             </select>
                         </div>
+
                         <div class="form-field">
                             <label for="height">Height</label>
-                            <input type="number" name="height" id="user_height" required>
+                            <input type="number" name="height" id="user_height" required value="{{ user.height }}">
                         </div>
                         <div class="form-field">
                             <label for="weight">Weight</label>
-                            <input type="number" name="weight" id="user_weight" required>
+                            <input type="number" name="weight" id="user_weight" required value="{{ user.weight }}">
                         </div>
-{#                        <div class="form-field">#}
-{#                            <label for="ideaWeight">Idea Weight</label>#}
-{#                            <input type="number" name="ideaWeight" id="user_ideaweight" required>#}
-{#                        </div>#}
+                        {#                        <div class="form-field">#}
+                        {#                            <label for="ideaWeight">Idea Weight</label>#}
+                        {#                            <input type="number" name="ideaWeight" id="user_ideaweight" required>#}
+                        {#                        </div>#}
                         <div class="form-field">
-                            <input type="submit" value="Submit" id="health-info-submit">
+                            <input type="submit" value="Generate Your Food Recommendation" id="health-info-submit">
                         </div>
                     </form>
                 </div>

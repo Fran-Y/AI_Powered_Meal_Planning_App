@@ -1,8 +1,7 @@
 {% extends "dashboard.html" %}
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 {% block title %}{% endblock %}
 {% block content %}
-
     <!--***-->
     <div class="main">
         <div class="topbar">
@@ -19,41 +18,21 @@
         </div>
 
         <div class="details">
-                <div class="container">
-                <div class="profile-form mt-5 p-4 bg-light">
-                    <h2 class="text-center mb-4">MY PROFILE</h2>
-                    <form>
-                        <div class="form-group">
-                            <label for="email">EMAIL ADDRESS</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">PASSWORD</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                            <small id="passwordHelp" class="form-text risky-password">Risky password</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="firstName">FIRST NAME</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="Enter first name">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">LAST NAME</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="Enter last name">
-                        </div>
-                        <div class="form-group">
-                            <label for="additionalInfo">ADDITIONAL INFO (optional)</label>
-                            <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
-                        </div>
-                        <button type="button" class="btn btn-outline-secondary">CANCEL</button>
-                        <button type="submit" class="btn btn-success">UPDATE</button>
-                    </form>
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Profile</h2>
+                    {#<a href="#" class="btn">View All</a>#}
                 </div>
+                <p>Username: {{ user.username }}</p>
+                <p>Height: {{ user.height }}</p>
+                <p>Weight: {{ user.weight }}</p>
+                <p>Idea Weight: {{ user.idea_weight }}</p>
+                <p>Gender: {{ user.gender }}</p>
+                <p>age: {{ user.age }}</p>
             </div>
 
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
         </div>
-
+    </div>
     </div>
 
     <script>

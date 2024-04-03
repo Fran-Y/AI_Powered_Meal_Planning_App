@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 import joblib
 import pandas as pd
 import numpy as np
+from django.contrib.auth import logout
+
 import random
 import sklearn
 from sklearn.cluster import KMeans
@@ -56,8 +58,16 @@ def login_view(request):
 
     return render(request, 'login.html', {'form': form})
 
+
+def user_logout(request):
+    logout(request)
+    return redirect('/')
+
+
 def about(request):
     return render(request, 'about.html')
+
+
 @login_required
 def profile(request):
     user = request.user
@@ -185,7 +195,8 @@ def test(request):
             recommended_food.append(
                 "You are Paleo. Your food will emulates ancient human diets consisting mainly of meat, fish, nuts, leafy greens, regional veggies, and seeds")
         elif dietary_preferences == "3":
-            recommended_food.append("Lactose Intolerance, Your food will offers meals without lactose, catering to those who are lactose intolerant. ")
+            recommended_food.append(
+                "Lactose Intolerance, Your food will offers meals without lactose, catering to those who are lactose intolerant. ")
         elif dietary_preferences == "4":
             recommended_food.append(
                 "You like Raw Food. Your food will comprises unprocessed and uncooked plant foods, such as fresh fruits and vegetables, nuts, seeds, and sprouted grains.")
@@ -349,5 +360,3 @@ def test(request):
     print(recommend_foods)
     return render(request, 'test.html', {'rm': recommended_meals, 'total_nutrition': total_nutrition,
                                          'nutrition_balance': nutrition_balance, 'recommend_foods': recommend_foods})
-
-
