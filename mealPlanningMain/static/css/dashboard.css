@@ -268,6 +268,15 @@ body{
     font-weight: 600;
 }
 
+button#download-csv{
+    position: relative!important;
+    padding: 5px 10px!important;
+    background: #03a9f4 !important;
+    color: #fff!important;
+    text-decoration: none!important;
+    border-radius: 6px!important;
+}
+
 a.btn{
     position: relative;
     padding: 5px 10px;
@@ -452,6 +461,19 @@ span.itemDeleteBtn{
     display: inline-block;
     cursor: pointer;
 }
+
+#weeklyMealCSvInput {
+    min-width: 14rem;
+    max-width: 14rem;
+    margin: 0;
+}
+
+.csv-input-field {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
 
 /*Make It Responsive*/
 

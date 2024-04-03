@@ -29,8 +29,9 @@ urlpatterns = [
     # path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('mealplan/', views.mealplan, name='mealplan'),
     path('personalInfo/', views.personalInfo, name='personalInfo'),
-    path('recommendation/', views.recommend_food, name='recommendation'),
+    # path('recommendation/', views.recommend_food, name='recommendation'),
     path('test/', views.test, name='test'),
     path('about/', views.about, name='about'),
-    path('logout/', views.user_logout, name='logout')
+    path('logout/', views.user_logout, name='logout'),
+    path('predict_csv/', views.predict, name='predict'),
 ]

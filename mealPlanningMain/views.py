@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from mealPlanningMain.forms import SignUpForm, LoginForm
 from django.db import connection
@@ -16,8 +16,9 @@ import sklearn
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-model = joblib.load('/Users/yuanfanfan/代码日常/model/food_recommender.joblib')
-label_encoder = joblib.load('/Users/yuanfanfan/代码日常/model/label_encoder.joblib')
+# model = joblib.load('/Users/yuanfanfan/代码日常/model/food_recommender.joblib')
+# label_encoder = joblib.load('/Users/yuanfanfan/代码日常/model/label_encoder.joblib')
+model = joblib.load('/Users/yuanfanfan/food_prediction_model.joblib')
 
 
 # Create your views here.
@@ -154,32 +155,18 @@ def personalInfo(request):
     return render(request, 'personal-info.html', {'user': request.user})
 
 
-def recommend_food(request):
-    df = pd.read_csv('/Users/yuanfanfan/updated_recipes.csv', low_memory=False)
-    user_preferences = {
-        'Calories': 200,
-        'FatContent': 10,
-        'ProteinContent': 50,
-        'CarbohydrateContent': 20,
-        'SodiumContent': 5,
-        'SugarContent': 5
-    }
+def predict(request):
+    csv_file_path = '/Users/yuanfanfan/Downloads/weekly-meal-plan (3).csv'
 
-    user_input = pd.DataFrame([user_preferences])
+    df = pd.read_csv(csv_file_path)
+    food_names = df['foodname'].tolist()
 
-    prediction = model.predict(user_input)
+    predictions = model.predict(food_names)
 
-    recommended_category = label_encoder.inverse_transform(prediction)[0]
+    for name, prediction in zip(food_names, predictions):
+        print(f'{name}: {prediction}')
 
-    matching_foods = df[df['Category'] == recommended_category]
-
-    if not matching_foods.empty:
-        recommended_food = matching_foods.sample(n=1).iloc[0]
-        food_name = recommended_food['Name']
-    else:
-        food_name = "No matching food found."
-
-    return JsonResponse({'recommended_category': recommended_category, 'recommended_food': food_name})
+    return HttpResponse('预测完成，结果已打印在控制台。')
 
 
 def test(request):

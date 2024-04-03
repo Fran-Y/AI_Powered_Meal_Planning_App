@@ -72,7 +72,8 @@
             <div class="recentOrders">
                 <div class="cardHeader">
                     <h2>Meal of the Week</h2>
-                    <a href={% url 'test' %} class="btn">Generate</a>
+                    <button class="btn download-csv" id="download-csv" onclick="downloadCSVFromLocalStorage()">Download CSV</button>
+{#                    <a href={% url 'test' %} class="btn">Generate</a>#}
                 </div>
                 <table class="table-responsive">
                     <thead>
@@ -128,6 +129,13 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="mt-5 pt-5 csv-input-field">
+                    <p>Input You 'Weekly-Meal-Plan' csv file here and see your results!</p>
+                    <!-- <button id="csv-input1" for="csv-input" onclick=""><i class="fas fa-upload"></i> Upload File</button> -->
+                    <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
+                    <input type="submit" value="See Your Result" class="btn btn-primary">
+                    <!-- <span class="file-custom"> -->
+                </div>
             </div>
         </div>
     </div>
@@ -1076,7 +1084,218 @@
             new_array = JSON.parse(localStorage.getItem(array_name)).splice(i, 1)
             localStorage.setItem(array_name, JSON.stringify(new_array))
             location.reload()
+
+            ocalStorage.getItem('sunday_breakfast')) : []
+            let d2 = localStorage.getItem('sunday_lunch') ? JSON.parse(localStorage.getItem('sunday_lunch')) : []
+            let d3 = localStorage.getItem('sunday_snack') ? JSON.parse(localStorage.getItem('sunday_snack')) : []
+            let d4 = localStorage.getItem('sunday_dinner') ? JSON.parse(localStorage.getItem('sunday_dinner')) : []
+
+            let d5 = localStorage.getItem('monday_breakfast') ? JSON.parse(localStorage.getItem('monday_breakfast')) : []
+            let d6 = localStorage.getItem('monday_lunch') ? JSON.parse(localStorage.getItem('monday_lunch')) : []
+            let d7 = localStorage.getItem('monday_snack') ? JSON.parse(localStorage.getItem('monday_snack')) : []
+            let d8 = localStorage.getItem('monday_dinner') ? JSON.parse(localStorage.getItem('monday_dinner')) : []
+
+            let d9 = localStorage.getItem('tuesday_breakfast') ? JSON.parse(localStorage.getItem('tuesday_breakfast')) : []
+            let d10 = localStorage.getItem('tuesday_lunch') ? JSON.parse(localStorage.getItem('tuesday_lunch')) : []
+            let d11 = localStorage.getItem('tuesday_snack') ? JSON.parse(localStorage.getItem('tuesday_snack')) : []
+            let d12 = localStorage.getItem('tuesday_dinner') ? JSON.parse(localStorage.getItem('tuesday_dinner')) : []
+
+            let d13 = localStorage.getItem('wednesday_breakfast') ? JSON.parse(localStorage.getItem('wednesday_breakfast')) : []
+            let d14 = localStorage.getItem('wednesday_lunch') ? JSON.parse(localStorage.getItem('wednesday_lunch')) : []
+            let d15 = localStorage.getItem('wednesday_snack') ? JSON.parse(localStorage.getItem('wednesday_snack')) : []
+            let d16 = localStorage.getItem('wednesday_dinner') ? JSON.parse(localStorage.getItem('wednesday_dinner')) : []
+
+            let d17 = localStorage.getItem('thursday_breakfast') ? JSON.parse(localStorage.getItem('thursday_breakfast')) : []
+            let d18 = localStorage.getItem('thursday_lunch') ? JSON.parse(localStorage.getItem('thursday_lunch')) : []
+            let d19 = localStorage.getItem('thursday_snack') ? JSON.parse(localStorage.getItem('thursday_snack')) : []
+            let d20 = localStorage.getItem('thursday_dinner') ? JSON.parse(localStorage.getItem('thursday_dinner')) : []
+
+            let d21 = localStorage.getItem('friday_breakfast') ? JSON.parse(localStorage.getItem('friday_breakfast')) : []
+            let d22 = localStorage.getItem('friday_lunch') ? JSON.parse(localStorage.getItem('friday_lunch')) : []
+            let d23 = localStorage.getItem('friday_snack') ? JSON.parse(localStorage.getItem('friday_snack')) : []
+            let d24 = localStorage.getItem('friday_dinner') ? JSON.parse(localStorage.getItem('friday_dinner')) : []
+
+            let d25 = localStorage.getItem('saturday_breakfast') ? JSON.parse(localStorage.getItem('saturday_breakfast')) : []
+            let d26 = localStorage.getItem('saturday_lunch') ? JSON.parse(localStorage.getItem('saturday_lunch')) : []
+            let d27 = localStorage.getItem('saturday_snack') ? JSON.parse(localStorage.getItem('saturday_snack')) : []
+            let d28 = localStorage.getItem('saturday_dinner') ? JSON.parse(localStorage.getItem('saturday_dinner')) : []
+
+            // Define the CSV column names
+            let csvColumns = ['day', 'meal', 'food name'];
+
+            // Combine or process the data as needed to create a C SV string
+            let csvData = csvColumns.join(',')+'/n'; // Add column headers
+
+            // Insert data into the specified columns
+
+            for (let items of d1){
+                let row = ['Sunday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d2){
+                let row = ['Sunday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d3){
+                let row = ['Sunday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d4){
+                let row = ['Sunday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d5){
+                let row = ['Monday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d6){
+                let row = ['Monday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d7){
+                let row = ['Monday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d8){
+                let row = ['Monday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d9){
+                let row = ['Tuesday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d10){
+                let row = ['Tuesday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d11){
+                let row = ['Tuesday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d12){
+                let row = ['Tuesday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d13){
+                let row = ['Wednesday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d14){
+                let row = ['Wendesday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d15){
+                let row = ['Wednesday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d16){
+                let row = ['Wednesday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d17){
+                let row = ['Thursday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d18){
+                let row = ['Thursday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d19){
+                let row = ['Thursday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d20){
+                let row = ['Thursday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d21){
+                let row = ['Friday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d22){
+                let row = ['Friday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d23){
+                let row = ['Friday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d24){
+                let row = ['Friday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            for (let items of d25){
+                let row = ['Saturday', 'Breakfast', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d26){
+                let row = ['Saturday', 'Lunch', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d27){
+                let row = ['Saturday', 'Snack', items];
+                csvData += row.join(',')+'\n';
+            }
+
+            for (let items of d28){
+                let row = ['Saturday', 'Dinner', items];
+                csvData += row.join(',')+'\n';
+            }
+            /*-------------*/
+
+            // Combine the data into a CSV string
+            //let combinedCSVData = `${d1}, ${d2}, ${d3}, ${d4}, ${d5}, ${d6}, ${d7}, ${d8}, ${d9}, ${d10}, ${d11}, ${d12}, ${d13}, ${d14}, ${d15}, ${d16}, ${d17}, ${d18}, ${d19}, ${d20}, ${d21}, ${d22}, ${d23}, ${d24}, ${d25}, ${d26}, ${d27}, ${d28}\n`;
+
+            // Create a Blob containing the CSV data
+            let blob = new Blob([csvData], {type: 'text/csv' });
+
+            // Create a URL for the blob
+            const url = URL.createObjectURL(blob);
+
+            // Create a temporary anchor element
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'weekly-meal-plan.csv'; // Set the file name for the CSV file
+
+            // Programmatically click the anchor element to trigger the download
+            a.click();
+
+            // Clean up
+            URL.revokeObjectURL(url);
         }
+
         weeklyMealForm.addEventListener("submit", insertFoodItem);
     </script>
     <script src="main.js"></script>
