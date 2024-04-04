@@ -1096,10 +1096,8 @@
             new_array = JSON.parse(localStorage.getItem(array_name)).splice(i, 1)
             localStorage.setItem(array_name, JSON.stringify(new_array))
             location.reload()
-
-            ocalStorage.getItem('sunday_breakfast')
-        ) :
-            []
+        }
+            let d1 = localStorage.getItem('sunday_breakfast')? JSON.parse(localStorage.getItem('sunday_breakfast')) : []
             let d2 = localStorage.getItem('sunday_lunch') ? JSON.parse(localStorage.getItem('sunday_lunch')) : []
             let d3 = localStorage.getItem('sunday_snack') ? JSON.parse(localStorage.getItem('sunday_snack')) : []
             let d4 = localStorage.getItem('sunday_dinner') ? JSON.parse(localStorage.getItem('sunday_dinner')) : []
