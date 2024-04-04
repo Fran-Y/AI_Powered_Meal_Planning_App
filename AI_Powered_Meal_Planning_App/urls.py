@@ -34,4 +34,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('logout/', views.user_logout, name='logout'),
     path('predict_csv/', views.predict, name='predict'),
+    path('upload_file/', views.upload_file, name='upload_file'),
+
 ]

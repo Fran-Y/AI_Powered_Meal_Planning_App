@@ -1,0 +1,223 @@
+﻿Meal,Name,PortionSize,Fats,Carbohydrates,Proteins,Calories,Loss,Muscle,Vegetarian,Dairy-Free,Vegan,Paleo,Lactose,Raw,Pescatarian,Keto,Heart,Sugar
+Breakfast,Oatmeal with Almonds and Berries,"1 cup oatmeal, 10 almonds, 1/2 cup berries",9,41,6,300,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Greek Yogurt with Honey,"1 cup Greek yogurt, 1 tbsp honey",4,18,10,150,Yes,Yes,No,No,No,No,No,Yes,Yes,No,Yes,Yes
+Lunch,Grilled Chicken Salad with Avocado,"150g grilled chicken, 1 cup mixed greens, 1/2 avocado",15,10,35,400,Yes,No,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Carrot and Cucumber Sticks with Hummus,"1 cup carrot and cucumber sticks, 2 tbsp hummus",5,10,3,120,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Salmon with Quinoa and Broccoli,"150g salmon, 1/2 cup quinoa, 1 cup broccoli",22,30,45,500,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Scrambled Eggs with Spinach and Whole Wheat Toast,"2 eggs, 1 cup spinach, 1 slice whole wheat toast",14,15,20,250,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Apple Slices with Peanut Butter,"1 medium apple, 2 tbsp peanut butter",8,25,4,200,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Turkey Breast Wrap with Lettuce and Tomato,"150g turkey breast, 2 lettuce leaves, 2 slices tomato, 1 whole wheat wrap",7,25,30,350,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 2,Mixed Nuts,1/4 cup mixed nuts,14,5,5,170,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Stir-Fried Tofu with Brown Rice and Mixed Vegetables,"150g tofu, 1/2 cup brown rice, 1 cup mixed vegetables",10,35,20,400,Yes,Yes,Yes,Yes,Yes,No,Yes,No,Yes,No,No,No
+Breakfast,Banana Pancakes with Maple Syrup,"2 banana pancakes, 2 tbsp maple syrup",5,30,4,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Snack 1,Cottage Cheese with Pineapple,"1 cup cottage cheese, 1/2 cup pineapple",2,20,28,220,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Quinoa Salad with Black Beans and Corn,"1 cup quinoa, 1/2 cup black beans, 1/2 cup corn",7,45,15,360,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,No
+Snack 2,Dark Chocolate and Almonds,"1 oz dark chocolate, 10 almonds",12,20,4,180,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Vegetable Stir Fry with Tofu and Brown Rice,"1 cup vegetable stir fry, 150g tofu, 1/2 cup brown rice",11,40,18,350,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Breakfast,Cheese Omelette with Toast,"2 eggs, 1 slice cheese, 2 slices toast",20,15,15,300,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,No
+Snack 1,Chocolate Protein Shake,"1 scoop chocolate protein, 1 cup milk",5,25,20,200,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Beef Steak with Mashed Potatoes,"200g beef steak, 1 cup mashed potatoes",25,30,30,500,No,No,No,Yes,No,Yes,Yes,Yes,No,No,Yes,Yes
+Snack 2,Cheese and Crackers,"4 cheese slices, 10 crackers",18,10,10,250,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Pasta with Creamy Alfredo Sauce,"1 cup pasta, 1/4 cup Alfredo sauce",22,40,10,400,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Breakfast,Smoothie Bowl with Nuts and Seeds,"1 cup mixed fruits, 1/4 cup nuts, 1 cup yogurt",10,30,15,350,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,Rice Cakes with Avocado,"2 rice cakes, 1/2 avocado",15,15,2,220,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Lunch,Salad with Grilled Chicken and Olive Oil Dressing,"2 cups mixed greens, 150g grilled chicken, 2 tbsp olive oil dressing",10,5,35,300,Yes,No,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Greek Yogurt with Mixed Berries,"1 cup Greek yogurt, 1/2 cup mixed berries",3,15,10,150,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,No
+Dinner,Baked Salmon with Sweet Potato,"150g salmon, 1 medium sweet potato",6,20,25,350,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes,No,Yes,No
+Breakfast,Pancakes with Syrup and Butter,"3 pancakes, 2 tbsp syrup, 1 tbsp butter",14,60,8,400,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Snack 1,Fruit Salad with Honey,"2 cups mixed fruits, 1 tbsp honey",0,30,2,150,Yes,Yes,No,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes
+Lunch,Vegetarian Burrito Bowl,"1 cup rice, 1/2 cup beans, veggies",7,45,12,360,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Nuts and Dried Fruits,"1/4 cup nuts, 1/4 cup dried fruits",10,20,5,150,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Grilled Shrimp with Quinoa and Vegetables,"150g shrimp, 1/2 cup quinoa, 1 cup vegetables",8,30,20,350,Yes,Yes,No,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Avocado Toast with Egg,"1 slice whole grain bread, 1/2 avocado, 1 egg",12,15,10,220,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Protein Bar,1 protein bar (60g),6,20,20,250,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Sushi Roll with Vegetables and Fish,6 pieces of sushi roll,7,30,12,300,Yes,No,No,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Popcorn,2 cups air-popped popcorn,2,15,3,100,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Steak with Asparagus and Mashed Cauliflower,"150g steak, 1 cup asparagus, 1/2 cup mashed cauliflower",15,10,25,350,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Edamame,1 cup edamame,8,14,11,150,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Chicken Caesar Salad without Croutons,"2 cups lettuce, 150g grilled chicken, Caesar dressing",12,10,30,300,Yes,No,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Breakfast,Whole Wheat Bagel with Cream Cheese,"1 whole wheat bagel, 2 tbsp cream cheese",6,55,11,300,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Almonds,1 oz almonds,14,6,6,160,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Grilled Salmon with Steamed Vegetables,"150g grilled salmon, 1 cup steamed vegetables",10,10,25,300,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,No
+Snack 2,Rice Cake with Avocado and Tomato,"1 rice cake, 1/4 avocado, 2 slices tomato",7,15,4,120,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Beef Chili with Beans,"1 cup beef chili, 1/2 cup beans",12,30,20,350,No,No,No,Yes,No,Yes,Yes,Yes,No,No,Yes,Yes
+Breakfast,Blueberry Muffins,2 small blueberry muffins,10,40,5,280,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Hard-Boiled Eggs,2 hard-boiled eggs,10,1,12,140,Yes,No,Yes,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes
+Lunch,Tuna Salad Sandwich on Whole Grain Bread,"1 sandwich (2 slices whole grain bread, 100g tuna, lettuce, tomato)",7,30,20,350,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Snack 2,Cottage Cheese with Sliced Peaches,"1 cup cottage cheese, 1/2 cup sliced peaches",5,10,28,200,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Vegetable Lasagna with Side Salad,"1 slice vegetable lasagna, 2 cups side salad",8,45,15,400,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Chia Seed Pudding with Mixed Berries,"1 cup chia seed pudding, 1/2 cup mixed berries",7,25,4,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Mixed Berry Smoothie,1 cup mixed berry smoothie,1,30,2,140,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Chicken Stir Fry with Brown Rice,"150g chicken, 1 cup vegetables, 1/2 cup brown rice",8,45,25,350,Yes,Yes,No,Yes,No,No,Yes,Yes,No,No,Yes,Yes
+Snack 2,Bell Pepper Slices with Guacamole,"1 cup bell pepper slices, 2 tbsp guacamole",5,8,2,80,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Turkey Meatballs with Spaghetti Squash,"5 turkey meatballs, 1 cup spaghetti squash",9,10,20,300,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+Breakfast,Overnight Oats with Almond Butter,"1 cup overnight oats, 1 tbsp almond butter",8,35,6,250,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Walnuts,1 oz walnuts,18,4,4,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Spinach and Feta Stuffed Chicken Breast,"1 stuffed chicken breast (150g chicken, spinach, feta)",9,5,30,300,Yes,No,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 2,Kale Chips,1 cup kale chips,4,10,2,60,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Eggplant Parmesan with Side of Mixed Greens,"1 slice eggplant parmesan, 2 cups mixed greens",10,20,15,250,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Kiwi Spinach Smoothie,"1 cup spinach, 2 kiwis, 1 cup almond milk",1,20,5,150,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Roasted Chickpeas,1 oz roasted chickpeas,2,22,7,120,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Lunch,Vegetable Quinoa Salad,"1 cup quinoa, 1 cup mixed vegetables",7,30,8,280,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Apple Slices with Peanut Butter,"1 medium apple, 2 tbsp peanut butter",8,20,4,180,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Grilled Portobello Mushrooms with Herbed Quinoa,"2 portobello mushrooms, 1/2 cup quinoa, herbs",7,15,8,200,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Quinoa Porridge with Berries,"1 cup quinoa porridge, 1/2 cup mixed berries",3,25,6,170,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Seaweed Snack,1 pack seaweed snack (10g),0,1,2,30,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Black Bean Soup with Sour Cream,"1 cup black bean soup, 1 tbsp sour cream",5,18,10,200,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,No
+Snack 2,Dark Chocolate Square,1 square (10g) dark chocolate,2,6,1,50,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Roasted Chicken with Brussels Sprouts,"150g roasted chicken, 1 cup Brussels sprouts",9,10,25,270,Yes,Yes,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Breakfast,Mango and Coconut Milk Smoothie,"1 cup mango, 1 cup coconut milk",5,25,2,200,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Pistachios,1 oz pistachios,13,8,6,160,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Lentil and Vegetable Stew,"1 cup lentils, 1 cup mixed vegetables",1,40,18,300,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Sliced Cucumber with Hummus,"1 cup sliced cucumber, 2 tbsp hummus",3,4,2,60,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Baked Cod with Roasted Vegetables,"150g cod, 1 cup roasted vegetables",2,10,22,200,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Omelette with Spinach and Mushrooms,"2 eggs, 1 cup spinach, 1/2 cup mushrooms",10,3,12,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Greek Yogurt with Honey and Walnuts,"1 cup Greek yogurt, 1 tbsp honey, 1 oz walnuts",10,15,10,215,Yes,No,No,No,No,No,No,Yes,Yes,No,Yes,Yes
+Lunch,Avocado and Black Bean Wrap,"1 whole wheat wrap, 1/2 avocado, 1/2 cup black beans",15,30,8,300,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Pumpkin Seeds,1 oz pumpkin seeds,5,3,7,153,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Pasta Primavera with Olive Oil and Parmesan,"1 cup pasta, 1 cup mixed vegetables, 1 tbsp olive oil, 1 oz Parmesan",14,42,10,350,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Breakfast,Banana Peanut Butter Smoothie,"1 banana, 2 tbsp peanut butter, 1 cup almond milk",16,27,8,250,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Cashews,1 oz cashews,12,9,5,180,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Roasted Turkey and Avocado Sandwich,"2 slices whole grain bread, 100g turkey, 1/2 avocado",9,35,25,350,Yes,Yes,No,Yes,Yes,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Carrot Sticks with Ranch Dip,"1 cup carrot sticks, 2 tbsp ranch dip",5,10,2,100,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Stuffed Bell Peppers,2 bell peppers stuffed with rice and vegetables,3,20,5,220,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Greek Yogurt with Granola and Strawberries,"1 cup Greek yogurt, 1/4 cup granola, 1/2 cup strawberries",7,20,10,250,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Sunflower Seeds,1 oz sunflower seeds,14,3,6,160,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Chickpea Salad with Olives and Feta,"1 cup chickpeas, 1/2 cup olives, 50g feta cheese",15,30,9,290,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Beef Jerky,1 oz beef jerky,1,0,9,70,Yes,No,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Dinner,Salmon Sushi Rolls,6 pieces salmon sushi rolls,2,28,20,300,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Croissant with Jam,"1 large croissant, 2 tbsp jam",18,36,5,330,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Salted Peanuts,1 oz salted peanuts,14,6,7,170,No,No,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes
+Lunch,Fried Chicken Sandwich,"1 sandwich (fried chicken, lettuce, mayo, bun)",20,55,25,600,No,No,No,Yes,No,Yes,Yes,No,No,Yes,No,Yes
+Snack 2,Potato Chips,1 oz potato chips,10,23,2,150,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Creamy Mushroom Pasta,"1 cup pasta, 1/2 cup creamy mushroom sauce",22,47,10,550,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,No
+Breakfast,French Toast with Syrup,"2 slices of French toast, 3 tbsp syrup",12,60,6,400,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,No
+Snack 1,Chocolate Chip Cookies,3 chocolate chip cookies,15,33,3,210,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Lunch,Pepperoni Pizza,2 slices pepperoni pizza,18,36,12,520,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 2,Ice Cream,1 cup ice cream,16,34,5,270,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Lasagna with Garlic Bread,"1 slice lasagna, 1 piece of garlic bread",22,58,18,710,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Breakfast,Butter Croissant,1 large butter croissant,22,26,5,310,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,No
+Snack 1,Milk Chocolate Bar,1 standard milk chocolate bar,12,25,3,230,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Cheeseburger with Fries,"1 cheeseburger, 1 serving of fries",25,45,28,700,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 2,Caramel Popcorn,1 oz caramel popcorn,5,20,1,100,No,No,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Deep-Fried Fish and Chips,"150g deep-fried fish, 1 serving of chips",30,60,24,800,No,No,No,Yes,No,Yes,Yes,No,Yes,Yes,No,No
+Breakfast,Pancakes with Butter and Maple Syrup,"3 pancakes, 2 tbsp butter, 3 tbsp maple syrup",15,72,8,520,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,No
+Snack 1,Candy Gummies,1 oz candy gummies,0,22,0,90,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,BBQ Ribs with Mashed Potatoes,"200g BBQ ribs, 1 cup mashed potatoes",35,40,25,760,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,No
+Snack 2,Chocolate Pudding,1 cup chocolate pudding,10,50,4,250,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Spaghetti Carbonara,"1 cup spaghetti, 1/2 cup carbonara sauce",28,75,20,650,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Almond Milk Smoothie with Spinach and Berries,"1 cup almond milk, 1 cup spinach, 1/2 cup mixed berries",3,20,5,150,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Sliced Apples with Almond Butter,"1 sliced apple, 2 tbsp almond butter",9,17,4,210,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Grilled Chicken Salad with Mixed Greens,"150g grilled chicken, 2 cups mixed greens, balsamic vinaigrette",7,10,20,250,Yes,Yes,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Baby Carrots with Hummus,"1 cup baby carrots, 2 tbsp hummus",5,8,2,100,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Steamed Salmon with Asparagus,"150g steamed salmon, 1 cup asparagus",6,5,25,300,Yes,No,No,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Oatmeal with Sliced Bananas and Almonds,"1 cup oatmeal, 1 sliced banana, 1 oz almonds",7,27,6,250,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Cottage Cheese with Pineapple,"1 cup cottage cheese, 1/2 cup pineapple chunks",2,15,14,180,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Turkey and Avocado Wrap,"1 whole wheat wrap, 100g turkey breast, 1/2 sliced avocado",8,20,12,270,Yes,No,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,No
+Snack 2,Baked Sweet Potato Chips,"1 baked sweet potato, sliced and baked",1,24,2,120,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,No,Yes,Yes
+Dinner,Quinoa Salad with Lemon Dressing,"1 cup cooked quinoa, 1/2 cup diced vegetables, lemon dressing",7,30,8,260,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Avocado Toast on Whole Grain Bread,"1 slice whole grain bread, 1/2 avocado",9,15,6,210,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Snack 1,Mixed Nuts,1 oz mixed nuts,15,6,6,180,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Tofu Stir Fry with Vegetables,"150g tofu, 1 cup mixed vegetables",10,20,15,250,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Greek Yogurt with Blueberries,"1 cup Greek yogurt, 1/2 cup blueberries",4,18,12,140,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Grilled Vegetables with Quinoa,"1 cup grilled vegetables, 1/2 cup quinoa",7,30,8,260,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Egg White Omelet with Spinach,"3 egg whites, 1 cup spinach",2,4,10,120,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Raw Vegetables with Tzatziki,"1 cup raw vegetables, 2 tbsp tzatziki",3,10,2,70,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Lentil Soup with Kale,"1 cup lentil soup, 1 cup kale",1,25,9,190,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Almonds and Walnuts,"1 oz almonds, 1 oz walnuts",18,9,8,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Baked Tilapia with Steamed Broccoli,"150g tilapia, 1 cup steamed broccoli",5,10,22,180,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Chia Seed Pudding with Kiwi,"1 cup chia seed pudding, 1 sliced kiwi",5,20,4,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Edamame,1 cup edamame,4,8,11,100,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Spinach and Feta Stuffed Chicken,"150g chicken breast, spinach, feta cheese",9,3,20,220,Yes,No,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 2,Zucchini Chips,1 cup zucchini chips,2,10,2,50,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Broccoli and Cauliflower Soup,1 cup broccoli and cauliflower soup,3,15,2,100,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Kale Smoothie with Almond Milk,"1 cup kale, 1 cup almond milk",4,9,3,150,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Hard-Boiled Egg Whites,4 hard-boiled egg whites,0,1,14,60,Yes,Yes,Yes,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes
+Lunch,Shrimp and Avocado Salad,"150g shrimp, 1/2 avocado, mixed greens",8,10,18,200,Yes,Yes,No,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Cucumber Slices with Greek Yogurt Dip,"1 cup cucumber slices, 2 tbsp Greek yogurt dip",2,4,2,50,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Turkey Meatloaf with Green Beans,"150g turkey meatloaf, 1 cup green beans",5,15,25,300,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,Yes
+Breakfast,Berry Protein Smoothie,"1 cup mixed berries, 1 scoop protein powder, 1 cup almond milk",3,20,25,200,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Carrot and Celery Sticks with Peanut Butter,"1/2 cup carrot sticks, 1/2 cup celery sticks, 2 tbsp peanut butter",8,12,6,150,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Grilled Salmon with Spinach Salad,"150g grilled salmon, 2 cups spinach, vinaigrette dressing",9,5,22,250,Yes,No,No,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Snack 2,Air-Popped Popcorn,1 cup air-popped popcorn,1,6,3,30,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Vegetable Stir-Fry with Tofu,"1 cup mixed vegetables, 150g tofu, soy sauce",10,20,15,300,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Greek Yogurt with Chia Seeds and Berries,"1 cup Greek yogurt, 1 tbsp chia seeds, 1/2 cup mixed berries",5,20,15,180,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Sliced Pear with Cottage Cheese,"1 sliced pear, 1/2 cup cottage cheese",2,15,14,120,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Chicken Caesar Salad without Croutons,"2 cups romaine lettuce, 150g grilled chicken, Caesar dressing (light)",7,10,20,250,Yes,Yes,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 2,Roasted Almonds,1 oz roasted almonds,14,6,6,160,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Dinner,Baked Chicken Breast with Steamed Vegetables,"150g baked chicken breast, 1 cup steamed mixed vegetables",6,10,30,270,Yes,Yes,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Breakfast,Full English Breakfast,"2 fried eggs, 2 sausages, bacon, baked beans, toast",35,45,20,700,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,Milk Chocolate with Hazelnuts,1 bar (100g) milk chocolate with hazelnuts,20,50,8,550,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Double Cheeseburger with Large Fries,"1 double cheeseburger, 1 large serving of fries",45,70,30,1000,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 2,Nachos with Cheese and Jalapenos,1 serving of nachos with cheese and jalapenos,25,40,9,600,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Deep Dish Pepperoni Pizza,1 slice deep dish pepperoni pizza,22,36,18,500,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Breakfast,Stack of Buttermilk Pancakes with Syrup,"3 buttermilk pancakes, 4 tbsp maple syrup",15,60,8,650,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Snack 1,Fried Mozzarella Sticks,"5 fried mozzarella sticks, 1 cup marinara sauce",18,30,15,450,No,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,No,Yes
+Lunch,Beef Burrito with Sour Cream,"1 large beef burrito, 2 tbsp sour cream",30,50,25,800,No,No,No,No,No,No,No,Yes,No,Yes,Yes,No
+Snack 2,Slice of New York Cheesecake,1 slice New York cheesecake,18,40,6,400,No,No,No,No,No,No,No,Yes,Yes,No,Yes,Yes
+Dinner,Creamy Carbonara Pasta,1 serving creamy carbonara pasta,25,45,18,750,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Breakfast,Bagel with Cream Cheese and Lox,"1 bagel, 2 oz cream cheese, 2 oz lox",18,55,15,450,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,No
+Snack 1,White Chocolate Macadamia Nut Cookie,1 large cookie,15,33,4,310,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Lunch,Pulled Pork Sandwich with Coleslaw,"1 sandwich with 150g pulled pork, 1/2 cup coleslaw",22,40,25,600,No,No,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 2,Sour Cream and Onion Potato Chips,1 oz potato chips,10,15,2,160,No,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Dinner,Fettuccine Alfredo,"1 cup fettuccine, 1/2 cup Alfredo sauce",28,42,14,680,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Sausage and Egg Breakfast Burrito,"1 tortilla, 2 scrambled eggs, 2 oz sausage",20,35,15,400,No,No,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes,Yes
+Snack 1,Caramel Latte,12 oz latte with 2 tbsp caramel syrup,5,40,3,250,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Philly Cheesesteak,"1 sub roll, 150g sliced beef, 2 oz cheese",25,50,20,700,No,No,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 2,Brownie Sundae,"1 brownie, 1 scoop ice cream, chocolate syrup",18,60,4,550,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Meat Lover's Pizza,2 slices of meat lover's pizza,24,38,20,520,No,No,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+Breakfast,Cinnamon Roll with Icing,1 large cinnamon roll,15,50,5,350,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,Salted Caramel Chocolate Bar,1 bar (100g) salted caramel chocolate,18,45,7,400,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+Lunch,Bacon Cheeseburger with Onion Rings,"1 bacon cheeseburger, 1 serving of onion rings",40,50,25,800,No,No,No,No,No,No,No,Yes,No,Yes,Yes,Yes
+Snack 2,Loaded Potato Skins,4 loaded potato skins,22,30,8,450,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Chicken Alfredo Pasta,1 cup chicken alfredo pasta,25,35,20,600,No,No,No,Yes,No,Yes,Yes,Yes,No,No,Yes,Yes
+Breakfast,Blueberry Muffin,1 large blueberry muffin,10,45,6,320,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,Chocolate Covered Pretzels,1 oz chocolate covered pretzels,14,25,2,200,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Reuben Sandwich,1 reuben sandwich with 150g corned beef,20,35,25,650,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Pecan Pie Slice,1 slice of pecan pie,27,50,5,500,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Deep-Fried Shrimp with Tartar Sauce,"150g deep-fried shrimp, 2 tbsp tartar sauce",30,20,15,400,No,No,No,Yes,No,Yes,Yes,No,Yes,Yes,No,No
+Breakfast,Maple Glazed Donut,1 large maple glazed donut,14,30,4,250,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,White Chocolate Truffles,1 oz white chocolate truffles,16,20,2,220,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Fried Chicken Wings with Blue Cheese Dip,"6 fried chicken wings, 2 oz blue cheese dip",24,8,14,400,No,No,No,No,No,No,No,No,No,Yes,No,Yes
+Snack 2,Cheetos,1 oz Cheetos,10,15,2,160,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Lasagna Bolognese,1 serving lasagna Bolognese,22,40,18,550,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No
+Breakfast,Chocolate Chip Waffles with Whipped Cream,"2 chocolate chip waffles, 2 tbsp whipped cream",18,35,5,320,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Jalapeno Poppers,4 jalapeno poppers,12,10,4,200,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Corned Beef Hash with Eggs,"1 serving corned beef hash, 2 fried eggs",19,30,15,350,No,No,No,Yes,No,No,Yes,Yes,No,No,Yes,Yes
+Snack 2,Milkshake,12 oz milkshake,14,60,7,300,No,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Stuffed Crust Pepperoni Pizza,2 slices stuffed crust pepperoni pizza,20,36,16,480,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Green Tea Smoothie,"1 cup green tea, 1/2 cup spinach, 1/2 banana",1,15,2,100,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Vegetable Sticks with Avocado Dip,"1 cup vegetable sticks, 1/4 cup avocado dip",9,10,2,120,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Quinoa and Black Bean Salad,"1 cup cooked quinoa, 1/2 cup black beans, veggies",7,20,9,250,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Apple Slices with Low-fat Cheese,"1 sliced apple, 1 oz low-fat cheese",2,15,7,150,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Baked Cod with Lemon and Dill,"150g baked cod, lemon juice, dill",5,0,22,190,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Overnight Oats with Pumpkin Seeds,"1 cup overnight oats, 1 tbsp pumpkin seeds",3,27,5,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Cherry Tomatoes with Hummus,"1 cup cherry tomatoes, 1/4 cup hummus",5,6,2,80,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Lunch,Lentils with Grilled Zucchini,"1 cup cooked lentils, 1 grilled zucchini",1,20,9,220,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,No,Yes,Yes
+Snack 2,Mixed Berry Fruit Salad,1 cup mixed berries,0,14,1,70,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Dinner,Turkey Chili with Vegetables,"150g ground turkey, 2 cups mixed vegetables, beans",6,25,20,300,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+Breakfast,Spinach and Mushroom Egg Whites,"3 egg whites, 1 cup spinach, 1/2 cup mushrooms",0,5,15,100,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No
+Snack 1,Rice Cakes with Almond Butter,"2 rice cakes, 2 tbsp almond butter",9,15,4,180,Yes,No,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Lunch,Grilled Turkey Burger with Lettuce Wrap,"150g turkey burger, lettuce leaves for wrapping",10,0,20,200,Yes,No,No,Yes,Yes,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Raw Almonds,1 oz raw almonds,14,6,6,164,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Dinner,Zucchini Noodles with Tomato Sauce,"1 cup zucchini noodles, 1/2 cup tomato sauce",7,10,4,120,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Greek Yogurt Parfait with Fresh Fruit,"1 cup Greek yogurt, 1/2 cup fresh fruit",4,15,10,150,Yes,Yes,Yes,No,No,No,No,Yes,Yes,No,Yes,Yes
+Snack 1,Celery Sticks with Peanut Butter,"1 cup celery sticks, 2 tbsp peanut butter",8,3,3,130,Yes,No,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Mixed Green Salad with Vinaigrette,"2 cups mixed greens, 2 tbsp vinaigrette",7,10,2,120,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 2,Cottage Cheese with Sliced Peaches,"1 cup cottage cheese, 1/2 cup sliced peaches",2,10,14,110,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Steamed Fish with Broccoli,"150g steamed fish, 1 cup broccoli",5,5,22,190,Yes,Yes,No,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes
+Breakfast,Avocado and Egg Toast,"1 slice whole grain bread, 1/2 avocado, 1 poached egg",10,15,12,220,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Berry and Yogurt Smoothie,"1 cup mixed berries, 1 cup Greek yogurt, 1/2 cup almond milk",3,20,10,180,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Breakfast,Oatmeal with Honey and Berries,"1 cup oatmeal, 1 tbsp honey, 1/2 cup mixed berries",2,25,6,150,Yes,Yes,No,Yes,No,No,Yes,Yes,Yes,No,Yes,Yes
+Breakfast,Vegetable Omelette,"2 eggs, 1 cup mixed vegetables (tomatoes, onions, spinach)",10,5,12,200,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Breakfast,Cottage Cheese with Pineapple,"1 cup cottage cheese, 1/2 cup pineapple chunks",2,10,14,180,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Breakfast,Oatmeal with Whey Protein and Almonds,"1 cup oatmeal, 1 scoop whey protein, 1 oz almonds",7,27,24,300,No,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Snack 1,Greek Yogurt with Honey and Granola,"1 cup Greek yogurt, 2 tbsp honey, 1/4 cup granola",4,20,20,250,No,Yes,No,No,No,No,No,Yes,Yes,No,Yes,Yes
+Lunch,Grilled Chicken Breast with Quinoa and Spinach,"150g grilled chicken breast, 1 cup quinoa, 1 cup spinach",5,40,35,450,No,Yes,No,Yes,No,Yes,Yes,No,No,Yes,Yes,Yes
+Snack 2,Beef Jerky,1 oz beef jerky,1,0,11,70,No,Yes,No,Yes,No,Yes,Yes,Yes,No,Yes,Yes,No
+Dinner,Salmon with Sweet Potato and Asparagus,"150g salmon, 1 medium sweet potato, 1 cup asparagus",10,35,30,500,No,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
+Breakfast,Egg White Omelette with Avocado and Salsa,"3 egg whites, 1/2 avocado, 1/4 cup salsa",7,15,20,220,No,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Snack 1,Cottage Cheese with Pineapple,"1 cup cottage cheese, 1/2 cup pineapple chunks",2,10,14,180,No,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Lunch,Tuna Salad on Whole Wheat Bread,"1 can tuna, 2 slices whole wheat bread, lettuce, tomato",6,30,25,350,No,Yes,No,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes
+Snack 2,Protein Shake with Banana and Peanut Butter,"1 scoop protein powder, 1 banana, 2 tbsp peanut butter",8,27,30,400,No,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes
+Dinner,Lean Steak with Broccoli and Brown Rice,"150g lean steak, 1 cup broccoli, 1/2 cup brown rice",10,40,32,450,No,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,No,Yes,Yes

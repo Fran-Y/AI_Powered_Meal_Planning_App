@@ -134,7 +134,12 @@
                 <div class="mt-5 pt-5 csv-input-field">
                     <p>Input You 'Weekly-Meal-Plan' csv file here and see your results!</p>
                     <!-- <button id="csv-input1" for="csv-input" onclick=""><i class="fas fa-upload"></i> Upload File</button> -->
-                    <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
+                    {#                    <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">#}
+                    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
+                        <input type="submit" value="Upload">
+                    </form>
                     <form action="{% url 'predict' %}" method="post">
                         {% csrf_token %}
                         <input type="submit" value="See Your Result" class="btn btn-primary">
@@ -1097,8 +1102,9 @@
             localStorage.setItem(array_name, JSON.stringify(new_array))
             location.reload()
         }
-        function downloadCSVFromLocalStorage(){
-            let d1 = localStorage.getItem('sunday_breakfast')? JSON.parse(localStorage.getItem('sunday_breakfast')) : []
+
+        function downloadCSVFromLocalStorage() {
+            let d1 = localStorage.getItem('sunday_breakfast') ? JSON.parse(localStorage.getItem('sunday_breakfast')) : []
             let d2 = localStorage.getItem('sunday_lunch') ? JSON.parse(localStorage.getItem('sunday_lunch')) : []
             let d3 = localStorage.getItem('sunday_snack') ? JSON.parse(localStorage.getItem('sunday_snack')) : []
             let d4 = localStorage.getItem('sunday_dinner') ? JSON.parse(localStorage.getItem('sunday_dinner')) : []

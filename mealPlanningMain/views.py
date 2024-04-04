@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.core.files.storage import FileSystemStorage
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from mealPlanningMain.forms import SignUpForm, LoginForm
@@ -18,7 +19,7 @@ from sklearn.preprocessing import StandardScaler
 
 # model = joblib.load('/Users/yuanfanfan/代码日常/model/food_recommender.joblib')
 # label_encoder = joblib.load('/Users/yuanfanfan/代码日常/model/label_encoder.joblib')
-model = joblib.load('/Users/yuanfanfan/food_prediction_model.joblib')
+model = joblib.load('food_prediction_model.joblib')
 
 
 # Create your views here.
@@ -155,8 +156,25 @@ def personalInfo(request):
     return render(request, 'personal-info.html', {'user': request.user})
 
 
+def upload_file(request):
+    if request.method == 'POST' and request.FILES['csv-input']:
+        print("11111")
+        csv_file = request.FILES['csv-input']
+
+        fs = FileSystemStorage()
+
+        file_name = 'weekly-meal-plan.csv'
+        file_path = fs.save(file_name, csv_file)
+
+        file_url = fs.url(file_path)
+
+        return HttpResponse(f'File uploaded at {file_url}')
+
+    return HttpResponse('Failed to upload file')
+
+
 def predict(request):
-    csv_file_path = '/Users/yuanfanfan/Downloads/weekly-meal-plan (3).csv'
+    csv_file_path = 'weekly-meal-plan.csv'
 
     df = pd.read_csv(csv_file_path)
     food_names = df['foodname'].tolist()
@@ -248,7 +266,7 @@ def test(request):
     print("Personalized Nutrition Standards:")
     print(personalized_nutrition_standards)
 
-    df = pd.read_csv('/Users/yuanfanfan/Meal_data.csv', low_memory=False)
+    df = pd.read_csv('Meal_data.csv', low_memory=False)
 
     numeric_columns = ['Calories', 'Fats', 'Proteins', 'Carbohydrates']
     for col in numeric_columns:
