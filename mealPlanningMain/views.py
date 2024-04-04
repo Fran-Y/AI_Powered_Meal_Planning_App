@@ -234,24 +234,24 @@ def test(request):
         return recommended_food
 
     def generate_nutrition_standards(age, weight, physical_activity):
-        default_nutrition_standards = {
-            'ProteinContent': (50, 150),
-            'FatContent': (20, 70),
-            'CarbohydrateContent': (130, 300),
-            'Calories': (1800, 2500)
-        }
-
-        protein_upper_limit = min(2.2 * weight, 150)
-        age_adjustment = 0
-        if age > 50:
-            age_adjustment = 200
-        calorie_lower_limit = max(1000 - age_adjustment, 1000)
-        calorie_upper_limit = min(2500 + age_adjustment, 3000)
-
-        if physical_activity == 1:
-            calorie_upper_limit -= 200
-        elif physical_activity == 2:
-            calorie_upper_limit += 200
+        # default_nutrition_standards = {
+        #     'ProteinContent': (50, 150),
+        #     'FatContent': (20, 70),
+        #     'CarbohydrateContent': (130, 300),
+        #     'Calories': (1800, 2500)
+        # }
+        #
+        # protein_upper_limit = min(2.2 * weight, 150)
+        # age_adjustment = 0
+        # if age > 50:
+        #     age_adjustment = 200
+        # calorie_lower_limit = max(1000 - age_adjustment, 1000)
+        # calorie_upper_limit = min(2500 + age_adjustment, 3000)
+        #
+        # if physical_activity == 1:
+        #     calorie_upper_limit -= 200
+        # elif physical_activity == 2:
+        #     calorie_upper_limit += 200
 
         personalized_nutrition_standards = {
             'Proteins': (0, 100000),
