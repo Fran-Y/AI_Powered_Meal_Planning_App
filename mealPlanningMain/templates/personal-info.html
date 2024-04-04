@@ -24,7 +24,7 @@
                     <!-- <a href="#" class="btn">View All</a> -->
                 </div>
                 <div class="cardBody">
-                    <form action="{% url 'test' %}" method="post" id="aboutUser">
+                    <form action="{% url 'personalInfo' %}" method="POST" id="aboutUser">
                         {% csrf_token %}
                         <div class="header-field">
                             <h2>Hello {{ user.username }}</h2>
