@@ -103,6 +103,7 @@
     </style>
     <div class="main">
         <a href="{% url "test" %}" class="btn btn-primary">regenerate</a>
+        <a href="{% url "personalInfo" %}" class="btn btn-primary">Go Back</a>
         <div>
             <p>Food Recommendation:
                 {% for food in recommend_foods %}
@@ -120,9 +121,9 @@
                 <tr>
                     <th>Name</th>
                     <th>Portion Size</th>
-                    <th>Protein</th>
-                    <th>Fat</th>
-                    <th>Carbohydrate</th>
+                    <th>Protein(g)</th>
+                    <th>Fat(g)</th>
+                    <th>Carbohydrate(g)</th>
                     <th>Calories</th>
                     <th>Meal</th>
                 </tr>

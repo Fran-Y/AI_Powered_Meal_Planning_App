@@ -138,7 +138,6 @@ def personalInfo(request):
         weight = request.POST.get('weight')
         height = request.POST.get('height')
         idea_weight = request.POST.get('ideaWeight')
-
         User.objects.update_or_create(
             defaults={
                 'age': user_age,
@@ -152,7 +151,7 @@ def personalInfo(request):
             }
         )
 
-        return redirect('personalInfo')
+        return redirect('test')
     return render(request, 'personal-info.html', {'user': request.user})
 
 
@@ -367,6 +366,28 @@ def test(request):
         recommended_meals[day] = rec_meals
         total_nutrition[day] = tot_nutrition
         nutrition_balance[day] = nutri_balance
+    # if request.method == 'POST':
+    #     user_age = request.POST.get('userage')
+    #     user_gender = request.POST.get('usergender')
+    #     physical_activity = request.POST.get('physical-activity')
+    #     dietary_preferences = request.POST.get('dietary-preferences')
+    #     health_goals = request.POST.get('health-goals')
+    #     weight = request.POST.get('weight')
+    #     height = request.POST.get('height')
+    #     idea_weight = request.POST.get('ideaWeight')
+    #     print(user_age, physical_activity)
+    #     User.objects.update_or_create(
+    #         defaults={
+    #             'age': user_age,
+    #             'gender': user_gender,
+    #             'physical_activity': physical_activity,
+    #             'dietary_preferences': dietary_preferences,
+    #             'health_goals': health_goals,
+    #             'weight': weight,
+    #             'height': height,
+    #             'idea_weight': idea_weight
+    #         }
+    #     )
     recommend_foods = user_profile(user.dietary_preferences, user.health_goals)
     print(recommend_foods)
     return render(request, 'test.html', {'rm': recommended_meals, 'total_nutrition': total_nutrition,
