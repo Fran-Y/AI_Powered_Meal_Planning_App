@@ -41,25 +41,34 @@
                 <!-- Add additional nav items here -->
             </ul>
 
-{#            {% if user.is_authenticated %}#}
-                <ul class="navbar-nav ml-auto">
+            {#            {% if user.is_authenticated %}#}
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' %}">Go to Dashboard</a>
+                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>#}
+{#                    </li>#}
+                {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'register' %}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
-                </ul>
-{#            {% else %}#}
-{#                <ul class="navbar-nav ml-auto">#}
-{#                    <li class="nav-item">#}
-{#                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>#}
-{#                    </li>#}
-{#                    <li class="nav-item">#}
-{#                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>#}
-{#                    </li>#}
-{#                </ul>f#}
-{#            {% endif %}#}
+                {% endif %}
+            </ul>
+            {#            {% else %}#}
+            {#                <ul class="navbar-nav ml-auto">#}
+            {#                    <li class="nav-item">#}
+            {#                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>#}
+            {#                    </li>#}
+            {#                    <li class="nav-item">#}
+            {#                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>#}
+            {#                    </li>#}
+            {#                </ul>f#}
+            {#            {% endif %}#}
         </div>
     </nav>
 </header>

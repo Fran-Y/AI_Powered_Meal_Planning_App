@@ -36,7 +36,7 @@
         <div class="navigation">
             <ul>
                 <li >
-                    <a href={% url 'profile' %}>
+                    <a href={% url 'landing' %}>
 
                         <span class="title"><img src="{% static 'images/MyMeal_logo.jpg' %}" alt="Your Brand Logo" style="height: 40px;"></span>
                     </a>
@@ -44,7 +44,7 @@
                 <li>
                     <a href={% url 'profile' %}>
                         <span class="icon">
-                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <i class="fa fa-user" aria-hidden="true"></i>
                         </span>
                         <span class="title">Profile</span>
                     </a>
@@ -52,15 +52,15 @@
                 <li>
                     <a href={% url 'personalInfo' %}>
                         <span class="icon">
-                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <i class="fas fa-hamburger" aria-hidden="true"></i>
                         </span>
-                        <span class="title">Personal Info</span>
+                        <span class="title">Food Recommendation</span>
                     </a>
                 </li>
                 <li>
                     <a href={% url 'mealplan' %}>
                         <span class="icon">
-                            <i class="fa fa-comment" aria-hidden="true"></i>
+                            <i class="fa fa-clipboard-list" aria-hidden="true"></i>
                         </span>
                         <span class="title">Weekly Meal Plans</span>
                     </a>

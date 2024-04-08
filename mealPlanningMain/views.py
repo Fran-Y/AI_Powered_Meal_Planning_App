@@ -3,12 +3,17 @@ from django.contrib.auth import authenticate, login
 from django.core.files.storage import FileSystemStorage
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
+
+from AI_Powered_Meal_Planning_App import settings
 from mealPlanningMain.forms import SignUpForm, LoginForm
 from django.db import connection
 from .models import User
 from django.contrib.auth.decorators import login_required
 import joblib
+from django.templatetags.static import static
+import os
 import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
 from django.contrib.auth import logout
 
@@ -163,34 +168,77 @@ def upload_file(request):
         fs = FileSystemStorage()
 
         file_name = 'weekly-meal-plan.csv'
+        if fs.exists(file_name):
+            fs.delete(file_name)
+
         file_path = fs.save(file_name, csv_file)
 
         file_url = fs.url(file_path)
 
-        return HttpResponse(f'File uploaded at {file_url}')
+        return redirect(predict)
 
     return HttpResponse('Failed to upload file')
+
+
+def generate_charts(daily_sums):
+    charts_url = {}
+    print("Generating charts for days:", daily_sums.keys())  # 测试输出1：检查哪些天的数据将被处理
+    for day, sums in daily_sums.items():
+        labels = ['Calories', 'Fat Content', 'Carbohydrate Content', 'Protein Content']
+        sizes = [sums['Calories'], sums['FatContent'], sums['CarbohydrateContent'], sums['ProteinContent']]
+
+        # 生成饼图
+        plt.figure(figsize=(6, 6))
+        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+        plt.axis('equal')
+        pie_path = os.path.join('mealPlanningMain/static/images', f'pie_chart_{day}.png')
+        plt.savefig(pie_path)
+        plt.close()
+
+        print(f"Saved pie chart for {day} at: {pie_path}")  # 测试输出2：检查饼图保存路径
+
+        # 生成直方图
+        plt.figure(figsize=(8, 6))
+        categories = range(len(labels))
+        plt.bar(categories, sizes, color=['red', 'blue', 'yellow', 'green'])
+        plt.xticks(categories, labels)
+        bar_path = os.path.join('mealPlanningMain/static/images', f'bar_chart_{day}.png')
+        plt.savefig(bar_path)
+        plt.close()
+
+        print(f"Saved bar chart for {day} at: {bar_path}")  # 测试输出3：检查直方图保存路径
+
+        charts_url[day] = {
+            'pie_chart_url': static(f'mealPlanningMain/images/pie_chart_{day}.png'),
+            'bar_chart_url': static(f'mealPlanningMain/images/bar_chart_{day}.png')
+        }
+
+    return charts_url
 
 
 def predict(request):
     csv_file_path = 'weekly-meal-plan.csv'
 
     df = pd.read_csv(csv_file_path)
+    print("CSV loaded. Number of rows:", len(df))  # 测试输出4：确认CSV文件已加载
+
     food_names = df['foodname'].tolist()
 
     predictions = model.predict(food_names)
+    print("Predictions made for food names.")  # 测试输出5：确认预测已完成
+
     df['Calories'], df['FatContent'], df['CarbohydrateContent'], df['ProteinContent'] = zip(*predictions)
-    daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum()
-    # for name, prediction in zip(food_names, predictions):
-    #     print(f'{name}: {prediction}')
-    for day, sums in daily_sums.iterrows():
-        print(f"{day}:\n{sums}\n")
+    daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum().round(2)
+
+    weekdays_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    daily_sums = daily_sums.reindex(weekdays_order)
 
     daily_sums_dict = daily_sums.to_dict(orient='index')
-    print(daily_sums_dict)
-    # Render the HTML template and pass the data
-    return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict})
+    print("Daily sums calculated.")  # 测试输出6：确认日总计已计算
 
+    charts_url = generate_charts(daily_sums_dict)
+
+    return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict, 'charts_url': charts_url})
 
 def test(request):
     user = request.user
@@ -229,6 +277,14 @@ def test(request):
             recommended_food.append("Loss Weight")
         elif health_goals == "6":
             recommended_food.append("Supporting muscle growth and strength.")
+        elif health_goals == "5":
+            recommended_food.append("Building and maintaining strong bones.")
+        elif health_goals == "8":
+            recommended_food.append("Stress Reduction and Enhancing Mood")
+        elif health_goals == "12":
+            recommended_food.append("Improving Physical Performance")
+
+
 
         return recommended_food
 
@@ -322,7 +378,7 @@ def test(request):
 
             if health_goals == "10":
                 cluster_meals = cluster_meals[cluster_meals['Loss'] == 'Yes']
-            elif health_goals == "6":
+            elif health_goals == "6" or health_goals == "12" or health_goals == "5":
                 cluster_meals = cluster_meals[cluster_meals['Muscle'] == 'Yes']
             # elif health_goals == 3:
             #     cluster_meals = cluster_meals[cluster_meals['HighProtein'] == 'Yes']

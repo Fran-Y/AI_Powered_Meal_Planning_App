@@ -1,22 +1,79 @@
 {% extends "dashboard.html" %}
+{% load static %}
 {% block title %}{% endblock %}
 {% block content %}
-    <div class="main">
- <div class="details">
- <div class="recentOrders">
-    <ul>
-        {% for day, sums in daily_sums.items %}
-        <li>
-            <h2>{{ day }}:</h2>
-            <p>Calories: {{ sums.Calories }}</p>
-            <p>Fat Content: {{ sums.FatContent }}</p>
-            <p>Carbohydrate Content: {{ sums.CarbohydrateContent }}</p>
-            <p>Protein Content: {{ sums.ProteinContent }}</p>
-        </li>
-        {% endfor %}
-    </ul>
- </div>
- </div>
-    </div>
+<style>
+    .chart-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
+    .chart-container img {
+        width: 48%;
+        max-width: 400px;
+    }
+</style>
+    <div class="main">
+        <div class="details">
+            <div class="recentOrders">
+                <ul>
+                    <div class="chart-container">
+                        <h2>Monday</h2>
+                        <img src="{% static 'images/pie_chart_Monday.png' %}" alt="Pie Chart for Monday">
+                        <img src="{% static 'images/bar_chart_Monday.png' %}" alt="Bar Chart for Monday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Tuesday</h2>
+                        <img src="{% static 'images/pie_chart_Tuesday.png' %}" alt="Pie Chart for Tuesday">
+                        <img src="{% static 'images/bar_chart_Tuesday.png' %}" alt="Bar Chart for Tuesday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Saturday</h2>
+                        <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
+                        <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Thursday</h2>
+                        <img src="{% static 'images/pie_chart_Thursday.png' %}" alt="Pie Chart for Thursday">
+                        <img src="{% static 'images/bar_chart_Thursday.png' %}" alt="Bar Chart for Thursday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Friday</h2>
+                        <img src="{% static 'images/pie_chart_Friday.png' %}" alt="Pie Chart for Friday">
+                        <img src="{% static 'images/bar_chart_Friday.png' %}" alt="Bar Chart for Friday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Saturday</h2>
+                        <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
+                        <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
+                    </div>
+
+                </ul>
+                <ul>
+                    <div class="chart-container">
+                        <h2>Sunday</h2>
+                        <img src="{% static 'images/pie_chart_Sunday.png' %}" alt="Pie Chart for Sunday">
+                        <img src="{% static 'images/bar_chart_Sunday.png' %}" alt="Bar Chart for Sunday">
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
