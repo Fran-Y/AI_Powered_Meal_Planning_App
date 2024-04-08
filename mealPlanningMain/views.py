@@ -22,8 +22,6 @@ import sklearn
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-# model = joblib.load('/Users/yuanfanfan/代码日常/model/food_recommender.joblib')
-# label_encoder = joblib.load('/Users/yuanfanfan/代码日常/model/label_encoder.joblib')
 model = joblib.load('food_prediction_model.joblib')
 
 
@@ -187,7 +185,6 @@ def generate_charts(daily_sums):
         labels = ['Calories', 'Fat Content', 'Carbohydrate Content', 'Protein Content']
         sizes = [sums['Calories'], sums['FatContent'], sums['CarbohydrateContent'], sums['ProteinContent']]
 
-        # 生成饼图
         plt.figure(figsize=(6, 6))
         plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
         plt.axis('equal')
@@ -195,9 +192,8 @@ def generate_charts(daily_sums):
         plt.savefig(pie_path)
         plt.close()
 
-        print(f"Saved pie chart for {day} at: {pie_path}")  # 测试输出2：检查饼图保存路径
+        print(f"Saved pie chart for {day} at: {pie_path}")
 
-        # 生成直方图
         plt.figure(figsize=(8, 6))
         categories = range(len(labels))
         plt.bar(categories, sizes, color=['red', 'blue', 'yellow', 'green'])
@@ -206,7 +202,7 @@ def generate_charts(daily_sums):
         plt.savefig(bar_path)
         plt.close()
 
-        print(f"Saved bar chart for {day} at: {bar_path}")  # 测试输出3：检查直方图保存路径
+        print(f"Saved bar chart for {day} at: {bar_path}")
 
         charts_url[day] = {
             'pie_chart_url': static(f'mealPlanningMain/images/pie_chart_{day}.png'),
@@ -220,12 +216,12 @@ def predict(request):
     csv_file_path = 'weekly-meal-plan.csv'
 
     df = pd.read_csv(csv_file_path)
-    print("CSV loaded. Number of rows:", len(df))  # 测试输出4：确认CSV文件已加载
+    print("CSV loaded. Number of rows:", len(df))
 
     food_names = df['foodname'].tolist()
 
     predictions = model.predict(food_names)
-    print("Predictions made for food names.")  # 测试输出5：确认预测已完成
+    print("Predictions made for food names.")
 
     df['Calories'], df['FatContent'], df['CarbohydrateContent'], df['ProteinContent'] = zip(*predictions)
     daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum().round(2)
@@ -234,7 +230,7 @@ def predict(request):
     daily_sums = daily_sums.reindex(weekdays_order)
 
     daily_sums_dict = daily_sums.to_dict(orient='index')
-    print("Daily sums calculated.")  # 测试输出6：确认日总计已计算
+    print("Daily sums calculated.")
 
     charts_url = generate_charts(daily_sums_dict)
 
