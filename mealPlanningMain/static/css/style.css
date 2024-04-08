@@ -6,6 +6,8 @@
 
 body{
     font-family: Lato,Helvetica Neue,Helvetica,Arial,sans;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
 }
 
 ul{
@@ -36,30 +38,80 @@ header{
 
 
 .banner-section{
-    background-image: url('/static/images/meal-plan-bg.jpg');
+    position: relative;
+    background-image: url('../images/meal-plan-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     padding: 150px 0;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner-section h1{
-    color: rgb(12,85,86);
-    font-size: 35px;
+
+    font-size: 40px;
     font-weight: 800;
-    line-height: 1.0;
+    line-height: 1.25;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.banner-section h1 span{
+    color: rgb(12,85,86);
+    font-size: 45px;
 }
 
 .banner-section p{
     color: rgb(12,85,86);
     font-size: 20px;
-    font-weight: 700;
-    line-height: 0.75;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.banner-section a{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(12,85,86);
+    background-color: rgb(255, 187, 1);
+    padding: 10px 15px;
+    border-radius: 5px 5px 5px 5px;
+    text-decoration: none;
 }
 
 .banner-section .jumbotron{
     background-color: rgb(255, 187, 1);
+}
+
+.banner-images{
+    background-color: rgb(255, 187, 1);
+    position: relative;
+    padding: 30px 0;
+    border-radius: 10% 0 40% 10%;
+}
+
+#banner-img-1{
+    position: absolute;
+    right: -12%;
+    animation-name: slideRight;
+    animation-duration: 2s;
+}
+
+#banner-img-3{
+    position: absolute;
+    left: -12%;
+    bottom: 10%;
+    animation-name: slideLeft;
+    animation-duration: 2s;
+}
+
+#banner-img-2{
+    animation: slideLeft;
+    animation-duration: 2s;
 }
 
 .healthy-food-section{
@@ -79,8 +131,18 @@ header{
     border-radius: 5px;
 }
 
+.healthy-food-section .healthy-food-info.active{
+    animation: slideLeft;
+    animation-duration: 2s;
+}
+
 .healthy-food-section .health-food-app-img{
     width: 45vw;
+}
+
+.healthy-food-section .health-food-app-img.active{
+    animation: slideRight;
+    animation-duration: 2s;
 }
 
 .healthy-food-section .healthy-food-info h2{
@@ -138,10 +200,39 @@ header{
 }
 
 .eat-healthy-section h2{
-    font-size: 28px;
+    font-size: 42px;
     font-weight: 700;
     line-height: 1.0;
     margin-bottom: 20px;
+}
+
+.eat-healthy-section .health-food-app-img{
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.eat-healthy-section .healthy-food-info{
+    position: relative;
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.eat-healthy-section .health-food-app-img.active{
+    /*animation: fadeInAnimation;*/
+    /*animation-duration: 2s;*/
+    /*animation: fadeInAnimation ease 3s;*/
+    /*animation-iteration-count: 1;*/
+    opacity: 1;
+}
+
+.eat-healthy-section .healthy-food-info.active{
+    /*opacity: 0;*/
+    /*animation: fadeInAnimation;*/
+    /*animation-duration: 2s;*/
+    /*animation: fadeInAnimation ease 3s;*/
+    /*animation-iteration-count: 1;*/
+    opacity: 1;
 }
 
 .application-section{
@@ -163,11 +254,65 @@ header{
 
 footer{
     position: relative;
-    background: rgba(0,137,55,1);
     width: 100%;
-    top: 56px;
 }
 
+footer p{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(12,85,86);
+    margin: 0;
+}
+
+footer .footer-section-content{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 5px 0;
+    background: rgba(0,137,55,1);
+}
+
+/* -- Login page -- */
+.login-form-section{
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 60px 0;
+    background-color: #ececec;
+    height: 100vh;
+}
+
+.login-form-section-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 450px;
+    width: 100%;
+}
+
+.form-section{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+#login-form{
+    display: inline-block;
+    max-width: 450px;
+    width: 100%;
+    height: 450px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 25px;
+}
+
+.form-field{
+
+}
+
+/* ----- */
 
 .about-us-banner{
     display: flex;
@@ -225,81 +370,33 @@ footer{
     outline: none;
 }
 
-footer p{
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(12,85,86);
-    margin: 0;
+.animate{
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 2s linear forwards;
 }
 
-footer .footer-section-content{
-    position: relative;
-    width: 100%;
-    /*bottom: 0;*/
-    padding: 5px 0;
-    /*background: rgb(152, 198, 53);*/
+@keyframes slideRight{
+    from{ transform: translateX(100%); }
 }
 
-/* -- Login page -- */
-.login-form-section{
-    position: relative;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    padding: 60px 0;
-    background-color: #ececec;
-    min-height: 100vh;
-    top: 56px;
+@keyframes slideLeft{
+    from{ transform: translateX(-100%); }
 }
 
-.login-form-section-content{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    max-width: 450px;
-    width: 100%;
+@keyframes fadeInAnimation{
+    /* 0% {
+        opacity: 0;
+    } */
+
+    100%{
+        opacity: 1;
+    }
 }
 
-.form-section{
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-}
-
-#login-form{
-    display: inline-block;
-    max-width: 450px;
-    width: 100%;
-    height: 450px;
-    border-radius: 5px;
-    padding: 25px;
-}
-
-#register-form{
-    display: inline-block;
-    max-width: 450px;
-    width: 100%;
-    /*height: 450px;*/
-    border-radius: 5px;
-    padding: 25px;
-}
-
-.form-field{
-
-}
-
-form.form-section label{
-    display: block;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-form.form-section input, form.form-section select{
-    border: 2px solid #ececec;
-    border-radius: 5px;
-    padding: 5px 5px;
-    width: 100%;
-    outline: none;
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
