@@ -292,6 +292,7 @@ a.btn{
     margin-top: 10px;
     overflow-x: scroll;
     /* overflow-y: scroll; */
+    display: inline-table !important;
 }
 
 .details table th{
@@ -473,6 +474,26 @@ span.itemDeleteBtn{
     display: inline-block;
     cursor: pointer;
 }
+
+#custom-file-button {
+  padding: 10px;
+  color: white;
+  background-color: #009578;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#custom-file-button:hover {
+  background-color: #00b28f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+
 
 
 /*Make It Responsive*/

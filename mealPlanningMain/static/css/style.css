@@ -254,6 +254,7 @@ header{
 
 footer{
     position: relative;
+    top: 60px;
     width: 100%;
 }
 
@@ -265,7 +266,7 @@ footer p{
 }
 
 footer .footer-section-content{
-    position: absolute;
+    position: relative;
     width: 100%;
     bottom: 0;
     padding: 5px 0;
@@ -278,16 +279,16 @@ footer .footer-section-content{
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    padding: 60px 0;
+    padding: 120px 0;
     background-color: #ececec;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .login-form-section-content{
-    position: absolute;
-    top: 50%;
+    position: relative;
+    /*top: 50%;*/
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     max-width: 450px;
     width: 100%;
 }
@@ -427,18 +428,27 @@ footer .footer-section-content{
     text-align: center;
 }
 
+.dietary-preferences-section .dietary-section-content h2.section-title{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
 /* ----- */
 
 .about-us-banner{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    min-height: 150px;
     /* background: linear-gradient(180deg,#030749,rgba(96, 33, 255, 0.592) 0%); */
     color: #fff;
     background-color: rgb(152, 198, 53);
     background-size: cover;
     background-position: center center;
+    top: 66px;
 }
 
 .about-us-banner-content{
@@ -448,6 +458,8 @@ footer .footer-section-content{
 }
 
 .how-we-work{
+    position: relative;
+    top: 60px;
     background-color: #ececec;
 }
 
@@ -485,10 +497,28 @@ footer .footer-section-content{
     outline: none;
 }
 
-.animate{
+.animate.active{
     opacity: 0;
     transform: translateY(30px);
     animation: moveup 2s linear forwards;
+}
+
+label{
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], select{
+    display: inline-block;
+    width: 100%;
+    background-color: #F5F5F5;
+    padding: 5px 10px;
+    border-radius: 4px 4px 4px 4px;
+    border: none;
+    outline: none;
+    /*cursor: pointer;*/
 }
 
 @keyframes slideRight{
