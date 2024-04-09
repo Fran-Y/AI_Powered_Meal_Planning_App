@@ -5,109 +5,216 @@
 {% block title %}{% trans 'Home' %}{% endblock %}
 
 {% block content %}
-<section class="banner-section">
-    <div class="banner-section-content animate">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 pt-5">
-                    <h1><span>Make Healthy Life</span><br> With Healthy Meal Plan</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos excepturi quas nam vel, quaerat accusantium, illo nemo repudiandae distinctio unde voluptatum nesciunt vero ex omnis obcaecati fugit illum autem eaque!</p>
-                    <a href="">Get Started</a>
+    <section class="banner-section">
+        <div class="banner-section-content animate">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 pt-5">
+                        <h1><span>Make Healthy Life</span><br> With Healthy Meal Plan</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos excepturi quas nam vel, quaerat accusantium, illo nemo repudiandae distinctio unde voluptatum nesciunt vero ex omnis obcaecati fugit illum autem eaque!</p>
+                        <a href="">Get Started</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="banner-images">
+                            <img class="w-25" id="banner-img-1" src="{% static 'images/lemon-1.png' %}" alt="">
+                            <img class="w-100" id="banner-img-2" src="{% static 'images/food-2.png' %}" alt="">
+                            <img class="w-25" id="banner-img-3" src="{% static 'images/tomat-leaf.png' %} " alt="">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="banner-images">
-                        <img class="w-25" id="banner-img-1" src="{% static 'images/lemon-1.png' %} " alt="">
-                        <img class="w-100" id="banner-img-2" src="{%  static 'images/food-2.png' %}" alt="">
-                        <img class="w-25" id="banner-img-3" src="{%  static 'images/tomat-leaf.png' %}" alt="">
+
+                <!-- <div class="jumbotron">
+                    <h1>Welcome to Meal Planner!</h1>
+                    <hr>
+                    <p>Plan your meals efficiently and effortlessly.</p>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section class="healthy-food-section">
+        <div class="healthy-food-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="health-food-app-img reveal">
+                            <img src="{% static 'images/meal-plan-computer-phone.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="healthy-food-info reveal">
+                            <h2>Achieve the following goals through <b>Meal Planner App</b></h2>
+                            <ul>
+                                <li id="save-money"><b>Save Money</b></li>
+                                <li id="save-time"><b>Save Time</b></li>
+                                <li id="healthy-choice"><b>Healthy Choices</b></li>
+                                <li id="reduce-stress"><b>Reduce Stress</b></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="healthy-food-section">
-    <div class="healthy-food-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="health-food-app-img reveal">
-                        <img src="{% static 'images/meal-plan-computer-phone.jpg' %}" alt="">
+    </section>
+    <section class="eat-healthy-section">
+        <div class="eat-healthy-content animate">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2>Learn How To Eat Healthy with Food Planner</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus consectetur doloribus animi nostrum dolores modi temporibus nam, aspernatur nulla suscipit minus, assumenda cupiditate aliquam consequatur voluptatem quaerat iste! Ullam?</p>
+                        <!-- <button>Get Started</button> -->
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{% static 'images/healthy-food-diagram-resize.jpg' %}" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="meal-type-section">
+        <div class="meal-type-content animate">
+            <div class="container">
+                <h2 class="text-center mb-4">Types of Meals</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row meal-type-div">
+                            <div class="p-1 col-md-6">
+                                <div class="meal-img-div breakfast-image">
+                                    <!-- <img src="img/breakfast.jpg" alt=""> -->
+                                    <p>Breakfast</p>
+                                </div>
+                            </div>
+                            <div class="p-1 col-md-6">
+                                <div class="meal-img-div lunch-image">
+                                    <!-- <img src="img/lunch.jpg" alt=""> -->
+                                    <p>Lunch</p>
+                                </div>
+                            </div>
+                            <div class="p-1 col-md-6">
+                                <div class="meal-img-div snack-image">
+                                    <!-- <img src="img/snack.jpg" alt=""> -->
+                                    <p>Snack</p>
+                                </div>
+                            </div>
+                            <div class="p-1 col-md-6">
+                                <div class="meal-img-div dinner-image">
+                                    <!-- <img src="img/dinner.jpg" alt=""> -->
+                                    <p>Dinner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-1"></div> -->
+                    <div class="col-md-5">
+                        <div class="meal-type-div">
+                            <img class="mb-2" src="{% static 'images/weekly-meal-plan.jpg' %}" alt="">
+                            <img src="{% static 'images/popup_1.png' %}" alt="">
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="healthy-food-info reveal">
-                        <h2>Achieve the following goals through <b>Meal Planner App</b></h2>
+            </div>
+        </div>
+    </section>
+    <section class="health-goal-section">
+        <div class="health-goal-section-content animate">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{% static 'images/food-3.gif' %}" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="section-title">Get Food Recommendation Based on The Following Health Goals</h2>
                         <ul>
-                            <li id="save-money"><b>Save Money</b></li>
-                            <li id="save-time"><b>Save Time</b></li>
-                            <li id="healthy-choice"><b>Healthy Choices</b></li>
-                            <li id="reduce-stress"><b>Reduce Stress</b></li>
+                            <li>
+                                <p>Maintaining Healthy Weight</p>
+                            </li>
+                            <li>
+                                <p>Lowering The Risk Of Heart Diseases</p>
+                            </li>
+                            <li>
+                                <p>Blood Sugar Control</p>
+                            </li>
+                            <li>
+                                <p>Promoting a healthy digestive system and preventing issues like constipation</p>
+                            </li>
+                            <li>
+                                <p>Building and maintaining strong bones.</p>
+                            </li>
+                            <li>
+                                <p>Supporting muscle growth and strength.</p>
+                            </li>
+                            <li>
+                                <p>Preventing Cancer</p>
+                            </li>
+                            <li>
+                                <p>Stress Reductiona and Enhancing Mood</p>
+                            </li>
+                            <li>
+                                <p>Boosting Energy</p>
+                            </li>
+                            <li>
+                                <p>Having Healthy Skin</p>
+                            </li>
+                            <li>
+                                <p>Improving Sleep Quality and Duration</p>
+                            </li>
+                            <li>
+                                <p>Imporving Physical Performance</p>
+                            </li>
+                            <li>
+                                <p>Improving the Immune System</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<section class="eat-healthy-section">
-    <div class="eat-healthy-content">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="healthy-food-info reveal">
-                        <h2>Learn How To Eat Healthy with Food Planner</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem natus consectetur doloribus animi nostrum dolores modi temporibus nam, aspernatur nulla suscipit minus, assumenda cupiditate aliquam consequatur voluptatem quaerat iste! Ullam?</p>
+    </section>
+    <section class="dietary-preferences-section">
+        <div class="dietary-section-content animate">
+            <h2 class="section-title">Dietary Preferences</h2>
+            <small>Do you have any dietary preferences? If so then get the food recommendation based on you preferred diet</small>
+            <div class="mt-4 container">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-md-2">
+                        <img src="{% static 'images/vegan-logo.png' %}" alt="">
+                        <p>Vegan</p>
                     </div>
-{#                    <button>Get Started</button>#}
-                </div>
-                <div class="col-lg-6">
-                    <div class="health-food-app-img reveal">
-                        <img src="{% static 'images/healthy-food-diagram-resize.jpg' %}" alt="">
+                    <div class="col-md-2">
+                        <img src="{% static 'images/vegetarian.png' %} " alt="">
+                        <p>Vegetarian</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="application-section">
-    <div class="application-section-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="application-div">
-                        <div class="app-img-div">
-                            <img src="{% static 'images/Smartphone-Free-Download-PNG.png' %}" alt="">
-                        </div>
-                        <div class="app-content-div">
-                            <h3>Mobile App</h3>
-                            <p>Download the app! Make healthy meal choices during grocery or dining</p>
-                        </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/paleo.png' %}" alt="">
+                        <p>Paleo</p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="application-div">
-                        <div class="app-img-div">
-                            <img src="{% static 'images/feat_smart_wearables.png' %}" alt="">
-                        </div>
-                        <div class="app-content-div">
-                            <h3>Smart Wearable Device</h3>
-                            <p>Download the app! Make healthy meal choices during grocery or dining</p>
-                        </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/lactose-intolearnce.png' %}" alt="">
+                        <p>Lactose Intolerance</p>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="application-div">
-                        <div class="app-img-div">
-                            <img src="{% static 'images/alexa.png' %}" alt="">
-                        </div>
-                        <div class="app-content-div">
-                            <h3>Smart AI Device</h3>
-                            <p>Download the app! Make healthy meal choices during grocery or dining</p>
-                        </div>
+                    <div class="col-md-2">
+                        <img src="{%  static 'images/raw-food-diet.png' %}" alt="">
+                        <p>Raw Food</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/dairy-free.png' %}" alt="">
+                        <p>Dairy-free</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/gluten-free.png' %}" alt="">
+                        <p>Gluten free</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/pescatarian.png' %}" alt="">
+                        <p>Pescatarian</p>
+                    </div>
+                    <div class="col-md-2">
+                        <img src="{% static 'images/keto-diet.png' %}" alt="">
+                        <p>Keto</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

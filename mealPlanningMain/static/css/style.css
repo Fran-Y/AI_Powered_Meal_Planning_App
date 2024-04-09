@@ -312,6 +312,121 @@ footer .footer-section-content{
 
 }
 
+.meal-type-section{
+    position: relative;
+    padding: 60px 0;
+    background-color: #EBEEFF;
+}
+
+.meal-img-div{
+    width: 100%;
+    position: relative;
+    height: 250px;
+    border-radius: 4px;
+}
+
+.meal-img-div.breakfast-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/breakfast.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.meal-img-div.lunch-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/lunch.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.meal-img-div.snack-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/snack.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.meal-img-div.dinner-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/dinner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .meal-img-div img{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 4px;
+} */
+
+.meal-img-div p{
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    background-color: #000;
+    opacity: 80%;
+    width: 100%;
+    /* border-radius: 0 0 4px 4px; */
+    transform: translate(0, -50%);
+    text-align: center;
+}
+
+.health-goal-section{
+    position: relative;
+    padding: 60px 0;
+    background-image: url('img/select-program-background.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.health-goal-section .health-goal-section-content h2.section-title{
+    font-size: 26px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.health-goal-section .health-goal-section-content ul li{
+    list-style-type: disclosure-closed;
+    color: rgb(12,85,86);
+    margin-left: 25px;
+}
+
+.health-goal-section .health-goal-section-content ul li p{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.20;
+    margin-bottom: 8px;
+    color: rgb(12,85,86);
+}
+
+.dietary-preferences-section{
+    position: relative;
+    padding: 60px 0;
+}
+
+.dietary-preferences-section .dietary-section-content img{
+    width: 120px;
+    height: 120px;
+    transition: 2s;
+    transform: scale(1.0);
+}
+
+.dietary-preferences-section .dietary-section-content img:hover{
+    transform: scale(1.2);
+    transition: 2s;
+}
+
+.dietary-preferences-section .dietary-section-content{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
 /* ----- */
 
 .about-us-banner{
