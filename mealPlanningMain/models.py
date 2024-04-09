@@ -22,10 +22,14 @@ DIETARY_PREFERENCES_CHOICES = (
 
 
 class User(AbstractBaseUser):
+    GENDER_CHOICES = (
+        ('male', 'Male'),
+        ('female', 'Female'),
+    )
     id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=20)
-    gender = models.CharField(max_length=20, null=True)
+    gender = models.CharField(max_length=20, null=True, choices=GENDER_CHOICES)
     age = models.IntegerField(null=True)
     weight = models.FloatField(null=True, blank=True, help_text="kg")
     height = models.FloatField(null=True, blank=True, help_text="cm")
