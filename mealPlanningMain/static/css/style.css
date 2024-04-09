@@ -326,25 +326,25 @@ footer .footer-section-content{
 }
 
 .meal-img-div.breakfast-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/breakfast.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('../images/breakfast.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .meal-img-div.lunch-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/lunch.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('../images/lunch.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .meal-img-div.snack-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/snack.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('../images/snack.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .meal-img-div.dinner-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('img/dinner.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url('../images/dinner.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -377,7 +377,7 @@ footer .footer-section-content{
 .health-goal-section{
     position: relative;
     padding: 60px 0;
-    background-image: url('img/select-program-background.jpg');
+    background-image: url('../images/select-program-background.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

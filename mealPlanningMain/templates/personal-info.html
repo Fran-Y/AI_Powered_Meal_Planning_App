@@ -10,9 +10,9 @@
 {#                    <i class="fas fa-search searchIcon"></i>#}
 {#                    <input type="text" placeholder="Search Here...." name="" id="">#}
 {#                </label>#}
-                <div class="user">
-                    <img src="images/avatar.png" alt="">
-                </div>
+{#                <div class="user">#}
+{#                    <img src="images/avatar.png" alt="">#}
+{#                </div>#}
             </div>
         </div>
         <div class="cardBox">
@@ -31,20 +31,20 @@
                             <p>Please enter your personal details and your Health Goals</p>
                             <br>
                         </div>
-                        <div class="form-field">
-                            <label for="userage">Age</label>
-                            <input type="number" name="userage" id="user_age" required value="{{ user.age }}">
-                        </div>
-                        <div class="form-field">
-                            <label for="user_gender">Gender</label>
-                            <select name="usergender" id="user_gender">
-                                <option value="male" {% if user.gender == "male" %}selected{% endif %}>Male
-                                </option>
-                                <option value="female" {% if user.gender == "female" %}selected{% endif %}>
-                                    Female
-                                </option>
-                            </select>
-                        </div>
+{#                        <div class="form-field">#}
+{#                            <label for="userage">Age</label>#}
+{#                            <input type="number" name="userage" id="user_age" required value="{{ user.age }}">#}
+{#                        </div>#}
+{#                        <div class="form-field">#}
+{#                            <label for="user_gender">Gender</label>#}
+{#                            <select name="usergender" id="user_gender">#}
+{#                                <option value="male" {% if user.gender == "male" %}selected{% endif %}>Male#}
+{#                                </option>#}
+{#                                <option value="female" {% if user.gender == "female" %}selected{% endif %}>#}
+{#                                    Female#}
+{#                                </option>#}
+{#                            </select>#}
+{#                        </div>#}
                         <div class="form-field">
                             <label for="physical-activity">Enter Your Physical Activity</label>
                             <select name="physical-activity" id="physical-activity">
@@ -131,14 +131,14 @@
                             </select>
                         </div>
 
-                        <div class="form-field">
-                            <label for="height">Height</label>
-                            <input type="number" name="height" id="user_height" required value="{{ user.height }}">
-                        </div>
-                        <div class="form-field">
-                            <label for="weight">Weight</label>
-                            <input type="number" name="weight" id="user_weight" required value="{{ user.weight }}">
-                        </div>
+{#                        <div class="form-field">#}
+{#                            <label for="height">Height</label>#}
+{#                            <input type="number" name="height" id="user_height" required value="{{ user.height }}">#}
+{#                        </div>#}
+{#                        <div class="form-field">#}
+{#                            <label for="weight">Weight</label>#}
+{#                            <input type="number" name="weight" id="user_weight" required value="{{ user.weight }}">#}
+{#                        </div>#}
                         {#                        <div class="form-field">#}
                         {#                            <label for="ideaWeight">Idea Weight</label>#}
                         {#                            <input type="number" name="ideaWeight" id="user_ideaweight" required>#}

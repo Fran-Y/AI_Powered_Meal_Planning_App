@@ -7,10 +7,11 @@ from django import forms
 class SignUpForm(UserCreationForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput)
+    gender = forms.CharField(label='Gender')
 
     class Meta:
         model = User
-        fields = ('username', 'password1', 'password2')
+        fields = ('username', 'password1', 'password2', 'age', 'gender', 'weight', 'height')
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")

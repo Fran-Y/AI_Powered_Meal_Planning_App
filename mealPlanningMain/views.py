@@ -132,6 +132,7 @@ def mealplan(request):
 
 
 def personalInfo(request):
+    user = request.user
     if request.method == 'POST':
         user_age = request.POST.get('userage')
         user_gender = request.POST.get('usergender')
@@ -142,6 +143,7 @@ def personalInfo(request):
         height = request.POST.get('height')
         idea_weight = request.POST.get('ideaWeight')
         User.objects.update_or_create(
+            id=user.id,
             defaults={
                 'age': user_age,
                 'gender': user_gender,
@@ -153,7 +155,6 @@ def personalInfo(request):
                 'idea_weight': idea_weight
             }
         )
-
         return redirect('test')
     return render(request, 'personal-info.html', {'user': request.user})
 
@@ -236,6 +237,7 @@ def predict(request):
 
     return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict, 'charts_url': charts_url})
 
+
 def test(request):
     user = request.user
 
@@ -279,8 +281,6 @@ def test(request):
             recommended_food.append("Stress Reduction and Enhancing Mood")
         elif health_goals == "12":
             recommended_food.append("Improving Physical Performance")
-
-
 
         return recommended_food
 
