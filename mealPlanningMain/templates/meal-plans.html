@@ -6,10 +6,10 @@
         <div class="topbar">
             <div class="toggle" onclick="toggleMenu();"></div>
             <div class="search">
-                <label for="">
-                    <i class="fas fa-search searchIcon"></i>
-                    <input type="text" placeholder="Search Here...." name="" id="">
-                </label>
+{#                <label for="">#}
+{#                    <i class="fas fa-search searchIcon"></i>#}
+{#                    <input type="text" placeholder="Search Here...." name="" id="">#}
+{#                </label>#}
                 <div class="user">
                     <img src="images/avatar.png" alt="">
                 </div>
@@ -138,12 +138,12 @@
                     <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
-                        <input type="submit" value="Upload">
+                        <input type="submit" class="btn btn-primary" value="See Your Result">
                     </form>
-                    <form action="{% url 'predict' %}" method="post">
-                        {% csrf_token %}
-                        <input type="submit" value="See Your Result" class="btn btn-primary">
-                    </form>
+{#                    <form action="{% url 'predict' %}" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <input type="submit" value="See Your Result" class="btn btn-primary">#}
+{#                    </form>#}
                     <!-- <span class="file-custom"> -->
                 </div>
             </div>
@@ -1140,10 +1140,10 @@
             let d28 = localStorage.getItem('saturday_dinner') ? JSON.parse(localStorage.getItem('saturday_dinner')) : []
 
             // Define the CSV column names
-            let csvColumns = ['day', 'meal', 'food name'];
+            let csvColumns = ['day', 'meal', 'foodname'];
 
             // Combine or process the data as needed to create a C SV string
-            let csvData = csvColumns.join(',') + '/n'; // Add column headers
+            let csvData = csvColumns.join(',') + '\n'; // Add column headers
 
             // Insert data into the specified columns
 
