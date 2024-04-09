@@ -19,7 +19,8 @@
                         <div class="activity-cards">
                             <i class="fab fa-wpforms fa-3x mb-4"></i>
                             <h4>Enter Your Diet and Health Goal</h4>
-                            <p>Fill in the form and find out the required weekly meals that needs to be followed to achieve your health goals</p>
+                            <p>Fill in the form and find out the required weekly meals that needs to be followed to
+                                achieve your health goals</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -33,7 +34,8 @@
                         <div class="activity-cards">
                             <i class="fas fa-poll fa-3x mb-4"></i>
                             <h4>Get Your Results</h4>
-                            <p>You'll find out the total nutritions you've consumed and what meal plans you need to follow</p>
+                            <p>You'll find out the total nutritions you've consumed and what meal plans you need to
+                                follow</p>
                         </div>
                     </div>
                 </div>
@@ -41,7 +43,9 @@
                     <div class="col-md-6">
                         <h2>01</h2>
                         <h4>Share Your Details of Your Dietary Preferences and Health Goals </h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum asperiores tempora quia officiis iste vitae nostrum explicabo laudantium officia ipsum saepe dolore aspernatur autem, velit minima delectus amet aperiam accusamus?</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum asperiores tempora quia
+                            officiis iste vitae nostrum explicabo laudantium officia ipsum saepe dolore aspernatur
+                            autem, velit minima delectus amet aperiam accusamus?</p>
                     </div>
                     <div class="col-md-6">
                         <img src="{% static 'images/personal-info-dashboard.jpg' %}" alt="">
@@ -54,14 +58,18 @@
                     <div class="col-md-6">
                         <h2>02</h2>
                         <h4>Make Your Weekly Meal Plans and See Your Results</h4>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus molestias saepe nemo architecto quos quam. Aspernatur odit omnis ipsam tenetur doloremque eligendi saepe enim nemo veniam natus. Eaque, quisquam voluptatum?</p>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus molestias saepe nemo
+                            architecto quos quam. Aspernatur odit omnis ipsam tenetur doloremque eligendi saepe enim
+                            nemo veniam natus. Eaque, quisquam voluptatum?</p>
                     </div>
                 </div>
                 <div class="row py-5 align-items-center">
                     <div class="col-md-6">
                         <h2>03</h2>
                         <h4>See Your Results</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos at accusamus vero sed perferendis, delectus quod inventore quae dicta obcaecati aperiam est voluptatibus officiis tenetur suscipit culpa? Vitae, error ad?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos at accusamus vero sed
+                            perferendis, delectus quod inventore quae dicta obcaecati aperiam est voluptatibus officiis
+                            tenetur suscipit culpa? Vitae, error ad?</p>
                     </div>
                     <div class="col-md-6">
                         <img src="{% static 'images/meal-routine.jpg' %}" alt="">
@@ -72,7 +80,11 @@
         <hr>
         <div class="additional-info">
             <h2>Ready To Get Started?</h2>
-            <a href="{% url 'profile' %}" class="about-login-button">Try It Out</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' %}" class="about-login-button">Try It Out</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="about-login-button">Try It Out</a>
+            {% endif %}
         </div>
     </section>
 {% endblock %}
