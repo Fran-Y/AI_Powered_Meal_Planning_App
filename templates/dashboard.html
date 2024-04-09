@@ -75,7 +75,7 @@
 {#                </li>#}
 
                 <li>
-                    <a href="{% url 'logout' %}">
+                    <a href="{% url 'logout' %}" onclick="clearLocalStorageAndLogout()">
                         <span class="icon">
                             <i class="fa fa-sign-out" aria-hidden="true"></i>
                         </span>
@@ -86,6 +86,13 @@
         </div>
         </div>
 <body>
+<script>
+function clearLocalStorageAndLogout() {
+    localStorage.clear();
+
+
+}
+</script>
 {% block content %}
 
 {% endblock %}

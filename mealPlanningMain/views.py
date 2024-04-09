@@ -183,11 +183,14 @@ def generate_charts(daily_sums):
     charts_url = {}
     print("Generating charts for days:", daily_sums.keys())  # 测试输出1：检查哪些天的数据将被处理
     for day, sums in daily_sums.items():
-        labels = ['Calories', 'Fat Content', 'Carbohydrate Content', 'Protein Content']
+        labels = ['Calories', 'Fat', 'Carbohydrate', 'Protein']
         sizes = [sums['Calories'], sums['FatContent'], sums['CarbohydrateContent'], sums['ProteinContent']]
 
-        plt.figure(figsize=(6, 6))
-        plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+        label_fontsize = 19
+        autopct_fontsize = 19
+
+        plt.figure(figsize=(8, 8))
+        plt.pie(sizes, labels=labels, autopct=lambda p: '{:.1f}%'.format(p), startangle=140, textprops={'fontsize': autopct_fontsize})
         plt.axis('equal')
         pie_path = os.path.join('mealPlanningMain/static/images', f'pie_chart_{day}.png')
         plt.savefig(pie_path)
@@ -198,7 +201,8 @@ def generate_charts(daily_sums):
         plt.figure(figsize=(8, 6))
         categories = range(len(labels))
         plt.bar(categories, sizes, color=['red', 'blue', 'yellow', 'green'])
-        plt.xticks(categories, labels)
+        plt.xticks(categories, labels, fontsize=label_fontsize)
+        # plt.xticks(categories, labels)
         bar_path = os.path.join('mealPlanningMain/static/images', f'bar_chart_{day}.png')
         plt.savefig(bar_path)
         plt.close()
@@ -226,7 +230,7 @@ def predict(request):
 
     df['Calories'], df['FatContent'], df['CarbohydrateContent'], df['ProteinContent'] = zip(*predictions)
     daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum().round(2)
-
+    print(daily_sums)
     weekdays_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     daily_sums = daily_sums.reindex(weekdays_order)
 
