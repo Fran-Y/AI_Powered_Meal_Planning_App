@@ -319,6 +319,19 @@ footer .footer-section-content{
     background-color: #EBEEFF;
 }
 
+.meal-type-section .meal-type-content{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.meal-type-section .meal-type-content h2.section-title{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
 .meal-img-div{
     width: 100%;
     position: relative;
