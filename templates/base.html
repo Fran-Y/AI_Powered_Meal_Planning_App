@@ -89,6 +89,7 @@
 
         function reveal(){
             let reveals = document.querySelectorAll('.reveal');
+            let animate = document.querySelectorAll('.animate');
 
             for(let i=0; i < reveals.length; i++){
                 let windowHeight = window.innerHeight;
@@ -97,6 +98,19 @@
 
                 if(revealTop < windowHeight - revealPoint){
                     reveals[i].classList.add('active');
+                }
+                // }else{
+                //     reveals[i].classList.remove('active');
+                // }
+            }
+            
+            for(let i=0; i < animate.length; i++){
+                let windowHeight = window.innerHeight;
+                let revealTop = animate[i].getBoundingClientRect().top;
+                let revealPoint = 150;
+
+                if(revealTop < windowHeight - revealPoint){
+                    animate[i].classList.add('active');
                 }
                 // }else{
                 //     reveals[i].classList.remove('active');
