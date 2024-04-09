@@ -1,3 +1,5 @@
+import glob
+
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.core.files.storage import FileSystemStorage
@@ -181,16 +183,25 @@ def upload_file(request):
 
 def generate_charts(daily_sums):
     charts_url = {}
-    print("Generating charts for days:", daily_sums.keys())  # 测试输出1：检查哪些天的数据将被处理
+    print("Generating charts for days:", daily_sums.keys())
+    images_dir = 'mealPlanningMain/static/images'
+    pie_chart_pattern = os.path.join(images_dir, 'pie_chart_*.png')
+    bar_chart_pattern = os.path.join(images_dir, 'bar_chart_*.png')
+
+    for file_path in glob.glob(pie_chart_pattern) + glob.glob(bar_chart_pattern):
+        os.remove(file_path)
+
     for day, sums in daily_sums.items():
+        print('----------------------------------')
+        print(sums)
         labels = ['Calories', 'Fat', 'Carbohydrate', 'Protein']
         sizes = [sums['Calories'], sums['FatContent'], sums['CarbohydrateContent'], sums['ProteinContent']]
-
         label_fontsize = 19
         autopct_fontsize = 19
 
         plt.figure(figsize=(8, 8))
-        plt.pie(sizes, labels=labels, autopct=lambda p: '{:.1f}%'.format(p), startangle=140, textprops={'fontsize': autopct_fontsize})
+        plt.pie(sizes, labels=labels, autopct=lambda p: '{:.1f}%'.format(p), startangle=140,
+                textprops={'fontsize': autopct_fontsize})
         plt.axis('equal')
         pie_path = os.path.join('mealPlanningMain/static/images', f'pie_chart_{day}.png')
         plt.savefig(pie_path)
@@ -231,15 +242,67 @@ def predict(request):
     df['Calories'], df['FatContent'], df['CarbohydrateContent'], df['ProteinContent'] = zip(*predictions)
     daily_sums = df.groupby('day')[['Calories', 'FatContent', 'CarbohydrateContent', 'ProteinContent']].sum().round(2)
     print(daily_sums)
-    weekdays_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    daily_sums = daily_sums.reindex(weekdays_order)
+    # weekdays_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    # daily_sums = daily_sums.reindex(weekdays_order)
 
     daily_sums_dict = daily_sums.to_dict(orient='index')
     print("Daily sums calculated.")
 
     charts_url = generate_charts(daily_sums_dict)
+    pie_chart_path_monday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Monday.png')
+    bar_chart_path_monday = os.path.join('', 'images/bar_chart_Monday.png')
+    print('======================')
+    print(pie_chart_path_monday)
+    pie_chart_exists_monday = os.path.exists(pie_chart_path_monday)
+    print(pie_chart_exists_monday)
+    bar_chart_exists_monday = os.path.exists(bar_chart_path_monday)
 
-    return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict, 'charts_url': charts_url})
+    pie_chart_path_tuesday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Tuesday.png')
+    bar_chart_path_tuesday = os.path.join('mealPlanningMain/', 'images/bar_chart_Tuesday.png')
+    pie_chart_exists_tuesday = os.path.exists(pie_chart_path_tuesday)
+    bar_chart_exists_tuesday = os.path.exists(bar_chart_path_tuesday)
+
+    pie_chart_path_wednesday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Wednesday.png')
+    bar_chart_path_wednesday = os.path.join('mealPlanningMain/', 'images/bar_chart_Wednesday.png')
+    pie_chart_exists_wednesday = os.path.exists(pie_chart_path_wednesday)
+    bar_chart_exists_wednesday = os.path.exists(bar_chart_path_wednesday)
+
+    pie_chart_path_thursday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Thursday.png')
+    bar_chart_path_thursday = os.path.join('mealPlanningMain/', 'images/bar_chart_Thursday.png')
+    pie_chart_exists_thursday = os.path.exists(pie_chart_path_thursday)
+    bar_chart_exists_thursday = os.path.exists(bar_chart_path_thursday)
+
+    pie_chart_path_friday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Friday.png')
+    bar_chart_path_friday = os.path.join('mealPlanningMain/', 'images/bar_chart_Friday.png')
+    pie_chart_exists_friday = os.path.exists(pie_chart_path_friday)
+    bar_chart_exists_friday = os.path.exists(bar_chart_path_friday)
+
+    pie_chart_path_saturday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Saturday.png')
+    bar_chart_path_saturday = os.path.join('mealPlanningMain/', 'images/bar_chart_Saturday.png')
+    pie_chart_exists_saturday = os.path.exists(pie_chart_path_saturday)
+    bar_chart_exists_saturday = os.path.exists(bar_chart_path_saturday)
+
+    pie_chart_path_sunday = os.path.join('mealPlanningMain/static', 'images/pie_chart_Sunday.png')
+    bar_chart_path_sunday = os.path.join('mealPlanningMain/', 'images/bar_chart_Sunday.png')
+    pie_chart_exists_sunday = os.path.exists(pie_chart_path_sunday)
+    bar_chart_exists_sunday = os.path.exists(bar_chart_path_sunday)
+    return render(request, 'meal-plans-result.html', {'daily_sums': daily_sums_dict, 'charts_url': charts_url,
+                                                      'pie_chart_exists_monday': pie_chart_exists_monday,
+                                                      'bar_chart_exists_monday': bar_chart_exists_monday,
+                                                      'pie_chart_exists_tuesday': pie_chart_exists_tuesday,
+                                                      'bar_chart_exists_tuesday': bar_chart_exists_tuesday,
+                                                      'pie_chart_exists_wednesday': pie_chart_exists_wednesday,
+                                                      'bar_chart_exists_wednesday': bar_chart_exists_wednesday,
+                                                      'pie_chart_exists_thursday': pie_chart_exists_thursday,
+                                                      'bar_chart_exists_thursday': bar_chart_exists_thursday,
+                                                      'pie_chart_exists_friday': pie_chart_exists_friday,
+                                                      'bar_chart_exists_friday':bar_chart_exists_friday,
+                                                      'pie_chart_exists_saturday': pie_chart_exists_saturday,
+                                                      'bar_chart_exists_saturday': bar_chart_exists_saturday,
+                                                      'pie_chart_exists_sunday': pie_chart_exists_sunday,
+                                                      'bar_chart_exists_sunday': bar_chart_exists_sunday,
+
+                                                      })
 
 
 def test(request):

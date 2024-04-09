@@ -6,13 +6,13 @@
         <div class="topbar">
             <div class="toggle" onclick="toggleMenu();"></div>
             <div class="search">
-{#                <label for="">#}
-{#                    <i class="fas fa-search searchIcon"></i>#}
-{#                    <input type="text" placeholder="Search Here...." name="" id="">#}
-{#                </label>#}
-{#                <div class="user">#}
-{#                    <img src="images/avatar.png" alt="">#}
-{#                </div>#}
+                {#                <label for="">#}
+                {#                    <i class="fas fa-search searchIcon"></i>#}
+                {#                    <input type="text" placeholder="Search Here...." name="" id="">#}
+                {#                </label>#}
+                {#                <div class="user">#}
+                {#                    <img src="images/avatar.png" alt="">#}
+                {#                </div>#}
             </div>
         </div>
         <div class="cardBox">
@@ -135,15 +135,16 @@
                     <p>Input You 'Weekly-Meal-Plan' csv file here and see your results!</p>
                     <!-- <button id="csv-input1" for="csv-input" onclick=""><i class="fas fa-upload"></i> Upload File</button> -->
                     {#                    <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">#}
-                    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data">
+                    <form action="{% url 'upload_file' %}" method="post" enctype="multipart/form-data"
+                          onsubmit="return checkFileSelected();">
                         {% csrf_token %}
                         <input type="file" name="csv-input" id="weeklyMealCSvInput" accept=".csv">
                         <input type="submit" class="btn btn-primary" value="See Your Result">
                     </form>
-{#                    <form action="{% url 'predict' %}" method="post">#}
-{#                        {% csrf_token %}#}
-{#                        <input type="submit" value="See Your Result" class="btn btn-primary">#}
-{#                    </form>#}
+                    {#                    <form action="{% url 'predict' %}" method="post">#}
+                    {#                        {% csrf_token %}#}
+                    {#                        <input type="submit" value="See Your Result" class="btn btn-primary">#}
+                    {#                    </form>#}
                     <!-- <span class="file-custom"> -->
                 </div>
             </div>
@@ -155,6 +156,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
+        function checkFileSelected() {
+            var input = document.getElementById('weeklyMealCSvInput');
+            if (!input.files.length) {
+                alert('Please select a file before clicking "See Your Result"');
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+
         const addBtn = document.querySelector(".add-meal-button");
         const input = document.querySelector(".input-group");
         const weeklyMealForm = document.getElementById('weeklyMealForm');

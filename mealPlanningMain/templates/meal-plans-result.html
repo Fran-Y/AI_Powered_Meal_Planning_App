@@ -20,6 +20,7 @@
                 <hr>
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Monday</u></h2>
+                    {% if pie_chart_exists_monday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -31,11 +32,15 @@
                         <img src="{% static 'images/pie_chart_Monday.png' %}" alt="Pie Chart for Monday">
                         <img src="{% static 'images/bar_chart_Monday.png' %}" alt="Bar Chart for Monday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
 
                 </ul>
                 <hr>
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Tuesday</u></h2>
+                    {% if pie_chart_exists_tuesday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                              <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -47,11 +52,15 @@
                         <img src="{% static 'images/pie_chart_Tuesday.png' %}" alt="Pie Chart for Tuesday">
                         <img src="{% static 'images/bar_chart_Tuesday.png' %}" alt="Bar Chart for Tuesday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
                 </ul>
                 <hr>
 
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Saturday</u></h2>
+                    {% if pie_chart_exists_saturday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                              <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -63,11 +72,15 @@
                         <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
                         <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
                 </ul>
                 <hr>
 
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Thursday</u></h2>
+                    {% if pie_chart_exists_thursday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                              <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -79,12 +92,16 @@
                         <img src="{% static 'images/pie_chart_Thursday.png' %}" alt="Pie Chart for Thursday">
                         <img src="{% static 'images/bar_chart_Thursday.png' %}" alt="Bar Chart for Thursday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
 
                 </ul>
                 <hr>
 
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Friday</u></h2>
+                    {% if pie_chart_exists_friday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                              <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -96,12 +113,16 @@
                         <img src="{% static 'images/pie_chart_Friday.png' %}" alt="Pie Chart for Friday">
                         <img src="{% static 'images/bar_chart_Friday.png' %}" alt="Bar Chart for Friday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
 
                 </ul>
                 <hr>
 
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Saturday</u></h2>
+                    {% if pie_chart_exists_saturday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -113,12 +134,16 @@
                         <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
                         <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
 
                 </ul>
                 <hr>
 
                 <ul>
                     <h2 class="text-decoration-underline mb-5"><u>Sunday</u></h2>
+                    {% if pie_chart_exists_sunday%}
                     <div class="chart-container">
                         <div class="nutritional-data">
                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
@@ -130,6 +155,9 @@
                         <img src="{% static 'images/pie_chart_Sunday.png' %}" alt="Pie Chart for Sunday">
                         <img src="{% static 'images/bar_chart_Sunday.png' %}" alt="Bar Chart for Sunday">
                     </div>
+                    {% else %}
+                    <p>You didn't enter this date.</p>
+                    {% endif %}
 
                 </ul>
             </div>
