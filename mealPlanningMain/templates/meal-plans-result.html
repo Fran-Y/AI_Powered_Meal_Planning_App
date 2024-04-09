@@ -16,94 +16,121 @@
     </style>
     <div class="main">
         <div class="details">
-            <div class="recentOrders">
+            <div class="recentOrders nutritionData">
+                <hr>
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Monday</u></h2>
                     <div class="chart-container">
-                        <h2>Monday</h2>
+                        <div class="nutritional-data">
+                            <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Monday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Monday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Monday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Monday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Monday.png' %}" alt="Pie Chart for Monday">
                         <img src="{% static 'images/bar_chart_Monday.png' %}" alt="Bar Chart for Monday">
                     </div>
-                    <p>Calories: {{ daily_sums.Monday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Monday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Monday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Monday.ProteinContent }}g</p>
+
                 </ul>
                 <hr>
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Tuesday</u></h2>
                     <div class="chart-container">
-                        <h2>Tuesday</h2>
+                        <div class="nutritional-data">
+                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Tuesday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Tuesday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Tuesday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Tuesday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Tuesday.png' %}" alt="Pie Chart for Tuesday">
                         <img src="{% static 'images/bar_chart_Tuesday.png' %}" alt="Bar Chart for Tuesday">
                     </div>
-    <p>Calories: {{ daily_sums.Tuesday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Tuesday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Tuesday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Tuesday.ProteinContent }}g</p>
                 </ul>
                 <hr>
 
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Saturday</u></h2>
                     <div class="chart-container">
-                        <h2>Saturday</h2>
+                        <div class="nutritional-data">
+                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Saturday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Saturday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Saturday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Saturday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
                         <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
                     </div>
-<p>Calories: {{ daily_sums.Saturday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Saturday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Saturday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Saturday.ProteinContent }}g</p>
                 </ul>
                 <hr>
 
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Thursday</u></h2>
                     <div class="chart-container">
-                        <h2>Thursday</h2>
+                        <div class="nutritional-data">
+                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Thursday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Thursday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Thursday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Thursday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Thursday.png' %}" alt="Pie Chart for Thursday">
                         <img src="{% static 'images/bar_chart_Thursday.png' %}" alt="Bar Chart for Thursday">
                     </div>
-<p>Calories: {{ daily_sums.Thursday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Thursday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Thursday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Thursday.ProteinContent }}g</p>
+
                 </ul>
                 <hr>
 
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Friday</u></h2>
                     <div class="chart-container">
-                        <h2>Friday</h2>
+                        <div class="nutritional-data">
+                             <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Friday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Friday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Friday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Friday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Friday.png' %}" alt="Pie Chart for Friday">
                         <img src="{% static 'images/bar_chart_Friday.png' %}" alt="Bar Chart for Friday">
                     </div>
-<p>Calories: {{ daily_sums.Friday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Friday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Friday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Friday.ProteinContent }}g</p>
+
                 </ul>
                 <hr>
 
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Saturday</u></h2>
                     <div class="chart-container">
-                        <h2>Saturday</h2>
+                        <div class="nutritional-data">
+                            <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Saturday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Saturday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Saturday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Saturday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Saturday.png' %}" alt="Pie Chart for Saturday">
                         <img src="{% static 'images/bar_chart_Saturday.png' %}" alt="Bar Chart for Saturday">
                     </div>
-<p>Calories: {{ daily_sums.Saturday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Saturday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Saturday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Saturday.ProteinContent }}g</p>
+
                 </ul>
                 <hr>
 
                 <ul>
+                    <h2 class="text-decoration-underline mb-5"><u>Sunday</u></h2>
                     <div class="chart-container">
-                        <h2>Sunday</h2>
+                        <div class="nutritional-data">
+                            <h3 class="mb-3"><u>Nutrition Data</u></h3>
+                            <p>Calories: {{ daily_sums.Sunday.Calories }}</p>
+                            <p>Fat Content: {{ daily_sums.Sunday.FatContent }}g</p>
+                            <p>Carbohydrate Content: {{ daily_sums.Sunday.CarbohydrateContent }}g</p>
+                            <p>Protein Content: {{ daily_sums.Sunday.ProteinContent }}g</p>
+                        </div>
                         <img src="{% static 'images/pie_chart_Sunday.png' %}" alt="Pie Chart for Sunday">
                         <img src="{% static 'images/bar_chart_Sunday.png' %}" alt="Bar Chart for Sunday">
                     </div>
-                    <p>Calories: {{ daily_sums.Sunday.Calories }}</p>
-                    <p>Fat Content: {{ daily_sums.Sunday.FatContent }}g</p>
-                    <p>Carbohydrate Content: {{ daily_sums.Sunday.CarbohydrateContent }}g</p>
-                    <p>Protein Content: {{ daily_sums.Sunday.ProteinContent }}g</p>
+
                 </ul>
             </div>
         </div>

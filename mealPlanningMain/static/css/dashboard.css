@@ -232,8 +232,13 @@ body{
     min-height: 300px;
     background: #fff;
     padding: 20px;
-    width: 100%;
+    /*width: 100%;*/
+    width: 70%;
     overflow: hidden;
+}
+
+.details .recentOrders.nutritionData{
+    width: 100% !important;
 }
 
 #meal-plan-details{
